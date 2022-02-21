@@ -1,0 +1,118 @@
+.ui-datepicker
+  background: rgb(51, 53, 56)
+  padding: 16px 8px
+  border-radius: 2px
+  color: $white
+  &-header
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-bottom: 21px
+  &-title
+    font-size: 14px
+    line-height: 16px
+    text-align: center
+    font-weight: 700
+    order: 2
+  &-prev, &-next
+    top: 16px
+    width: 24px
+    height: 24px
+    display: flex
+    align-items: center
+    justify-content: center
+    cursor: pointer
+    span
+      border-left: 2px solid rgb(153, 155, 157)
+      border-top: 2px solid rgb(153, 155, 157)
+      border-radius: 1px
+      width: 7px
+      height: 7px
+  &-prev
+    order: 1
+    transform: rotate(-45deg)
+  &-next
+    order: 3
+    transform: rotate(135deg)
+  th
+    font-weight: 700
+    font-size: 11px
+    line-height: 16px
+    color: $formText
+    padding-bottom: 8px
+  td
+    font-size: 14px
+    line-height: 20px
+    text-align: center
+    a
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 41px
+      height: 32px
+      &.ui-state-active
+        font-weight: 700
+        color: $white
+        border-radius: 3px
+        border: 1px solid $white
+      &.ui-state-hover
+        color: $white
+      &.ui-state-default
+        color: $white
+  &-unselectable
+    color: $formText
+.qs
+  &-datepicker
+    background: $bg5k
+    padding: 16px 8px
+    border-radius: 2px
+    color: $white
+  &-datepicker-container
+    position: relative
+    top: calc(100% + 10px)
+    margin-bottom: 60px
+  &-controls
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-bottom: 21px
+  &-arrow
+    width: 24px
+    height: 24px
+    cursor: pointer
+    background: url("../img/select-down.png") no-repeat
+    background-position: center center
+  &-left
+    transform: rotate(90deg)
+  &-right
+    transform: rotate(-90deg)
+  &-squares
+    display: grid
+    grid-template-columns: repeat(7, 1fr)
+  &-hidden
+    display: none
+  &-day
+    font-weight: 700
+    font-size: 11px
+    line-height: 16px
+    color: $formText
+    padding-bottom: 8px
+    text-align: center
+  &-num
+    font-size: 14px
+    line-height: 20px
+    text-align: center
+    width: 41px
+    height: 32px
+    display: flex
+    align-items: center
+    justify-content: center
+    cursor: pointer
+  &-disabled, &-outside-current-month
+    color: $formText
+    cursor: default
+  &-current
+    font-weight: 700
+    color: $white
+    border-radius: 3px
+    border: 1px solid $white

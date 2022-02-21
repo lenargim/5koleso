@@ -1,0 +1,547 @@
+.entry
+  height: calc(100vh - $headerHeight)
+  position: relative
+  overflow: hidden
+  @include between(1280, 1919)
+    height: calc(100vh - $headerHeightLaptop)
+  &__info
+    background: #34393F
+    padding: 34px 102px 78px 78px
+    color: $white
+    position: absolute
+    top: 0
+    bottom: 0
+    right: 0
+    width: 658px
+    transition: all 0.5s ease
+    overflow-y: auto
+    -ms-overflow-style: none
+    scrollbar-width: none
+    display: flex
+    flex-direction: column
+    gap: 30px
+    justify-content: flex-start
+    align-items: stretch
+    @include between(1280, 1919)
+      width: 500px
+      padding: 20px 40px 40px
+      gap: 20px
+    @include between(768, 1279)
+      padding: 65px 127px 23px
+      top: 50%
+    @include max(767)
+      top: 25%
+      padding: 30px 10px
+    @include max(1279)
+      width: 100%
+      border-radius: 10px 10px 0 0
+      &::after
+        content: ''
+        position: absolute
+        width: 30px
+        height: 2px
+        background: $white
+        top: 9px
+        left: calc(50% - 15px)
+    &::-webkit-scrollbar
+      display: none
+    &.hide
+      right: -700px
+      @include between(768, 1279)
+        right: unset
+        top: 110%
+  &__close
+    display: block
+    width: 24px
+    height: 24px
+    fill: $extraLightGray
+    margin: 0 auto
+    flex-shrink: 0
+    @include max(1279)
+      order: 1
+  &__text
+    display: grid
+    grid-template-columns: 1fr
+    grid-row: auto
+    grid-gap: 40px
+    @include between(1280, 1919)
+      grid-gap: 30px
+  &__title
+    display: flex
+    align-items: center
+    justify-content: space-between
+  &__steps
+    position: relative
+    font-family: $stoltz
+    @include max(767)
+      display: none
+    .current
+      font-size: 46px
+      @include between(1280, 1919)
+        font-size: 32px
+    .all
+      font-size: 26px
+      @include between(1280, 1919)
+        font-size: 20px
+      &::before
+        content: '/'
+  &__hightlight
+    position: absolute
+    display: flex
+    align-items: flex-end
+    justify-content: space-between
+    width: 100px
+    @include between(1280, 1919)
+      width: 70px
+    i
+      display: block
+      width: 30px
+      height: 3px
+      background: $formText
+      @include between(1280, 1919)
+        width: 20px
+      &.active
+        height: 5px
+        background: $white
+  &__search
+    position: relative
+    padding-bottom: 5px
+    border-bottom: 2px solid $white
+    &-input
+      width: 100%
+      background: transparent
+      border: none
+      font-size: 16px
+      color: $extraLightGray
+      font-weight: 600
+      &::placeholder
+        font-size: 16px
+        line-height: 24px
+        color: $formText
+      @include max(767)
+        font-weight: 400
+    &-submit
+      position: absolute
+      right: 0
+      top: 0
+      padding: 0
+      background: transparent
+    svg
+      width: 24px
+      height: 24px
+      fill: $white
+      @include between(1280, 1919)
+        width: 20px
+        height: 20px
+      @include max(767)
+        width: 18px
+        height: 18px
+  &__list
+    display: grid
+    grid-gap: 30px
+    grid-template-columns: 1fr
+    grid-template-rows: auto
+    overflow-y: auto
+    @include between(1280, 1919)
+      grid-gap: 25px
+    @include max(767)
+      grid-gap: 20px
+  &__item
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    gap: 10px
+    &-img
+      border-radius: 10px
+      flex-shrink: 0
+      width: 125px
+      height: 100px
+      @include between(1280, 1919)
+        width: 100px
+        height: 80px
+      @include between(768, 1279)
+        width: 200px
+        height: 100px
+      @include max(767)
+        width: 65px
+        height: 65px
+    &-text
+      display: flex
+      flex-direction: column
+      justify-content: flex-start
+      align-items: flex-start
+      gap: 10px
+      @include max(1919)
+        gap: 6px
+    &-address
+      font-family: $stoltz
+      font-size: 28px
+      @include between(1280, 1919)
+        font-size: 22px
+      @include max(767)
+        font-size: 18px
+    &-time
+      color: $extraLightGray
+      &:before
+        content: 'Время работы:'
+        font-weight: 700
+        display: inline-block
+        margin-right: 0.6em
+    &-workload
+      font-size: 12px
+      display: flex
+      align-items: center
+      justify-content: flex-start
+      gap: 5px
+      &:before
+        content: ''
+        display: inline-block
+        width: 10px
+        height: 10px
+        border-radius: 50%
+      &.green:before
+        background: $green2
+      &.orange:before
+        background: $orange
+      &.red:before
+        background: $redGradient
+  &__map
+    height: 100%
+    width: 100%
+    position: relative
+    .btn
+      width: 40px
+      height: 40px
+      z-index: 10
+      background: $buttonGlass
+      border-radius: 5px
+      border: 1px solid $whiteGradient
+      cursor: pointer
+      display: flex
+      align-items: center
+      justify-content: center
+      @include between(1280, 1919)
+        width: 30px
+        height: 30px
+    .map-layout
+      display: flex
+      flex-direction: column
+      gap: 10px
+      @include min(1280)
+        top: 400px
+        left: 20px
+      position: absolute
+      @include between(768, 1279)
+        left: 92vw
+        top: 30vh
+      @include max(767)
+        display: none
+  &__page
+    background: url("../img/bg-5k.jpg") no-repeat
+    background-size: cover
+    background-position: center center
+    position: absolute
+    top: 0
+    bottom: 0
+    right: 0
+    width: 944px
+    padding: 40px 168px 38px 216px
+    color: $white
+    transition: right 0.3s ease
+    overflow-y: auto
+    -ms-overflow-style: none
+    scrollbar-width: none
+    @include between(1280, 1919)
+      width: 600px
+      padding: 20px 40px 40px
+    @include between(768, 1279)
+      top: 30%
+      padding: 36px 127px 69px
+    @include max(1279)
+      width: 100%
+      border-radius: 10px 10px 0 0
+      &::after
+        content: ''
+        position: absolute
+        width: 30px
+        height: 2px
+        background: $white
+        top: 9px
+        left: calc(50% - 15px)
+    @include max(767)
+      top: 10%
+      padding: 30px 10px 56px
+    &::-webkit-scrollbar
+      display: none
+    h3
+      padding-bottom: 40px
+      @include between(1280, 1919)
+        padding-bottom: 20px
+    &.hide
+      right: -1000px
+      @include between(1280, 1919)
+        right: -800px
+      @include max(1279)
+        right: unset
+        top: 110%
+    &-top
+      display: flex
+      align-items: center
+      justify-content: space-between
+      margin-bottom: 40px
+      @include between(1280, 1919)
+        margin-bottom: 20px
+      @include max(767)
+        position: absolute
+        right: 10px
+        top: 30px
+        margin: 0
+        .entry__page-back
+          display: none
+    &-back
+      display: flex
+      align-items: center
+      justify-content: flex-start
+      gap: 4px
+      color: $formText
+      font: $font14Bold
+      @include max(767)
+        justify-content: center
+        margin-bottom: 30px
+      svg
+        width: 20px
+        height: 20px
+        fill: transparent
+        stroke: $formText
+    &-close svg
+      width: 24px
+      height: 24px
+      fill: $extraLightGray
+  &__submit
+    margin: 40px 0
+    position: relative
+    left: 50%
+    transform: translateX(-50%)
+    @include between(1280, 1919)
+      margin: 20px 0
+    @include max(767)
+      margin: 30px 0 10px
+    &.disabled
+      cursor: not-allowed
+  &__thx
+    @include max(767)
+      top: 60%
+    &-subtitle
+      margin-bottom: 10px
+    &-button
+      gap: 8px
+      font-size: 14px
+      line-height: 24px
+      font-weight: 700
+      color: $white
+      &:not(&:last-child)
+        margin-bottom: 20px
+      svg
+        width: 24px
+        height: 24px
+    &-content
+      display: grid
+      grid-template-columns: 1fr
+      grid-template-rows: auto
+      grid-gap: 40px
+      @include max(1919)
+        grid-gap: 30px
+    &-red
+      text-align: center
+      width: 300px
+      @include max(767)
+        width: 100%
+.balloon-close
+  display: block
+  position: absolute
+  right: 5px
+  top: 5px
+  color: $white
+  font-size: 18px
+  line-height: 1
+.balloon-root
+  background: $bg5k
+  width: fit-content
+  min-width: 289px
+  border-radius: 10px
+  position: relative
+.balloon-pin
+  position: absolute
+  z-index: -1
+  bottom: 0
+  left: 50%
+.balloon-content
+  padding: 20px
+  display: flex
+  align-items: center
+  justify-content: space-between
+  gap: 15px
+  &__text
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: flex-start
+    gap: 5px
+    color: $white
+  &__address
+    font-weight: 700
+    font-size: 14px
+  &__workhour
+    font-size: 12px
+    color: $extraLightGray
+    white-space: nowrap
+  &__workload
+    font-size: 12px
+    color: $extraLightGray
+    &::before
+      content: ''
+      width: 10px
+      height: 10px
+      border-radius: 50%
+      display: inline-block
+      margin-right: 0.5em
+    &.green:before
+      background: $green2
+    &.orange:before
+      background: $orange
+    &.red:before
+      background: $redGradient
+  &__img
+    width: 62px
+    height: 62px
+    border-radius: 10px
+    flex-shrink: 0
+.parking
+  margin-bottom: 30px
+  @include between(1280, 1919)
+    margin-bottom: 25px
+  &__title
+    padding-bottom: 9px
+    color: $white
+    font-size: 18px
+    line-height: 22px
+  &__wrap
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    border-top: 1px solid $moreGray
+    border-left: 1px solid $moreGray
+    border-right: 1px solid $moreGray
+  &__box
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 90px
+    position: relative
+    @include between(1280, 1919)
+      height: 70px
+    &:nth-of-type(2)
+      border-left: 1px solid $moreGray
+      border-right: 1px solid $moreGray
+  input
+    position: absolute
+    opacity: 0
+    cursor: pointer
+    &:checked + label
+      background: $button
+      svg
+        fill: $white
+    &:disabled
+      cursor: default
+      & + label
+        width: 30px
+        height: 66px
+        border: none
+        cursor: default
+        background: url("../img/parking-car.png") no-repeat
+        background-size: contain
+        @include between(1280, 1919)
+          width: 25px
+          height: 50px
+        svg
+          display: none
+  &__label
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 40px
+    height: 50px
+    border-radius: 4px
+    border: 1px solid transparent
+    border-image: $whiteGradient
+    border-image-slice: 1
+    @include between(1280, 1919)
+      width: 35px
+      height: 40px
+    svg
+      width: 24px
+      height: 24px
+      fill: $formText
+      cursor: pointer
+      @include between(1280, 1919)
+        width: 20px
+        height: 20px
+.notification
+  color: $formText
+  margin-bottom: 40px
+  position: relative
+  padding: 16px
+  display: flex
+  align-items: flex-start
+  justify-content: flex-start
+  &::after
+    content: ''
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 0
+    height: 1px
+    background: $whiteGradient
+  &__span
+    white-space: nowrap
+    font-weight: 600
+    font-size: 16px
+    line-height: 24px
+  &__select
+    display: none
+.wheel-table
+  width: 100%
+  margin-top: 20px
+  display: none
+  tr
+    position: relative
+    &:after
+      content: ''
+      position: absolute
+      bottom: 0
+      left: 0
+      right: 0
+      height: 1px
+      background: $whiteGradient
+    &:last-of-type::after
+      content: none
+    &.active
+      font-weight: 700
+  td
+    line-height: 1
+    padding: 30px 10px
+    white-space: nowrap
+    @include between(1280, 1919)
+      padding: 20px 10px
+    &:last-of-type
+      text-align: right
+  label
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    z-index: 3
+.additional
+  font-size: 14px
+  line-height: 20px
+  color: $formText

@@ -1,0 +1,197 @@
+.form
+  &-row
+    position: relative
+    width: 100%
+    margin-bottom: 30px
+    @include between(1280, 1919)
+      margin-bottom: 25px
+    @include max(767)
+      margin-bottom: 20px
+    &:after
+      content: ''
+      position: absolute
+      left: 0
+      right: 0
+      top: 54px
+      height: 1px
+      background: $whiteGradient
+      @include between(1280, 1919)
+        top: 43px
+    &.checked .svg-checked, &.alert .svg-alert
+      display: block
+    &.alert
+      &::after
+        background: $red
+      .form-hint
+        color: $red
+    .country
+      top: 50%
+      left: 16px
+      transform: translateY(-50%)
+      cursor: text
+      position: absolute
+      display: flex
+      align-items: center
+      justify-content: flex-start
+      gap: 12px
+      @include between(1280, 1919)
+        gap: 4px
+      &::after
+        content: ''
+        width: 1px
+        height: 20px
+        background: $whiteGradient
+    .svg-state
+      width: 24px
+      height: 24px
+      position: absolute
+      right: 0
+      top: 10px
+      @include between(1280, 1919)
+        width: 20px
+        height: 20px
+    &:hover::after
+      height: 2px
+      background: #2183DF
+  &-label
+    top: 16px
+    left: 16px
+    cursor: text
+    position: absolute
+    @include between(1280, 1919)
+      left: 10px
+      top: 12px
+    svg
+      width: 24px
+      height: 24px
+      @include between(1280, 1919)
+        width: 20px
+        height: 20px
+  &-input
+    background: transparent
+    width: 100%
+    border: none
+    padding: 16px 50px 16px 56px
+    font-size: 16px
+    line-height: 24px
+    font-weight: 600
+    color: $extraLightGray
+    border-radius: 4px 4px 0 0
+    @include between(1280, 1919)
+      padding: 10px 40px 10px 40px
+    &:focus
+      background: rgba(33, 131, 223, 0.04)
+    &::placeholder
+      color: $formText
+  &-hint
+    position: absolute
+    left: 16px
+    top: calc(100% + 8px)
+    font-size: 13px
+    line-height: 16px
+    letter-spacing: 0.1px
+    color: $formText
+    @include between(1280, 1919)
+      top: calc(100% + 4px)
+      font-size: 12px
+      line-height: 14px
+.select
+  background: transparent
+  color: $formText
+  font-weight: 600
+  font-size: 16px
+  line-height: 24px
+  border: none
+  width: 100%
+  position: relative
+  padding: 0 16px
+  &__selected
+    position: relative
+    background: url("../img/select-down.png") no-repeat
+    background-position: right center
+  .options
+    position: absolute
+    left: 0
+    right: 0
+    z-index: 3
+    top: calc(100% + 4px)
+    background: transparent
+    background: $white
+    display: none
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.06), 0 1px 10px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.08)
+    border-radius: 6px
+    li
+      padding: 12px 20px
+      cursor: pointer
+      font-weight: 600
+      font-size: 16px
+      line-height: 24px
+      color: $black
+      &:hover
+        background: $blackGradient
+.checkbox
+  &-row
+    position: relative
+    z-index: 1
+    display: flex
+    align-items: flex-start
+    justify-content: flex-start
+    gap: 14px
+    div
+      position: relative
+      width: 18px
+      height: 18px
+      border-radius: 4px
+      background: #000
+      z-index: 2
+      &::before
+        content: ""
+        position: absolute
+        top: -1px
+        bottom: -1px
+        left: -1px
+        right: -1px
+        background: $whiteGradient
+        border-radius: 4px
+        z-index: 1
+  &-input
+    opacity: 0
+    position: absolute
+    width: 0
+    height: 0
+    &:checked + div
+      width: 20px
+      height: 20px
+      background: $red
+      &:before
+        background: url("../img/check.png") no-repeat
+        background-position: center center
+  &-label
+    position: relative
+.form-row-time
+  &__list
+    margin-top: 10px
+    display: none
+    grid-template-columns: repeat(auto-fill, 60px)
+    &.open
+      display: grid
+  li
+    position: relative
+    input
+      opacity: 0
+      width: 0
+      height: 0
+      position: absolute
+      &:checked + label
+        border: 1px solid $white
+    label
+      cursor: pointer
+      padding: 10px 13px
+      border-radius: 4px
+      font-size: 14px
+      line-height: 20px
+      display: block
+      text-align: center
+      border: 1px solid transparent
+      &:hover
+        border-color: $white

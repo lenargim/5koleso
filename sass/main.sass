@@ -1,0 +1,177 @@
+*
+  box-sizing: border-box
+  outline: none
+
+html
+  overflow-x: hidden
+
+body, input, textarea, table, button
+  font-family: $proximaNova
+
+body
+  font-weight: 400
+  font-size: 18px
+  line-height: 1.2
+  margin: 0
+  width: 100%
+  padding: 0
+  overflow-x: hidden
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  min-width: 320px
+  min-height: 100vh
+  position: relative
+  @include between(1280, 1919)
+    font-size: 16px
+  @include max(767)
+    font-size: 14px
+
+html
+  height: 100%
+
+header,
+footer,
+section,
+main
+  position: relative
+
+.container
+  width: 100%
+  padding: 0 15px
+  margin: 0 auto
+  max-width: 1750px
+
+input[type=search]::-ms-clear
+  display: none
+  width: 0
+  height: 0
+
+input[type=search]::-ms-reveal
+  display: none
+  width: 0
+  height: 0
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration
+  display: none
+
+input::-webkit-calendar-picker-indicator
+  opacity: 0
+
+nav
+  list-style-type: none
+ul
+  list-style-type: none
+  li
+    padding: 0
+    list-style-position: inside
+
+a
+  text-decoration: none
+
+h1, h2, h3, p, ul
+  margin: 0
+  padding: 0
+  font-weight: 400
+
+.button
+  display: inline-flex
+  justify-content: center
+  align-items: center
+  cursor: pointer
+  white-space: nowrap
+  border-radius: 8px
+  padding: 9px 20px
+  border: none
+  transition: all 0.3s ease
+  font-size: 14px
+  line-height: 22px
+
+h1
+  font: 400 120px/144px $stoltz
+
+h2
+  font: 400 60px/72px $stoltz
+h3
+  font: 400 28px/33.6px $stoltz
+  @include between(1280, 1919)
+    font: 400 22px/28px $stoltz
+  @include max(767)
+    font: 400 21px/1.2 $stoltz
+
+
+.img
+  display: flex
+  align-items: center
+  justify-content: center
+  overflow: hidden
+
+  img, picture
+    width: 100%
+    height: 100%
+    display: block
+    object-fit: cover
+
+select
+  width: 100%
+  appearance: none
+  -moz-appearance: none
+  -webkit-appearance: none
+  outline: none
+  &::-ms-expand
+    display: none
+
+input, textarea
+  outline: none
+
+textarea
+  resize: none
+
+button
+  border: none
+
+address
+  font-style: normal
+
+.desktop
+  @include max(1279)
+    display: none !important
+.mobile
+  @include min(768)
+    display: none !important
+.nowrap
+  white-space: nowrap
+.hidden
+  display: none
+.pointer
+  cursor: pointer
+.relative
+  position: relative
+.bold
+  font-weight: 700
+.button-red
+  padding: 8px 96.5px
+  background: $redGradient
+  color: $white
+  font-size: 14px
+  line-height: 24px
+  font-weight: 700
+  border-radius: 4px
+  cursor: pointer
+  @include max(767)
+    width: 100%
+.button-dark
+  width: 300px
+  height: 40px
+  display: flex
+  align-items: center
+  justify-content: center
+  background: $buttonGlass
+  border-radius: 4px
+  cursor: pointer
+  @include max(767)
+    width: 100%
