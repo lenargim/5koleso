@@ -133,6 +133,17 @@ include('partials/header.php'); ?>
              autocomplete="off">
       <span class="form-hint">Мобильный телефон</span>
     </div>
+    <div class="form-row form-row-car-number should-be-checked">
+      <svg class="svg-checked svg-state hidden">
+        <use xlink:href="img/sprite-form.svg#checked-green"></use>
+      </svg>
+      <svg class="svg-alert svg-state hidden">
+        <use xlink:href="img/sprite-form.svg#alert"></use>
+      </svg>
+      <input type="text" placeholder="Гос. номер авто *" name="entry-car-number" id="entry-car-number" class="form-input car-number"
+             autocomplete="off">
+      <span class="form-hint">Гос. номер авто</span>
+    </div>
     <div class="form-row form-row-date should-be-checked">
       <svg class="svg-checked svg-state hidden">
         <use xlink:href="img/sprite-form.svg#checked-green"></use>

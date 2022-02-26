@@ -165,12 +165,6 @@ $(document).ready(function () {
     checkForm(form)
   });
 
-  function checkForm(form) {
-    form.find('.should-be-checked').length == form.find('.should-be-checked.checked').length ?
-      form.find('button[type="submit"]').removeClass('disabled') :
-      form.find('button[type="submit"]').addClass('disabled')
-  }
-
   $('.entry__form').on('submit', function (e) {
     let btn = $(this).find('.entry__submit');
     if (btn.hasClass('disabled')) {
@@ -223,7 +217,7 @@ $(document).ready(function () {
   });
 
   $('.car-number').on('change input keyup', function () {
-    let row = $(this).parents('.modal__form-row');
+    let row = $(this).parents('.should-be-checked');
     $(this).val().length > 10 ? row.addClass('checked').removeClass('alert') : row.addClass('alert').removeClass('checked')
     let form = $(this).parents('form');
     checkForm(form)
@@ -249,17 +243,31 @@ $(document).ready(function () {
     closeModal()
   });
 
-  $('.modal__form-button').on('click', function (e) {
-    e.preventDefault();
-    $('.modal-add-car').removeClass('active');
-    $('.modal-car-added').addClass('active');
-  });
-
   function closeModal() {
     $('.overlay').removeClass('active');
     $('.modal').removeClass('active')
   }
 
+
+  $('.modal__form').on('submit', function (e) {
+    let btn = $(this).find('.modal__form-button');
+    e.preventDefault();
+    if (btn.hasClass('disabled')) {
+      $(this).find('.should-be-checked').each(function () {
+        $(this).hasClass('checked') ? true : $(this).addClass('alert')
+      })
+    } else {
+      $('.modal-add-car').removeClass('active');
+      $('.modal-car-added').addClass('active');
+    }
+  });
+
   /* End Account page */
 
 });
+
+function checkForm(form) {
+  form.find('.should-be-checked').length == form.find('.should-be-checked.checked').length ?
+    form.find('button[type="submit"]').removeClass('disabled') :
+    form.find('button[type="submit"]').addClass('disabled')
+}
