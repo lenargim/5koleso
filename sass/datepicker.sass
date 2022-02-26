@@ -1,76 +1,18 @@
-.ui-datepicker
-  background: rgb(51, 53, 56)
-  padding: 16px 8px
-  border-radius: 2px
-  color: $white
-  &-header
-    display: flex
-    align-items: center
-    justify-content: space-between
-    margin-bottom: 21px
-  &-title
-    font-size: 14px
-    line-height: 16px
-    text-align: center
-    font-weight: 700
-    order: 2
-  &-prev, &-next
-    top: 16px
-    width: 24px
-    height: 24px
-    display: flex
-    align-items: center
-    justify-content: center
-    cursor: pointer
-    span
-      border-left: 2px solid rgb(153, 155, 157)
-      border-top: 2px solid rgb(153, 155, 157)
-      border-radius: 1px
-      width: 7px
-      height: 7px
-  &-prev
-    order: 1
-    transform: rotate(-45deg)
-  &-next
-    order: 3
-    transform: rotate(135deg)
-  th
-    font-weight: 700
-    font-size: 11px
-    line-height: 16px
-    color: $formText
-    padding-bottom: 8px
-  td
-    font-size: 14px
-    line-height: 20px
-    text-align: center
-    a
-      display: flex
-      align-items: center
-      justify-content: center
-      width: 41px
-      height: 32px
-      &.ui-state-active
-        font-weight: 700
-        color: $white
-        border-radius: 3px
-        border: 1px solid $white
-      &.ui-state-hover
-        color: $white
-      &.ui-state-default
-        color: $white
-  &-unselectable
-    color: $formText
+.entry .qs-datepicker-container
+  position: relative
+  top: calc(100% + 10px)
+  margin-bottom: 60px
+.settings .qs-datepicker-container
+  position: absolute
+  z-index: 3
+  top: calc(100% + 30px)
 .qs
   &-datepicker
     background: $bg5k
+    backdrop-filter: blur(5px)
     padding: 16px 8px
     border-radius: 2px
     color: $white
-  &-datepicker-container
-    position: relative
-    top: calc(100% + 10px)
-    margin-bottom: 60px
   &-controls
     display: flex
     align-items: center
@@ -116,3 +58,24 @@
     color: $white
     border-radius: 3px
     border: 1px solid $white
+  &-overlay-month-container
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    grid-gap: 10px 5px
+  &-overlay-month
+    text-align: center
+    cursor: pointer
+  &-submit
+    display: block
+    cursor: pointer
+    margin-top: 15px
+    text-align: center
+  &-close
+    text-align: center
+    cursor: pointer
+    margin: 10px auto
+  &-month-year
+    cursor: pointer
+    span:first-of-type
+      display: inline-block
+      margin-right: 0.3em

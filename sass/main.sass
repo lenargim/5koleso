@@ -41,6 +41,10 @@ main
   padding: 0 15px
   margin: 0 auto
   max-width: 1750px
+  @include between(768, 1279)
+    padding: 0 27px
+  @include max(767)
+    padding: 0 10px
 
 input[type=search]::-ms-clear
   display: none
@@ -78,6 +82,9 @@ h1, h2, h3, p, ul
   padding: 0
   font-weight: 400
 
+table
+  width: 100%
+
 .button
   display: inline-flex
   justify-content: center
@@ -93,9 +100,19 @@ h1, h2, h3, p, ul
 
 h1
   font: 400 120px/144px $stoltz
+  @include between(1280, 1919)
+    font: 400 80px/100px $stoltz
+  @include between(768, 1279)
+    font: 400 68px/72px $stoltz
+  @include max(767)
+    font: 400 28px/1.2 $stoltz
 
 h2
   font: 400 60px/72px $stoltz
+  @include between(1280, 1919)
+    font: 400 54px/64px $stoltz
+  @include max(767)
+    font: 400 28px/1.2 $stoltz
 h3
   font: 400 28px/33.6px $stoltz
   @include between(1280, 1919)
@@ -126,7 +143,9 @@ select
     display: none
 
 input, textarea
+  border: none
   outline: none
+  width: 100%
 
 textarea
   resize: none
@@ -136,6 +155,12 @@ button
 
 address
   font-style: normal
+svg
+  width: 24px
+  height: 24px
+
+.input
+  background: transparent
 
 .desktop
   @include max(1279)
@@ -154,7 +179,7 @@ address
 .bold
   font-weight: 700
 .button-red
-  padding: 8px 96.5px
+  display: inline-flex
   background: $redGradient
   color: $white
   font-size: 14px
@@ -162,6 +187,9 @@ address
   font-weight: 700
   border-radius: 4px
   cursor: pointer
+  white-space: nowrap
+  padding: 8px 0
+  justify-content: center
   @include max(767)
     width: 100%
 .button-dark
@@ -173,5 +201,30 @@ address
   background: $buttonGlass
   border-radius: 4px
   cursor: pointer
+  white-space: nowrap
   @include max(767)
     width: 100%
+.button-dark-border
+  padding: 8px
+  border-radius: 4px
+  cursor: pointer
+  white-space: nowrap
+  font-size: 14px
+  line-height: 24px
+  font-weight: 700
+  display: flex
+  align-items: center
+  justify-content: center
+  background: $buttonGlass
+  position: relative
+  color: $white
+  &::before
+    content: ""
+    position: absolute
+    top: -1px
+    bottom: -1px
+    left: -1px
+    right: -1px
+    background: $whiteGradient
+    border-radius: 4px
+    z-index: -1

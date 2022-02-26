@@ -7,6 +7,7 @@ let cityData = [
     "imgSrc": "img/entry-address-img.jpg",
     "baloonColor": "green",
     "iconSrc": "img/icon-green.png",
+    "coords": [55.78568,49.103872],
   },
   {
     "id": 1,
@@ -16,6 +17,7 @@ let cityData = [
     "imgSrc": "img/entry-address-img.jpg",
     "baloonColor": "orange",
     "iconSrc": "img/icon-orange.png",
+    "coords": [55.819853,49.12226],
   },
   {
     "id": 2,
@@ -25,6 +27,7 @@ let cityData = [
     "imgSrc": "img/entry-address-img.jpg",
     "baloonColor": "red",
     "iconSrc": "img/icon-red.png",
+    "coords": [55.833779,49.12164],
   },
   {
     "id": 3,
@@ -34,6 +37,7 @@ let cityData = [
     "imgSrc": "img/entry-address-img.jpg",
     "baloonColor": "green",
     "iconSrc": "img/icon-green.png",
+    "coords": [55.836969,49.158498],
   },
   {
     "id": 4,
@@ -43,6 +47,7 @@ let cityData = [
     "imgSrc": "img/entry-address-img.jpg",
     "baloonColor": "green",
     "iconSrc": "img/icon-green.png",
+    "coords": [55.766582,49.126887],
   },
   {
     "id": 5,
@@ -52,5 +57,6 @@ let cityData = [
     "imgSrc": "img/entry-address-img.jpg",
     "baloonColor": "green",
     "iconSrc": "img/icon-green.png",
+    "coords": [55.781226,49.189104],
   }
 ];

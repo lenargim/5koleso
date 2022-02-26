@@ -9,10 +9,31 @@
       </a>
       <div class="header__city city pointer">
         <div class="city__current">
-          <span>Казань</span>
+          <span class="watch-city">Казань</span>
           <svg>
             <use xlink:href="img/sprite.svg#arrow-down"></use>
           </svg>
+        </div>
+        <ul class="header__city-list header__city-modal">
+          <li data-city="kazan">Казань</li>
+          <li data-city="moscow">Москва</li>
+          <li data-city="volgograd">Волгоград</li>
+          <li data-city="voronezh">Воронеж</li>
+          <li>Нижнекамск</li>
+          <li>Нижний Новгород</li>
+          <li>Новосибирск</li>
+          <li>Пенза</li>
+          <li>Пермь</li>
+          <li>Ростов-на-Дону</li>
+          <li>Самара</li>
+          <li>Саратов</li>
+          <li>Уфа</li>
+          <li>Челябинск</li>
+        </ul>
+        <div class="header__is-city header__city-modal">
+          <span>Ваш город <span class="is-current watch-city" data-city="kazan">Казань</span>, верно?</span>
+          <span class="no">Нет</span>
+          <div class="yes button-red">Да</div>
         </div>
       </div>
       <div class="header__search pointer">

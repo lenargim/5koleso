@@ -352,7 +352,6 @@ include('partials/header.php'); ?>
   </div>
 </main>
 <?php include('partials/footer.php'); ?>
-<script src="cities/kazan.js"></script>
 <script type="text/javascript">
   ymaps.ready(init);
 
@@ -460,9 +459,10 @@ include('partials/header.php'); ?>
       let item = cityData[i];
       let address = item.address;
       ymaps.geocode(address, {results: 1}).then(function (res) {
-        var firstGeoObject = res.geoObjects.get(0);
-        coords = firstGeoObject.geometry.getCoordinates();
+        //var firstGeoObject = res.geoObjects.get(0);
+        //coords = firstGeoObject.geometry.getCoordinates();
         let iconSrc = item.iconSrc;
+        let coords = item.coords
 
         var myPlacemark = new ymaps.Placemark(coords, {
           id: item.id,
@@ -578,4 +578,37 @@ include('partials/header.php'); ?>
       })
     });
   }
+  let d = new Date();
+
+  let month = d.getMonth();
+  let day = d.getDate();
+  let year = d.getFullYear();
+
+
+  const picker = datepicker('#entry-date', {
+    showOn: "focus",
+    showAllDates: true,
+    hideIfNoPrevNext: true,
+    minDate: new Date(year, month, day),
+    startDay: 1,
+    maxDate: new Date(year, month, day+30),
+    customDays: ['ВС','ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'],
+    customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+    formatter: (input, date, instance) => {
+      const options = {year: 'numeric', month: 'numeric', day: 'numeric'};
+      const value = date.toLocaleDateString('ru-RU', options);
+      input.value = value
+    },
+    onSelect: (instance, date) => {
+      $('#entry-date').parents('.form-row-date').addClass('checked').removeClass('alert');
+      let form = $(this).parents('form');
+      checkForm(form);
+      const options1 = { month: 'long', day: 'numeric'};
+      let value1 = date.toLocaleDateString('ru-RU', options1);
+      $('.entry-send-date').text(value1);
+      //const options2 = {weekday: 'long'};
+      //let dayOfWeek = new Intl.DateTimeFormat('ru-RU', options2).format(date);
+      //let value2 = dayOfWeek[0].toUpperCase() + dayOfWeek.slice(1);
+    },
+  });
 </script>

@@ -1,0 +1,33 @@
+let cityData = [
+  {
+    "id": 0,
+    "address": "улица Охотный Ряд, 2",
+    "coordinates": [],
+    "workhour": "Круглосуточно",
+    "workload": "Свободен",
+    "imgSrc": "img/entry-address-img.jpg",
+    "baloonColor": "green",
+    "iconSrc": "img/icon-green.png",
+    "coords": [55.758112, 37.618022],
+  },
+  {
+    "id": 1,
+    "address": "квартал 14Б Ленина-Дачного",
+    "workhour": "Круглосуточно",
+    "workload": "Средняя загруженность",
+    "imgSrc": "img/entry-address-img.jpg",
+    "baloonColor": "orange",
+    "iconSrc": "img/icon-orange.png",
+    "coords": [55.623291, 37.646841],
+  },
+  {
+    "id": 2,
+    "address": "Большая Черкизовская улица, 9к6",
+    "workhour": "Круглосуточно",
+    "workload": "Средняя загруженность",
+    "imgSrc": "img/entry-address-img.jpg",
+    "baloonColor": "orange",
+    "iconSrc": "img/icon-orange.png",
+    "coords": [55.800334, 37.721427],
+  },
+];

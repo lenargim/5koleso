@@ -1,6 +1,14 @@
 .header
   background-color: $black
   color: $white
+  &_transparent
+    background-color: transparent
+  &_absolute
+    position: absolute
+    left: 0
+    right: 0
+    top: 0
+    z-index: 2
   &__wrap
     height: $headerHeight
     display: flex
@@ -11,13 +19,63 @@
     @include max(767)
       height: $headerHeightMobile
   &__city
+    position: relative
     margin-left: 60px
+    margin-right: auto
     @include between(768, 1279)
       margin-left: 20px
     @include max(767)
       display: none
+  &__city-modal
+    display: none
+    position: absolute
+    top: 100%
+    left: 0
+    z-index: 4
+    background: $bg5k
+    backdrop-filter: blur(5px)
+    border-radius: 5px
+    justify-content: flex-start
+    white-space: nowrap
+    &.open
+      display: flex
+  &__city-list
+    min-width: 280px
+    gap: 15px
+    padding: 30px
+    flex-direction: column
+    align-items: flex-start
+    li
+      margin: 0
+  &__is-city
+    padding: 20px
+    align-items: center
+    gap: 20px
+    .is-current
+      text-decoration: underline
+    span
+      color: $extraLightGray
+      flex-shrink: 0
+    .yes, .no
+      color: $white
+      font-weight: 700
+      text-align: center
+      width: 60px
+  &__logo
+    @include max(767)
+      margin-right: auto
+  &__button
+    margin-right: 60px
+    padding: 4px 15px
+    font-weight: 700
+    font-size: 14px
+    line-height: 24px
+    @include between(768, 1279)
+      margin-right: 37px
+    @include max(767)
+      margin: 0
+      width: fit-content
   &__search
-    margin-left: auto
     margin-right: 50px
     line-height: 1
     @include between(768, 1279)
@@ -28,12 +86,78 @@
       width: 24px
       height: 24px
       fill: $white
+  &__exit
+    padding: 11px 0
+    position: relative
+    &:hover .member + .member-card
+      display: block
+      z-index: 2
+.member-card
+  display: none
+  z-index: -1
+  position: absolute
+  top: 100%
+  right: -50px
+  padding: 28px 32px
+  background: $bg5k
+  border-radius: 5px
+  backdrop-filter: blur(5px)
+  &:hover
+    display: block
+    z-index: 2
+  &__top
+    padding-bottom: 25px
+    display: flex
+    gap: 19px
+    justify-content: flex-start
+    align-items: flex-start
+  &__img
+    width: 36px
+    height: 36px
+    border-radius: 50%
+    flex-shrink: 0
+  &__name
+    font-size: 14px
+    line-height: 20px
+    span
+      font-size: 18px
+      font-weight: 700
+      white-space: nowrap
+  &__part
+    position: relative
+    padding: 15px 0
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: flex-start
+    gap: 10px
+    &:not(:last-of-type)::after
+      content: ''
+      position: absolute
+      left: 0
+      right: 0
+      bottom: 0
+      height: 1px
+      background: $whiteGradient
+  &__link
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    gap: 10px
+    color: $white
+    svg
+      width: 18px
+      height: 18px
+      fill: $white
+    span
+      white-space: nowrap
 .city
   &__current
     display: flex
     align-items: center
     justify-content: flex-start
     gap: 5px
+    padding: 10px 0
     span
       font-weight: 700
     svg

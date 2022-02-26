@@ -95,6 +95,10 @@
       top: calc(100% + 4px)
       font-size: 12px
       line-height: 14px
+    &_top
+      top: 6px
+    &_green
+      color: $green2
 .select
   background: transparent
   color: $formText
@@ -142,8 +146,10 @@
       width: 18px
       height: 18px
       border-radius: 4px
-      background: #000
+      background: $overlayGray
+      backdrop-filter: blur(10px)
       z-index: 2
+      flex-shrink: 0
       &::before
         content: ""
         position: absolute
@@ -160,14 +166,15 @@
     width: 0
     height: 0
     &:checked + div
-      width: 20px
-      height: 20px
+      width: 18px
+      height: 18px
       background: $red
       &:before
         background: url("../img/check.png") no-repeat
         background-position: center center
   &-label
     position: relative
+    cursor: pointer
 .form-row-time
   &__list
     margin-top: 10px

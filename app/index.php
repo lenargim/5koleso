@@ -2,7 +2,9 @@
 include('partials/header.php'); ?>
   <main class="main">
     5koleso.loc
-    <h1>h1</h1>
-    <a href="entry.php">Онлайн запись</a>
+    <div>
+      <a href="entry.php">Онлайн запись</a>
+      <a href="lk-history.php">Account history</a>
+    </div>
   </main>
 <?php include('partials/footer.php'); ?>

@@ -1,42 +1,63 @@
 $(document).ready(function () {
+
+  /* Common */
   $('.tel').mask('(Z00) 000-00-00', {translation: {'Z': {pattern: /[0-79]/}}});
-  //$('.date').mask('00/00/0000', {translation: {'Z': {pattern: /[0-79]/}}});
-  //$('.time').mask('00:00', {translation: {'Z': {pattern: /[0-79]/}}});
-
-  let d = new Date();
-
-  let month = d.getMonth();
-  let day = d.getDate();
-  let year = d.getFullYear();
-
-
-  const picker = datepicker('#entry-date', {
-    showOn: "focus",
-    showAllDates: true,
-    hideIfNoPrevNext: true,
-    minDate: new Date(year, month, day),
-    maxDate: new Date(year, month, day+30),
-    customDays: ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'],
-    customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-    formatter: (input, date, instance) => {
-      const options = {year: 'numeric', month: 'numeric', day: 'numeric'};
-      const value = date.toLocaleDateString('ru-RU', options);
-      input.value = value
+  let carNumberOptions = {
+    translation: {
+      'Z': {pattern: /[0-79]/},
+      'S': {pattern: /[А-Яа-я]/}
     },
-    onSelect: (instance, date) => {
-      $('#entry-date').parents('.form-row-date').addClass('checked').removeClass('alert');
-      let form = $(this).parents('form');
-      checkForm(form);
-      const options1 = { month: 'long', day: 'numeric'};
-      let value1 = date.toLocaleDateString('ru-RU', options1);
-      $('.entry-send-date').text(value1);
-      //const options2 = {weekday: 'long'};
-      //let dayOfWeek = new Intl.DateTimeFormat('ru-RU', options2).format(date);
-      //let value2 = dayOfWeek[0].toUpperCase() + dayOfWeek.slice(1);
-    },
+    onKeyPress: function (cep, e, field, options) {
+      field.val(field.val().toUpperCase());
+    }
+  };
+  $('.car-number').mask('S 000 SS 000', carNumberOptions);
+
+  $('.email').mask("A", {
+    translation: {
+      "A": {pattern: /[\w@\-.+A-Za-z]/, recursive: true}
+    }
   });
 
 
+  $('.header__is-city').on('click', '.yes', function () {
+    let city = $('.header__is-city .is-current').attr('data-city');
+    document.cookie = `city=${city}`;
+    $('.header__is-city').removeClass('open')
+  });
+
+
+  $('.header__is-city').on('click', '.no', function () {
+    $('.header__is-city').removeClass('open');
+    $('.header__city-list').addClass('open');
+  });
+
+  $('.header__city-list').on('click', 'li', function () {
+    let newCity = $(this).text();
+    let newCityEn = $(this).attr('data-city');
+    document.cookie = `city=${newCityEn}`;
+    $('.watch-city').text(newCity);
+    $('.header__city-list').removeClass('open');
+    location.reload();
+  });
+
+  $('.city__current').click(function () {
+    $('.header__city-list').toggleClass('open');
+  });
+
+  let isCity = (document.cookie.match(/^(?:.*;)?\s*city\s*=\s*([^;]+)(?:.*)?$/) || [, null])[1];
+  if (isCity == null) {
+    isCity = 'kazan';
+    $('.header__is-city').addClass('open')
+  } else {
+
+  }
+  $('#get-city-data').attr("src", `cities/${isCity}.js`);
+
+
+  /* End Common */
+
+  /* Entry page */
 
   $('.entry__item').on('click', function () {
     $('.entry__search-input').val('');
@@ -107,7 +128,7 @@ $(document).ready(function () {
     $(this).val().length > 1 ? row.addClass('checked').removeClass('alert') : row.addClass('alert').removeClass('checked')
     let form = $(this).parents('form');
     checkForm(form)
-  })
+  });
 
   $('.tel').on('change input keyup', function () {
     let row = $(this).parents('.form-row-phone');
@@ -115,6 +136,7 @@ $(document).ready(function () {
     let form = $(this).parents('form');
     checkForm(form)
   });
+
 
   // $('.date').on('change input keyup', function () {
   //   let row = $(this).parents('.form-row-date');
@@ -135,7 +157,7 @@ $(document).ready(function () {
   });
 
   $('.form-row-time__list').on('change', 'input', function () {
-    $('#entry-time').val( $(this).val());
+    $('#entry-time').val($(this).val());
     $('.form-row-time__list').removeClass('open');
     let row = $(this).parents('.form-row-time');
     row.addClass('checked').removeClass('alert');
@@ -143,7 +165,7 @@ $(document).ready(function () {
     checkForm(form)
   });
 
-  function checkForm (form) {
+  function checkForm(form) {
     form.find('.should-be-checked').length == form.find('.should-be-checked.checked').length ?
       form.find('button[type="submit"]').removeClass('disabled') :
       form.find('button[type="submit"]').addClass('disabled')
@@ -153,10 +175,10 @@ $(document).ready(function () {
     let btn = $(this).find('.entry__submit');
     if (btn.hasClass('disabled')) {
       e.preventDefault();
-      $(this).find('.should-be-checked').each( function(){
+      $(this).find('.should-be-checked').each(function () {
         $(this).hasClass('checked') ? true : $(this).addClass('alert')
       })
-    } else  {
+    } else {
       e.preventDefault();
       $(this).addClass('hide');
       $(this).next().removeClass('hide');
@@ -168,6 +190,7 @@ $(document).ready(function () {
     }
   });
 
+
   $('.entry__thx-red').on('click', function () {
     let page = $(this).parents('.entry__page');
     page.addClass('hide');
@@ -176,4 +199,67 @@ $(document).ready(function () {
     form.find('.entry__submit').prop('disabled', 'disabled');
     $('.entry__info').removeClass('hide')
   });
+
+
+  /* End Entry page */
+
+  /* Account page */
+
+  $('.add-car-form').on('submit', function (e) {
+    let btn = $(this).find('button[type="submit"]');
+    if (btn.hasClass('disabled')) {
+      e.preventDefault();
+      $(this).find('.should-be-checked').each(function () {
+        $(this).hasClass('checked') ? true : $(this).addClass('alert')
+      })
+    }
+  });
+
+  $('.form-car-model').on('change input keyup', function () {
+    let row = $(this).parents('.modal__form-row');
+    $(this).val().length > 1 ? row.addClass('checked').removeClass('alert') : row.addClass('alert').removeClass('checked')
+    let form = $(this).parents('form');
+    checkForm(form)
+  });
+
+  $('.car-number').on('change input keyup', function () {
+    let row = $(this).parents('.modal__form-row');
+    $(this).val().length > 10 ? row.addClass('checked').removeClass('alert') : row.addClass('alert').removeClass('checked')
+    let form = $(this).parents('form');
+    checkForm(form)
+  });
+
+  $('.add-car').on('click', function () {
+    $('.overlay').addClass('active');
+    $('.modal-add-car').addClass('active')
+  });
+
+  $('.overlay__close').on('click', function () {
+    closeModal()
+  });
+
+  $('.change-password').on('click', function () {
+    $(this).toggleClass('hidden');
+    $(this).siblings('.change-password').toggleClass('hidden');
+    let input = $(this).siblings('.input')
+    input.attr('type') == 'password' ? input.attr('type', 'text') : input.attr('type', 'password')
+  });
+
+  $('.modal-car-added__button').on('click', function () {
+    closeModal()
+  });
+
+  $('.modal__form-button').on('click', function (e) {
+    e.preventDefault();
+    $('.modal-add-car').removeClass('active');
+    $('.modal-car-added').addClass('active');
+  });
+
+  function closeModal() {
+    $('.overlay').removeClass('active');
+    $('.modal').removeClass('active')
+  }
+
+  /* End Account page */
+
 });
