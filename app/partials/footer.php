@@ -7,7 +7,7 @@
     <div class="modal__desc">Заполните форму чтобы добавить авто.<br>
       Необходимо указать марку автомобиля и гос. номер.
     </div>
-    <form action="" class="modal__form add-car-form">
+    <form action="" class="modal__form add-car-form" autocomplete="off">
       <div class="modal__form-row should-be-checked">
         <svg class="svg-checked svg-state hidden">
           <use xlink:href="img/sprite-form.svg#checked-green"></use>

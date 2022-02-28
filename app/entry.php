@@ -19,26 +19,16 @@ include('partials/header.php'); ?>
           </div>
         </div>
       </div>
-      <form action="" class="entry__search">
+      <form action="" class="entry__search" autocomplete="off">
         <input class="entry__search-input" type="text" placeholder="Поиск объекта" list="entry-addresses">
         <button type="submit" class="entry__search-submit pointer">
           <svg>
             <use xlink:href="img/sprite.svg#search"></use>
           </svg>
         </button>
-        <datalist class="datalist" id="entry-addresses">
-          <option class="datalist__li" tabindex="-1" value="ул. Нариманова, 15Б">ул. Нариманова, 15Б</option>
-          <option class="datalist__li" tabindex="-1" value="ул. Чистопольская, 33В">ул. Чистопольская, 33В</option>
-          <option class="datalist__li" tabindex="-1" value="ул. Мусина, 61к1">ул. Мусина, 61к1</option>
-          <option class="datalist__li" tabindex="-1" value="ул. Гаврилова, 30">ул. Гаврилова, 30</option>
-          <option class="datalist__li" tabindex="-1" value="ул. Габдуллы Тукая, 115, корп. 5">ул. Габдуллы Тукая, 115,
-            корп. 5
-          </option>
-          <option class="datalist__li" tabindex="-1" value="ул. Аделя Кутуя, 86/7">ул. Аделя Кутуя, 86/7</option>
-        </datalist>
       </form>
-      <ul class="entry__list">
-        <li class="entry__item pointer">
+      <ul class="entry__list" id="entry-addresses">
+        <li class="entry__item pointer" data-address="ул. Нариманова, 15Б">
           <div class="entry__item-text">
             <div class="entry__item-address">ул. Нариманова, 15Б</div>
             <div class="entry__item-time">Круглосуточно</div>
@@ -46,7 +36,7 @@ include('partials/header.php'); ?>
           </div>
           <div class="entry__item-img img"><img src="img/entry-address-img.jpg" alt="ул. Нариманова, 15Б"></div>
         </li>
-        <li class="entry__item pointer">
+        <li class="entry__item pointer" data-address="ул. Чистопольская, 33В">
           <div class="entry__item-text">
             <div class="entry__item-address">ул. Чистопольская, 33В</div>
             <div class="entry__item-time">Круглосуточно</div>
@@ -54,7 +44,7 @@ include('partials/header.php'); ?>
           </div>
           <div class="entry__item-img img"><img src="img/entry-address-img.jpg" alt="ул. Нариманова, 15В"></div>
         </li>
-        <li class="entry__item pointer">
+        <li class="entry__item pointer" data-address="ул. Мусина, 61к1">
           <div class="entry__item-text">
             <div class="entry__item-address">ул. Мусина, 61к1</div>
             <div class="entry__item-time">Круглосуточно</div>
@@ -62,7 +52,7 @@ include('partials/header.php'); ?>
           </div>
           <div class="entry__item-img img"><img src="img/entry-address-img.jpg" alt="ул. Нариманова, 15Г"></div>
         </li>
-        <li class="entry__item pointer">
+        <li class="entry__item pointer" data-address="ул. Гаврилова, 30">
           <div class="entry__item-text">
             <div class="entry__item-address">ул. Гаврилова, 30</div>
             <div class="entry__item-time">Круглосуточно</div>
@@ -70,7 +60,7 @@ include('partials/header.php'); ?>
           </div>
           <div class="entry__item-img img"><img src="img/entry-address-img.jpg" alt="ул. Нариманова, 15Д"></div>
         </li>
-        <li class="entry__item pointer">
+        <li class="entry__item pointer" data-address="ул. Габдуллы Тукая, 115, корп. 5">
           <div class="entry__item-text">
             <div class="entry__item-address">ул. Габдуллы Тукая, 115, корп. 5</div>
             <div class="entry__item-time">Круглосуточно</div>
@@ -78,7 +68,7 @@ include('partials/header.php'); ?>
           </div>
           <div class="entry__item-img img"><img src="img/entry-address-img.jpg" alt="ул. Нариманова, 15Е"></div>
         </li>
-        <li class="entry__item pointer">
+        <li class="entry__item pointer" data-address="ул. Аделя Кутуя, 86/7">
           <div class="entry__item-text">
             <div class="entry__item-address">ул. Аделя Кутуя, 86/7</div>
             <div class="entry__item-time">Круглосуточно</div>
@@ -89,7 +79,7 @@ include('partials/header.php'); ?>
       </ul>
     </div>
   </div>
-  <form action="" class="entry__form entry__page entry-step hide">
+  <form action="" class="entry__form entry__page entry-step hide" autocomplete="off">
     <div class="entry__page-top">
       <div class="entry__page-back pointer">
         <svg>
@@ -242,7 +232,6 @@ include('partials/header.php'); ?>
     </div>
     <div class="checkbox-row">
       <input type="checkbox" id="entry-storage" class="checkbox-input">
-      <div class="pointer"></div>
       <label for="entry-storage" class="checkbox-label pointer">Я буду использовать колеса с хранения</label>
     </div>
     <table class="wheel-table">
@@ -251,7 +240,6 @@ include('partials/header.php'); ?>
           <div class="checkbox-row">
             <input type="checkbox" id="entry-table-checkbox-1" name="entry-table-checkbox-1"
                    class="checkbox-input table-input">
-            <div class="pointer"></div>
             <label for="entry-table-checkbox-1" class="checkbox-label pointer"></label>
           </div>
         </td>
@@ -265,7 +253,6 @@ include('partials/header.php'); ?>
           <div class="checkbox-row">
             <input type="checkbox" id="entry-table-checkbox-2" name="entry-table-checkbox-2"
                    class="checkbox-input table-input">
-            <div class="pointer"></div>
             <label for="entry-table-checkbox-2" class="checkbox-label pointer"></label>
           </div>
         </td>
@@ -279,7 +266,6 @@ include('partials/header.php'); ?>
           <div class="checkbox-row">
             <input type="checkbox" id="entry-table-checkbox-3" name="entry-table-checkbox-3"
                    class="checkbox-input table-input">
-            <div class="pointer"></div>
             <label for="entry-table-checkbox-3" class="checkbox-label pointer"></label>
           </div>
         </td>
@@ -497,9 +483,19 @@ include('partials/header.php'); ?>
           // Размеры метки.
           iconImageSize: [27, 27],
         });
+        let margin = [];
+        if (window.innerWidth > 1279) {
+          margin = [0, 250,0, 0]
+        } else {
+          margin = [0, 0, 100, 0]
+        }
         myMap.geoObjects.add(myPlacemark);
-        myMap.setBounds(myMap.geoObjects.getBounds());
+        myMap.setBounds(myMap.geoObjects.getBounds(), {
+          checkZoomRange: true,
+          zoomMargin: margin
+        });
       });
+
 
 
       myMap.geoObjects.events.add('click', function (e) {

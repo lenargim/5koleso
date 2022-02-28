@@ -48,7 +48,7 @@ include('partials/header-registered.php'); ?>
         </li>
       </nav>
       <div class="lk__content">
-        <form action="" class="settings">
+        <form action="" class="settings" autocomplete="off">
           <div class="settings__block">
             <h3>Личные данные</h3>
             <div class="settings__input-wrap">

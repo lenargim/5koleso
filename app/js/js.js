@@ -59,10 +59,17 @@ $(document).ready(function () {
 
   /* Entry page */
 
+  $('.entry__search-input').on('change input keyup', function () {
+    let text = $(this).val().toUpperCase();
+    $('.entry__item').each(function (i, v) {
+      let address = $(this).attr('data-address').toUpperCase();
+      address.includes(text) ? $(this).show() : $(this).hide()
+    });
+  });
+
   $('.entry__item').on('click', function () {
     $('.entry__search-input').val('');
-    let field = $(this).find('.entry__item-address');
-    let address = field.text();
+    let address = $(this).attr('data-address');
     $('.entry__search-input').val(address).focus();
     $('.entry__search').submit()
   });
