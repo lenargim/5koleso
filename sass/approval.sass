@@ -1,8 +1,8 @@
 .approval
   height: 100vh
-  background: url("../img/approval-bg.jpg") no-repeat
-  background-position: center center
-  background-size: cover
+  background: url("../img/approval-bg.jpg") center center/cover no-repeat
+  @include max(767)
+    background: url("../img/approval-bg-mobile.jpg") center center/cover no-repeat
   &__content
     position: relative
     @include min(768)
