@@ -5,6 +5,7 @@ include('partials/header.php'); ?>
     <div>
       <a href="entry.php">Онлайн запись</a>
       <a href="lk-history.php">Account history</a>
+      <a href="entrance-person.php">Entrance person</a>
     </div>
   </main>
 <?php include('partials/footer.php'); ?>

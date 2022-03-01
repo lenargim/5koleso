@@ -271,6 +271,38 @@ $(document).ready(function () {
 
   /* End Account page */
 
+  /* Entrance page */
+
+  /* Account page */
+
+  $('.entrance__form').on('submit', function (e) {
+    let btn = $(this).find('button[type="submit"]');
+    e.preventDefault();
+    if (btn.hasClass('disabled')) {
+      $(this).find('.should-be-checked').hasClass('checked') ? true : $(this).find('.should-be-checked').addClass('alert')
+    } else {
+      $(this).find('.entrance__button-row').hide()
+      $(this).siblings('.entrance__code').show()
+    }
+  });
+
+  $('.entrance__code').on('submit', function (e) {
+    e.preventDefault();
+    window.location.href = 'entrance-person-thx.php';
+  });
+
+  /* End Entrance page */
+
+  $('.add-car-form').on('submit', function (e) {
+    let btn = $(this).find('button[type="submit"]');
+    if (btn.hasClass('disabled')) {
+      e.preventDefault();
+      $(this).find('.should-be-checked').each(function () {
+        $(this).hasClass('checked') ? true : $(this).addClass('alert')
+      })
+    }
+  });
+
 });
 
 function checkForm(form) {

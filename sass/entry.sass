@@ -4,6 +4,8 @@
   overflow: hidden
   @include between(1280, 1919)
     height: calc(100vh - $headerHeightLaptop)
+  @include max(1279)
+    height: calc(100vh - $headerHeightMobile)
   &__info
     background: #34393F
     padding: 34px 102px 78px 78px
@@ -47,7 +49,7 @@
       display: none
     &.hide
       right: -700px
-      @include between(768, 1279)
+      @include max(1279)
         right: unset
         top: 110%
   &__close
@@ -58,7 +60,10 @@
     margin: 0 auto
     flex-shrink: 0
     @include max(1279)
-      order: 1
+      position: absolute
+      top: 30px
+      right: 10px
+      margin: 0
   &__text
     display: grid
     grid-template-columns: 1fr
