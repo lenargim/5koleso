@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+
   /* Common */
   $('.tel').mask('(Z00) 000-00-00', {translation: {'Z': {pattern: /[0-79]/}}});
   let carNumberOptions = {
@@ -174,13 +175,12 @@ $(document).ready(function () {
 
   $('.entry__form').on('submit', function (e) {
     let btn = $(this).find('.entry__submit');
+    e.preventDefault();
     if (btn.hasClass('disabled')) {
-      e.preventDefault();
       $(this).find('.should-be-checked').each(function () {
         $(this).hasClass('checked') ? true : $(this).addClass('alert')
       })
     } else {
-      e.preventDefault();
       $(this).addClass('hide');
       $(this).next().removeClass('hide');
       // Show choosen data
@@ -303,6 +303,57 @@ $(document).ready(function () {
     }
   });
 
+
+  /* Card Page*/
+  const cardSlider = new Swiper('.card__slider', {
+    slidesPerView: 1,
+    spaceBetween: 150,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'custom',
+      clickable: true,
+      currentClass: 'active',
+    },
+    breakpoints: {
+      320: {
+        navigation: false,
+      },
+      1280: {
+        navigation: {
+          nextEl: '.swiper-next',
+          prevEl: '.swiper-prev',
+        },
+      }
+    }
+  });
+
+  cardSlider.on('slideChange', function () {
+    let pagItem = $('.card__slider-pagination .pag');
+    pagItem.removeClass('active');
+    pagItem.eq(cardSlider.activeIndex).addClass('active')
+  });
+
+  $('.card__faq-item').click(function () {
+    $(this).toggleClass('open').find('.card__faq-answer').slideToggle();
+  })
+
+  $('.card-question__form').on('submit', function (e) {
+    e.preventDefault();
+    let btn = $(this).find('.card-question__submit');
+    let accept = $(this).find('.check-accept')
+    if (btn.hasClass('disabled')) {
+      $(this).find('.should-be-checked').each(function () {
+        $(this).hasClass('checked') ? true : $(this).addClass('alert')
+      })
+    } else if ( !accept.is(':checked') ) {
+      accept.siblings('label').css('color', '#E30514');
+    } else {
+      window.location.href = 'card-question-send.php'
+    }
+  })
+
+  /* End Card Page*/
+
 });
 
 function checkForm(form) {
@@ -310,3 +361,13 @@ function checkForm(form) {
     form.find('button[type="submit"]').removeClass('disabled') :
     form.find('button[type="submit"]').addClass('disabled')
 }
+
+$('a[href^="#"]').on('click', function() {
+
+  let href = $(this).attr('href');
+
+  $('html, body').animate({
+    scrollTop: $(href).offset().top - 20
+  });
+  return false;
+});

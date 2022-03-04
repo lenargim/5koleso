@@ -100,3 +100,42 @@
       &:last-of-type
         @include max(1279)
           max-width: 450px
+.footer-card
+  z-index: 1
+  position: absolute
+  bottom: 86px
+  left: 0
+  right: 0
+  @include between(1280, 1919)
+    bottom: 40px
+  @include max(1279)
+    bottom: 30px
+  &__logo
+    display: block
+    margin: 0 auto 48px
+    @include max(1279)
+      margin-bottom: 30px
+  &__nav
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding-bottom: 40px
+    @include max(1279)
+      flex-direction: column
+      justify-content: flex-start
+      gap: 30px
+  &__link
+    white-space: nowrap
+    font-size: 24px
+    color: $extraLightGray
+    @include between(1280, 1919)
+      font-size: 20px
+    @include max(767)
+      font-size: 18px
+  &__copy
+    border-top: 1px solid #E0E0E0
+    padding-top: 20px
+    font-size: 14px
+    color: #E0E0E0
+    letter-spacing: 0.02em
+    text-align: center

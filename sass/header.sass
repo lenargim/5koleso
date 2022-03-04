@@ -18,6 +18,8 @@
       height: $headerHeightLaptop
     @include max(767)
       height: $headerHeightMobile
+    &_card
+      height: 130px
   &__city
     position: relative
     margin-left: 60px
@@ -75,6 +77,10 @@
     @include max(767)
       margin: 0
       width: fit-content
+  &__card
+    margin-left: auto
+    @include max(767)
+      display: none
   &__search
     margin-right: 50px
     line-height: 1
