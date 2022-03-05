@@ -228,19 +228,43 @@
       @include between(1280, 1919)
         width: 30px
         height: 30px
+        svg
+          width: 16px
+          height: 16px
     .map-layout
       display: flex
       flex-direction: column
       gap: 10px
+      position: absolute
       @include min(1280)
         top: 400px
         left: 20px
-      position: absolute
       @include between(768, 1279)
-        left: 92vw
+        left: calc(100vw - 67px)
         top: 30vh
       @include max(767)
         display: none
+    .list-layout
+      position: absolute
+      width: 64px
+      height: 64px
+      background: $buttonGlass
+      border-radius: 5px
+      cursor: pointer
+      right: 20px
+      top: calc(100vh - $headerHeight - 84px)
+      &::after
+        position: absolute
+        width: 24px
+        height: 24px
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+        content: ''
+        background: url("../img/loupe.svg") no-repeat
+      @include max(1279)
+        width: 48px
+        height: 48px
   &__page
     background: url("../img/bg-5k.jpg") no-repeat
     background-size: cover
