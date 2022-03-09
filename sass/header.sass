@@ -27,7 +27,9 @@
     @include between(768, 1279)
       margin-left: 20px
     @include max(767)
-      display: none
+      position: absolute
+      margin: 0
+      left: 0
   &__city-modal
     display: none
     position: absolute
@@ -39,6 +41,10 @@
     border-radius: 5px
     justify-content: flex-start
     white-space: nowrap
+    @include max(767)
+      top: 60px
+      left: 10px
+      width: calc(100vw - 20px)
     &.open
       display: flex
   &__city-list
@@ -63,6 +69,13 @@
       font-weight: 700
       text-align: center
       width: 60px
+    @include max(767)
+      justify-content: center
+      gap: 18px 29px
+      flex-wrap: wrap
+      .city-text
+        width: 100%
+        text-align: center
   &__logo
     @include max(767)
       margin-right: auto
@@ -164,6 +177,8 @@
     justify-content: flex-start
     gap: 5px
     padding: 10px 0
+    @include max(767)
+      display: none
     span
       font-weight: 700
     svg

@@ -1,6 +1,4 @@
 $(document).ready(function () {
-
-
   /* Common */
   $('.tel').mask('(Z00) 000-00-00', {translation: {'Z': {pattern: /[0-79]/}}});
   let carNumberOptions = {
@@ -305,33 +303,7 @@ $(document).ready(function () {
 
 
   /* Card Page*/
-  const cardSlider = new Swiper('.card__slider', {
-    slidesPerView: 1,
-    spaceBetween: 150,
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'custom',
-      clickable: true,
-      currentClass: 'active',
-    },
-    breakpoints: {
-      320: {
-        navigation: false,
-      },
-      1280: {
-        navigation: {
-          nextEl: '.swiper-next',
-          prevEl: '.swiper-prev',
-        },
-      }
-    }
-  });
 
-  cardSlider.on('slideChange', function () {
-    let pagItem = $('.card__slider-pagination .pag');
-    pagItem.removeClass('active');
-    pagItem.eq(cardSlider.activeIndex).addClass('active')
-  });
 
   $('.card__faq-item').click(function () {
     $(this).toggleClass('open').find('.card__faq-answer').slideToggle();

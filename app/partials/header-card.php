@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
 <header class="header header_transparent header_absolute">
   <div class="container-sm">
     <div class="header__wrap header__wrap_card">

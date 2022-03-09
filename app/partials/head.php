@@ -9,5 +9,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="css/styles.min.css">
   <link rel="shortcut icon" type="image/x-icon" href="img/favicon/favicon.ico">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
 </head>
 <body>

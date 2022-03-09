@@ -224,5 +224,4 @@
       </section>
     </div>
   </div>
-  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 <?php include('partials/footer-card.php'); ?>

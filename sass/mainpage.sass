@@ -1,0 +1,336 @@
+.mainpage
+  &__slider
+    width: 100vw
+    height: 100vh
+    &-button
+      margin-top: 30px
+      width: 270px
+      gap: 8px
+      @include between(1280, 1919)
+        width: 250px
+  &__slide
+    position: relative
+    overflow: hidden
+    &-wrap
+      display: flex
+      align-items: center
+      @include max(1279)
+        flex-direction: column
+        justify-content: flex-start
+        align-items: flex-start
+        margin: 0 auto
+      @include between(768, 1279)
+        width: 580px
+      @include max(767)
+        width: 230px
+    &-grid
+      position: relative
+      z-index: 1
+      @include min(1280)
+        .swiper-wrapper
+          padding: 130px 0
+          display: grid
+          grid-template-rows: repeat(2, 35vh)
+          grid-template-columns: repeat(2, calc(35vh/397*497))
+          grid-gap: 20px
+      @include between(1280, 1919)
+        .swiper-wrapper
+          padding: 100px 0
+      @include between(768, 1279)
+        width: 100%
+        height: 536px
+      @include max(767)
+        width: 100%
+        height: 190px
+    &-detailed
+      display: block
+      overflow: hidden
+      position: relative
+      &:first-of-type
+        grid-row: 1/3
+      &-info
+        position: absolute
+        left: 0
+        right: 0
+        bottom: 0
+        min-height: 25vh
+        background: rgba(51, 51, 51, 0.8)
+        backdrop-filter: blur(5px)
+        padding: 21px 40px 110px
+        color: $white
+        @include between(1280, 1919)
+          padding: 15px 30px 60px
+        @include max(767)
+          min-height: 50px
+          padding: 12px 18px
+        h3
+          color: $extraLightGray
+          @include min(1920)
+            padding-bottom: 20px
+          @include between(1280, 1919)
+            padding-bottom: 15px
+          @include max(767)
+            font-size: 18px
+            text-align: center
+        .more
+          position: absolute
+          bottom: 21px
+          display: flex
+          align-items: center
+          justify-content: flex-start
+          gap: 8px
+          &::after
+            content: ''
+            width: 20px
+            height: 20px
+            display: block
+            background: url("../img/button-arrow.svg") no-repeat
+    &-img
+      width: 100%
+      height: 100%
+      object-fit: cover
+    &_type1
+      &::before
+        position: absolute
+        background: $bg5k
+        backdrop-filter: blur(5px)
+        z-index: 1
+        @include min(1280)
+          content: ''
+          left: 0
+          top: 0
+          bottom: 0
+          width: 50%
+      .content
+        @include min(1280)
+          width: 50%
+          padding: 15% 100px 20% 0
+        @include max(1279)
+          width: 100%
+          position: absolute
+          bottom: 0
+          left: 0
+          right: 0
+          background: $bg5k
+          backdrop-filter: blur(5px)
+        @include between(1280, 1919)
+          padding: 8% 50px 15% 0
+        @include between(768, 1279)
+          padding: 53px 27px 150px
+        @include max(767)
+          padding: 20px 10px
+      .image
+        width: 100%
+        height: 100%
+        object-fit: cover
+        position: absolute
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+      .title
+        padding-bottom: 30px
+        @include between(768, 1279)
+          padding-bottom: 25px
+      .text
+        color: $extraLightGray
+        max-width: 530px
+        display: grid
+        grid-template-columns: 1fr
+        grid-template-rows: auto
+        grid-gap: 1em
+        @include between(768, 1279)
+          max-width: 592px
+        @include max(767)
+          font-size: 16px
+
+        li
+          list-style-type: disc
+          list-style-position: outside
+          margin-left: 1em
+      .more
+        color: $white
+        font-weight: 700
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        gap: 8px
+        margin-top: 14px
+        @include max(767)
+          margin-top: 7px
+          line-height: 40px
+        &::after
+          content: ''
+          width: 20px
+          height: 20px
+          display: block
+          background: url("../img/button-arrow.svg") no-repeat
+    &_type2
+      .wrap
+        gap: 9vw
+        @include between(768, 1279)
+          gap: 36px
+        @include max(767)
+          gap: 26px
+      .content
+        max-width: 520px
+        padding: 130px 0
+        @include between(1280, 1919)
+          padding: 100px 0
+        @include between(768, 1279)
+          padding: 154px 0 0
+          max-width: 100%
+        @include max(767)
+          padding: 91px 0 0
+          max-width: 100%
+      .title
+        font-size: 120px
+        line-height: 1.2
+        padding-bottom: 35px
+        @include between(1280, 1919)
+          font-size: 70px
+          padding-bottom: 30px
+        @include between(768, 1279)
+          font-size: 60px
+          padding-bottom: 16px
+        @include max(767)
+          font-size: 28px
+          padding-bottom: 20px
+      .text
+        max-width: 464px
+        color: $extraLightGray
+        @include max(767)
+          font-size: 16px
+      .button
+        &::after
+          content: ''
+          width: 24px
+          height: 24px
+          background: url("../img/button-arrow.svg") center center no-repeat
+        @include max(767)
+          width: 194px
+          &::after
+            width: 16px
+            height: 16px
+    &-content
+      position: relative
+      color: $white
+      z-index: 1
+  &__map
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background: linear-gradient(180deg, #151515 0%, rgba(51, 51, 51, 0) 25.62%)
+      z-index: 0
+    &-title
+      .city
+        display: inline-block
+        position: relative
+        &:before
+          position: absolute
+          content: ''
+          left: 0
+          right: 0
+          bottom: 0
+          height: 3px
+          background: $white
+    &-button
+      &::before
+        content: ''
+        width: 20px
+        height: 20px
+        background: url("../img/rote.svg") no-repeat
+      @include max(767)
+        margin-top: 66px
+        width: 100%
+        &:before
+          content: none
+  &__bottom
+    position: absolute
+    bottom: 30px
+    left: 0
+    right: 0
+    z-index: 1
+    @include between(1280, 1919)
+      bottom: 15px
+    @include max(767)
+      bottom: 6px
+    &-wrap
+      display: flex
+      align-items: center
+      justify-content: space-between
+      @include max(767)
+        justify-content: flex-end
+  &__socials
+    display: flex
+    gap: 40px
+    justify-content: flex-start
+    @include max(767)
+      display: none
+  &__pagination
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    align-items: flex-end
+    gap: 2px
+    color: $white
+    position: relative
+    &.black
+      @include min(1280)
+        color: $black
+        .pagination.swiper-pagination-bullets .swiper-pagination-bullet
+            background: $buttonGlass
+            &-active
+              background: $black
+      @include max(767)
+        display: none
+    &-numbers
+      text-align: right
+    &-current
+      font-size: 46px
+      line-height: 1
+      font-weight: 700
+      @include between(1280, 1919)
+        font-size: 30px
+      @include max(767)
+        font-size: 36px
+    &-total
+      font-size: 26px
+      @include between(1280, 1919)
+        font-size: 22px
+      @include max(767)
+        font-size: 18px
+      &:before
+        content: '/'
+    .pagination.swiper-pagination-bullets
+      width: fit-content
+      line-height: 1
+      @include max(767)
+        display: none
+      .swiper-pagination-bullet
+        margin: 0 2.5px
+        opacity: 1
+        background: $formText
+        width: 30px
+        height: 3px
+        border-radius: 0
+        transition: all 0.2s ease
+        &-active
+          height: 5px
+          background: $white
+  &__services
+    background: url("../img/main-bg.jpg") no-repeat
+    background-size: cover
+  &__corp
+    &-button
+      @include max(767)
+        width: 192px
+        margin-top: 10px
+  &__info
+    .content
+      @include max(767)
+        padding: 84px 10px 70px

@@ -57,5 +57,4 @@
       <button type="submit" class="button-red card-question__submit disabled">Отправить</button>
     </form>
   </main>
-  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 <?php include('partials/footer.php'); ?>

@@ -31,7 +31,7 @@
           <li>Челябинск</li>
         </ul>
         <div class="header__is-city header__city-modal">
-          <span>Ваш город <span class="is-current watch-city" data-city="kazan">Казань</span>, верно?</span>
+          <span class="city-text">Ваш город <span class="is-current watch-city" data-city="kazan">Казань</span>, верно?</span>
           <span class="no">Нет</span>
           <div class="yes button-red">Да</div>
         </div>
