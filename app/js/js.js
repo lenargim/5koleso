@@ -322,10 +322,20 @@ $(document).ready(function () {
     } else {
       window.location.href = 'card-question-send.php'
     }
-  })
+  });
 
   /* End Card Page*/
 
+  /* Actions page */
+  $('.toggle-filter').on('click', function () {
+    $(this).siblings('.actions__side-body').slideToggle()
+  });
+
+  $('.actions__side').on('click', '.reset', function () {
+    $('.actions__side').find('input').prop('checked', false)
+  });
+
+  /* End Actions page */
 });
 
 function checkForm(form) {
