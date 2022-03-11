@@ -83,6 +83,12 @@ ul
     padding: 0
     list-style-position: inside
 
+ol
+  margin: 0
+  padding: 0
+  li
+    list-style-position: inside
+    padding: 0
 a
   text-decoration: none
 
@@ -253,3 +259,18 @@ svg
   z-index: 1
   color: $white
   overflow: hidden
+.breadcrumbs
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  margin-bottom: 40px
+  a
+    color: $white
+    font-size: 12px
+    line-height: 15px
+    &:not(:first-of-type)
+      font-weight: 700
+    &:not(:last-of-type)
+      &::after
+        content: '•'
+        margin: 0 1em
