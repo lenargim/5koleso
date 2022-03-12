@@ -103,14 +103,16 @@
   &__item
     color: $white
     background: #333941
-    padding: 47px 21px 47px 30px
+    padding: 47px 21px 100px 30px
+    min-height: 250px
     position: relative
     border-radius: 10px
     transition: background-color 0.3s ease
     @include between(1280, 1919)
-      padding: 30px 15px 30px 20px
+      min-height: 200px
+      padding: 30px 15px 94px 20px
     @include between(768, 1279)
-      padding: 47px 25px
+      padding: 47px 25px 94px 25px
     @include max(767)
       padding: 30px 20px
       display: flex
@@ -142,7 +144,6 @@
     &-text
       color: $formText
       font-size: 16px
-      padding-bottom: 7px
       @include between(1280, 1919)
         font-size: 14px
       @include max(767)
@@ -164,6 +165,9 @@
         order: 1
         padding-bottom: 15px
     &-more
+      position: absolute
+      right: 32px
+      bottom: 47px
       line-height: 40px
       display: flex
       align-items: center
@@ -173,6 +177,7 @@
       color: $extraLightGray
       font-weight: 700
       @include max(767)
+        position: unset
         order: 4
       &::after
         content: ''

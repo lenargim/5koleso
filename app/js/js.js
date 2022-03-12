@@ -336,6 +336,19 @@ $(document).ready(function () {
   });
 
   /* End Actions page */
+
+
+  /* Faq page  */
+
+  $('.news__search-input').on('change input keyup', function () {
+    let text = $(this).val().toUpperCase();
+    $('.news__item').each(function (i, v) {
+      let address = $(this).attr('data-faq').toUpperCase();
+      address.includes(text) ? $(this).show() : $(this).hide()
+    });
+  });
+
+  /* End Faq page  */
 });
 
 function checkForm(form) {
