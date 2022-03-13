@@ -131,3 +131,67 @@
       padding: 0
       svg
         fill: $white
+.faq-ask
+  height: 100vh
+  background: url("../img/faq-ask-bg.jpg") center center/cover no-repeat
+  @include max(767)
+    background: url("../img/faq-ask-bg-mobile.jpg") center center/cover no-repeat
+  &__close
+    position: absolute
+    right: 64px
+    top: 64px
+    fill: $white
+    @include between(768, 1279)
+      right: 40px
+      top: 40px
+    @include max(767)
+      top: 30px
+      left: 50%
+      transform: translateX(-50%)
+  &__content
+    position: relative
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+    color: $white
+    @include min(1280)
+      width: 552px
+    @include min(768)
+      width: 521px
+      left: 50%
+      top: 50%
+      transform: translate(-50%,-50%)
+    @include max(767)
+      width: 100%
+      padding: 10px
+      top: 94px
+  &__title
+    padding-bottom: 15px
+    text-align: center
+    @include between(768, 1279)
+      padding-bottom: 10px
+  &__desc
+    color: $extraLightGray
+    padding-bottom: 40px
+    @include max(767)
+      padding-bottom: 20px
+  &__form
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: stretch
+    width: 100%
+    gap: 40px
+    .form-row
+      margin: 0
+    span
+      max-width: 360px
+  &__button
+    @include min(768)
+      position: relative
+      left: 50%
+      transform: translateX(-50%)
+      width: 270px
+    @include max(767)
+      width: 100%

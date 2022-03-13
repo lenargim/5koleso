@@ -317,7 +317,7 @@ $(document).ready(function () {
       $(this).find('.should-be-checked').each(function () {
         $(this).hasClass('checked') ? true : $(this).addClass('alert')
       })
-    } else if ( !accept.is(':checked') ) {
+    } else if (!accept.is(':checked')) {
       accept.siblings('label').css('color', '#E30514');
     } else {
       window.location.href = 'card-question-send.php'
@@ -348,6 +348,18 @@ $(document).ready(function () {
     });
   });
 
+  $('.faq-ask__form').on('submit', function (e) {
+    let btn = $(this).find('button[type="submit"]');
+    e.preventDefault();
+    if (btn.hasClass('disabled')) {
+      $(this).find('.should-be-checked').each(function () {
+        $(this).hasClass('checked') ? true : $(this).addClass('alert')
+      })
+    } else {
+      window.location.href = 'faq-thx.php';
+    }
+  });
+
   /* End Faq page  */
 });
 
@@ -357,7 +369,7 @@ function checkForm(form) {
     form.find('button[type="submit"]').addClass('disabled')
 }
 
-$('a[href^="#"]').on('click', function() {
+$('a[href^="#"]').on('click', function () {
   let href = $(this).attr('href');
   $('html, body').animate({
     scrollTop: $(href).offset().top - 20
