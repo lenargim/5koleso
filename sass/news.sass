@@ -195,3 +195,77 @@
       width: 270px
     @include max(767)
       width: 100%
+.news-detailed
+  padding-top: 106px
+  @include max(767)
+    padding-top: 115px
+  h1
+    padding-bottom: 30px
+    border-bottom: 5px solid $white
+    margin-bottom: 60px
+    @include between(768, 1279)
+      font-size: 60px
+      padding-bottom: 35px
+      margin-bottom: 35px
+    @include max(767)
+      padding-bottom: 24px
+      margin-bottom: 30px
+  h2
+    padding-bottom: 10px
+    max-width: 1060px
+    line-height: 1.2
+    @include between(768, 1279)
+      font-size: 28px
+      padding-bottom: 8px
+      max-width: 457px
+    @include max(767)
+      padding-bottom: 20px
+  img
+    width: 100%
+  &__narrow
+    max-width: 1280px
+    margin: 0 auto 60px
+    @include max(767)
+      margin-bottom: 20px
+    img
+      margin-bottom: 20px
+  &__text
+    color: $extraLightGray
+  &__wide
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-rows: auto
+    grid-gap: 20px
+    padding-bottom: 175px
+    @include between(768, 1279)
+      grid-gap: 25px 20px
+      grid-template-rows: 1fr 535px
+      padding-bottom: 90px
+    @include max(767)
+      padding-bottom: 60px
+      grid-template-columns: 1fr
+    @include min(768)
+      .img
+        grid-column: 1/3
+  &__item
+    position: relative
+  &__desc
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 0
+    color: $extraLightGray
+    background: rgba(51, 51, 51, 0.6)
+    backdrop-filter: blur(15px)
+    @include min(1280)
+      padding: 18px 30px 40px
+      min-height: 146px
+    @include between(768, 1279)
+      min-height: 50%
+      padding: 20px 20px 22px
+    @include max(767)
+      max-height: 227px
+      padding: 28px 10px
+  &__img
+    width: 100%
+    height: 100%
