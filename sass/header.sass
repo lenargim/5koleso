@@ -111,6 +111,94 @@
     &:hover .member + .member-card
       display: block
       z-index: 2
+  .guest-button-wrap
+    display: none
+  &_menued
+    background: transparent
+    z-index: 4
+    .city, .sign-online, .header__search, .header__exit, .burger
+      display: none
+    @include max(767)
+      .header__wrap
+        height: auto
+        flex-wrap: wrap
+        padding-top: 20px
+        .city
+          position: unset
+          margin: 0 auto
+          display: block
+          order: 2
+          .city__current
+            display: block
+        .header__search
+          display: block
+          order: 1
+          margin: 0
+          svg
+            width: 32px
+            height: 32px
+        .header__logo
+          display: none
+        .close
+          order: 3
+          margin: 0
+      .header__exit
+        display: block
+        width: 100%
+        order: 4
+    .close
+      display: block
+      fill: $white
+      width: 48px
+      height: 48px
+      margin-left: auto
+      @include between(768, 1279)
+        width: 24px
+        height: 24px
+      @include max(767)
+        width: 32px
+        height: 32px
+    &.header_registered
+      @include max(767)
+        .header__exit
+          .member-card
+            position: relative
+            right: unset
+            display: block
+            padding: 20px 32px 32px
+            border-radius: 10px
+            background: #333538
+            z-index: 1
+            border: 1px solid #69696C
+            &__top
+              padding-bottom: 0
+            &::after
+              content: ''
+              position: absolute
+              width: 24px
+              height: 24px
+              bottom: 6px
+              left: calc(50% - 12px)
+              transition: all 0.3s ease
+              background: url("../img/menu-arrow.svg") no-repeat
+            &.active:after
+              transform: rotateX(180deg)
+            &__links
+              display: none
+  &_menued.header_unregistered
+    .guest-button-wrap
+      display: flex
+      align-items: center
+      justify-content: center
+      padding-top: 30px
+      gap: 20px
+      a
+        color: $white
+        width: 140px
+        font-weight: 600
+        padding: 8px
+        line-height: 24px
+        text-align: center
 .member-card
   display: none
   z-index: -1

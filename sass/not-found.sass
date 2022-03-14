@@ -1,0 +1,47 @@
+.not-found
+  height: 100vh
+  background: url("../img/404.jpg") no-repeat
+  background-size: cover
+  color: $white
+  z-index: 1
+  overflow: hidden
+  padding: 58px 0
+  @include between(768, 1279)
+    background: url("../img/404-tablet.jpg") no-repeat
+    padding: 58px 100px
+  @include max(767)
+    background: url("../img/404-tablet.jpg") no-repeat
+    padding: 9px 0
+  h1
+    font: 700 260px/312px $stoltz
+    padding-bottom: 60px
+    @include between(1280, 1919)
+      font: 700 160px/200px $stoltz
+    @include max(767)
+      font: 700 120px/144px $stoltz
+      padding-bottom: 48px
+  h2
+    font-size: 60px
+    padding-bottom: 10px
+    @include max(767)
+      font-size: 28px
+  &__before
+    font-weight: 700
+    padding-bottom: 5px
+    @include max(767)
+      padding-bottom: 10px
+  &__text
+    @include max(767)
+      font-size: 16px
+  &__button
+    margin-top: 30px
+    width: 270px
+    gap: 8px
+    @include max(767)
+      width: 100%
+    &::before
+      content: ''
+      width: 20px
+      height: 20px
+      background: url("../img/button-arrow.svg") no-repeat
+      transform: rotate(180deg)

@@ -1,4 +1,4 @@
-<header class="header header_transparent header_absolute">
+<header class="header header_transparent header_absolute header_registered">
   <div class="container">
     <div class="header__wrap">
       <a href="/" class="header__logo">
@@ -106,6 +106,9 @@
       </div>
       <svg class="burger pointer">
         <use xlink:href="img/sprite.svg#burger"></use>
+      </svg>
+      <svg class="close pointer hidden">
+        <use xlink:href="img/sprite.svg#close"></use>
       </svg>
     </div>
   </div>

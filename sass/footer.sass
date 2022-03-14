@@ -139,3 +139,196 @@
     color: #E0E0E0
     letter-spacing: 0.02em
     text-align: center
+.menu
+  position: absolute
+  left: 200%
+  right: 0
+  min-height: 100%
+  top: 0
+  background: url("../img/menu-bg.jpg") no-repeat
+  background-size: cover
+  background-position: right bottom
+  transition: all 0.3s ease
+  z-index: 3
+  color: $white
+  &.active
+    left: 0
+  @include max(1279)
+    background: url("../img/bg.jpg") no-repeat
+    overflow-y: auto
+    overflow-x: hidden
+  &__wrap
+    padding-top: 161px
+    max-width: 1140px
+    width: calc(8/12*100%)
+    display: grid
+    grid-template-columns: repeat(8, 1fr)
+    grid-template-rows: auto
+    grid-gap: 30px 14px
+    @include between(1280, 1919)
+      padding-top: 100px
+      grid-gap: 14px
+    @include max(1279)
+      width: 100%
+    @include between(768, 1279)
+      grid-template-columns: 2fr
+      grid-gap: 24px 20px
+      padding-bottom: 46px
+    @include max(767)
+      gap: 25px
+      padding-top: 225px
+      grid-template-columns: 1fr
+      padding-bottom: 40px
+  &__item
+    height: 250px
+    background: $buttonGlass
+    border-radius: 10px
+    position: relative
+    padding: 40px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
+    color: $white
+    transition: color 0.3s ease
+    &:hover
+      background: $redGradient
+    @include between(1280, 1919)
+      max-height: 22vh
+      height: 150px
+      padding: 25px
+    @include max(767)
+      height: 100px
+      padding: 25px 30px
+    span
+      position: relative
+      z-index: 1
+      padding-top: 12px
+      @include max(767)
+        font-size: 16px
+        padding-top: 5px
+    &::before
+      content: ""
+      position: absolute
+      top: -1px
+      bottom: -1px
+      left: -1px
+      right: -1px
+      border-radius: 10px
+      background: $whiteGradient
+      z-index: -1
+    &:nth-of-type(5)
+      overflow: hidden
+      img
+        width: 100%
+        height: 100%
+      &:hover img
+        display: none
+    @include min(1280)
+      &:nth-of-type(1)
+        grid-column: 1/6
+      &:nth-of-type(2)
+        grid-column: 6/9
+      &:nth-of-type(3)
+        grid-column: 1/4
+      &:nth-of-type(4)
+        grid-column: 4/9
+      &:nth-of-type(5)
+        grid-column: 1/-1
+    @include between(768, 1279)
+      &:nth-of-type(1)
+        grid-column: 1/3
+      &:nth-of-type(2)
+        grid-column: 1/2
+      &:nth-of-type(3)
+        grid-column: 2/3
+      &:nth-of-type(4)
+        grid-column: 1/3
+      &:nth-of-type(5)
+        grid-column: 1/3
+    img
+      position: absolute
+      right: 0
+      bottom: 0
+      z-index: 0
+      @include between(1280, 1919)
+        max-height: calc(100% + 10px)
+      @include max(767)
+        max-height: calc(100% + 16px)
+    h2
+      position: relative
+      z-index: 1
+      line-height: 1.2
+      @include between(1280, 1919)
+        font-size: 36px
+      @include max(767)
+        font-size: 21px
+  &__footer
+    @include min(1280)
+      position: absolute
+      left: 0
+      right: 0
+      bottom: 30px
+    @include between(1280, 1919)
+      bottom: 15px
+    &-wrap
+      display: grid
+      grid-template-columns: 8fr 4fr
+      grid-gap: 14px
+      @include max(1279)
+        grid-template-columns: 1fr
+        grid-gap: 60px
+  &__socials
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    gap: 40px
+    @include max(1279)
+      justify-content: center
+      padding-bottom: 38px
+  &__left
+    .link
+      color: $white
+      font-size: 16px
+      padding: 10px
+      display: flex
+      align-items: center
+      justify-content: flex-end
+      width: fit-content
+      margin-left: auto
+      position: relative
+      gap: 27px
+      @include max(1279)
+        color: $formText
+      @include max(767)
+        font-size: 16px
+        padding: 5px 0
+      &::after
+        content: ''
+        width: 24px
+        height: 24px
+        background: url("../img/button-arrow.svg") no-repeat
+      &::before
+        position: absolute
+        content: ''
+        left: 0
+        bottom: 0
+        right: 0
+        height: 1px
+        background: $whiteGradient
+      @include max(1279)
+        justify-content: center
+        margin: 0 auto
+    @include max(1279)
+      nav
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+        align-items: center
+        gap: 20px
+        padding-bottom: 40px
+        a
+          font-size: 18px
+          color: $formText
+          @include max(767)
+            font-size: 14px

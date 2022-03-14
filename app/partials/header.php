@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header header_unregistered">
   <div class="container">
     <div class="header__wrap">
       <a href="/" class="header__logo">
@@ -49,9 +49,16 @@
           </svg>
           <span>Вход<span class="desktop">/Регистрация</span></span>
         </div>
+        <div class="guest-button-wrap">
+          <a href="#" class="button-red">Вход</a>
+          <a href="#">Регистрация</a>
+        </div>
       </div>
       <svg class="burger pointer">
         <use xlink:href="img/sprite.svg#burger"></use>
+      </svg>
+      <svg class="close pointer hidden">
+        <use xlink:href="img/sprite.svg#close"></use>
       </svg>
     </div>
   </div>

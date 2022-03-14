@@ -53,6 +53,23 @@ $(document).ready(function () {
   }
   $('#get-city-data').attr("src", `cities/${isCity}.js`);
 
+  $('.burger').on('click', function () {
+    $('.menu').addClass('active');
+    $('.header').addClass('header_menued')
+  });
+
+  $('.close').on('click', function () {
+    $('.menu').removeClass('active');
+    $('.header').removeClass('header_menued')
+  });
+
+  $('.member-card').on('click', function () {
+    $(this).toggleClass('active');
+    if (window.innerWidth < 768) {
+      $(this).find('.member-card__links').slideToggle()
+    }
+  });
+
 
   /* End Common */
 
