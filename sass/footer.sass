@@ -332,3 +332,125 @@
           color: $formText
           @include max(767)
             font-size: 14px
+.popup
+  display: none
+  position: fixed
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  z-index: 5
+  background: url("../img/popup.jpg") no-repeat
+  background-size: cover
+  &.active
+    display: block
+  @include between(768,1279)
+    background: url("../img/popup-tablet.jpg") no-repeat
+    background-size: cover
+  @include max(767)
+    background: url("../img/popup-mobile.jpg") no-repeat
+    background-size: cover
+  @include min(1280)
+    &::after
+      content: ''
+      background: url("../img/popup-phone.png") no-repeat
+      background-size: cover
+      position: absolute
+      bottom: 0
+      right: 0
+      width: 77vh
+      height: 80vh
+  &__header
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 40px 0 15vh
+    @include between(1280, 1919)
+      padding: 30px 0 5vh
+    @include between(768,1279)
+      padding: 50px 0 15vh
+    @include max(767)
+      padding: 20px 0 60px
+  &__close
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    color: $white
+    font-size: 14px
+    font-weight: 700
+    gap: 4px
+    svg
+      fill: $white
+  &__body
+    color: $white
+    position: relative
+    padding-bottom: 20vh
+    @include between(768,1279)
+      padding-bottom: 10vh
+  &__title
+    font-size: 120px
+    padding-bottom: 20px
+    max-width: calc(8/12*100%)
+    font-weight: 700
+    @include between(768, 1919)
+      font-size: 60px
+      max-width: 80%
+    @include max(767)
+      font-size: 28px
+      max-width: 100%
+      padding-bottom: 15px
+  &__desc
+    font-size: 28px
+    margin-bottom: 40px
+    @include between(1280, 1919)
+      font-size: 18px
+      margin-bottom: 30px
+    @include between(768,1279)
+      margin-bottom: 20px
+      max-width: 65%
+    @include max(767)
+      max-width: 220px
+      font-size: 18px
+      margin-bottom: 20px
+  &__button
+    width: 270px
+    margin-bottom: 20px
+    @include max(767)
+      width: 100%
+  &__refuse
+    width: 270px
+    text-align: center
+    color: $extraLightGray
+    @include max(767)
+      width: 100%
+      font-size: 18px
+  &__footer
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 0
+    padding: 35px 0 17px
+    background: #555
+    @include between(1280, 1919)
+      padding: 20px 0 15px
+    @include between(768,1279)
+      padding: 43px 27px 44px 53px
+    @include max(767)
+      padding: 27px 0
+    p
+      color: $formText
+      font-size: 14px
+      max-width: 911px
+      a
+        color: $formText
+        font-weight: 700
+      @include between(1280, 1919)
+        max-width: 60vw
+      @include between(768,1279)
+        max-width: unset
+      &:not(:first-of-type)
+        padding-top: 35px
+        @include between(1280, 1919)
+          padding-top: 20px
+        @include max(767)
+          padding: 0

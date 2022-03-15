@@ -147,6 +147,10 @@ $(document).ready(function () {
     $('.modal-search').addClass('active');
   });
 
+  $('.popup-close').on('click', function () {
+    $('.popup').removeClass('active');
+  });
+
   /* End Common */
 
   /* Entry page */

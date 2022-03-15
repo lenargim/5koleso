@@ -104,11 +104,11 @@
       </button>
       <script>
         const dataSearch = [
-          { value: "1", text: "Шиномонтаж", type: "Услуга" },
-          { value: "2", text: "Шиномонтаж литых дисков", type: "Услуга" },
-          { value: "3", text: "Шиномонтаж 24/7", type: "Акция" },
-          { value: "4", text: "Шиномонтаж без границ", type: "Услуга" },
-          { value: "5", text: "Еще", type: "Услуга" }
+          {value: "1", text: "Шиномонтаж", type: "Услуга"},
+          {value: "2", text: "Шиномонтаж литых дисков", type: "Услуга"},
+          {value: "3", text: "Шиномонтаж 24/7", type: "Акция"},
+          {value: "4", text: "Шиномонтаж без границ", type: "Услуга"},
+          {value: "5", text: "Еще", type: "Услуга"}
         ];
       </script>
     </form>
@@ -174,6 +174,43 @@
           </a>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+<div class="popup">
+  <div class="container">
+    <div class="popup__header">
+      <picture>
+        <source media="(max-width:767px)" srcset="img/logo-mobile.png">
+        <img src="img/logo.png" alt="5колесо" class="logo">
+      </picture>
+      <div class="popup__close pointer popup-close">
+        <span class="hide-on-mobile">Закрыть</span>
+        <svg>
+          <use xlink:href="img/sprite.svg#close"></use>
+        </svg>
+      </div>
+    </div>
+    <div class="popup__body">
+      <div class="popup__title">Зарегистрируйся на сайте «5колесо»</div>
+      <div class="popup__desc">Дарим всем новым пользователям 500 бонусных рублей.</div>
+      <div class="popup__button button-red">Получить бонусы</div>
+      <div class="popup__refuse popup-close">Нет, не интересно</div>
+    </div>
+  </div>
+  <div class="popup__footer">
+    <div class="container">
+      <p class="hide-on-mobile">Личный транспорт — спасение во время изоляции. Друзья, в ближайшую неделю нам всем
+        крайне важно ограничить
+        контакты с другими людьми. Если все же пришлось выйти, лучше воспользоваться личным транспортом. Далеко не все
+        успели подготовить свои колеса к теплому сезону. Личный транспорт — спасение во время изоляции. Друзья,
+        в ближайшую неделю нам всем крайне важно ограничить контакты с другими людьми. Если все же пришлось выйти, лучше
+        воспользоваться личным транспортом. Далеко не все успели подготовить свои колеса к теплому сезону.</p>
+      <p class="mobile">
+        Личный транспорт — спасение во время изоляции. Друзья, в ближайшую неделю нам всем крайне важно ограничить
+        контакты с другими людьми. <a href="#">Подробнее...</a>
+      </p>
+      <p class="desktop">Правовая документация и тд.</p>
     </div>
   </div>
 </div>
