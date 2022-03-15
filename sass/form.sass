@@ -211,3 +211,72 @@
 .form-row-car-number, .form-row-left
   .form-input
     padding-left: 16px
+
+
+.modal-search
+  &__form
+    position: relative
+    top: 50%
+    transform: translateY(-50%)
+    @include max(767)
+      top: 20%
+    &.active
+      .modal-search__list
+        display: block
+  &__input
+    background: transparent
+    padding: 12px
+    color: $formText
+    border-bottom: 2px solid $white
+  &__list
+    display: none
+    position: absolute
+    top: calc(100% + 19px)
+    left: 0
+    right: 0
+    border-radius: 10px
+    border: 1px solid $formText
+    overflow: hidden
+    max-height: 240px
+    @include max(767)
+      max-height: 260px
+    li
+      cursor: pointer
+      padding: 20px
+      color: $extraLightGray
+      @include max(767)
+        font-size: 18px
+        padding: 11px 20px
+        display: flex
+        flex-direction: column
+      &:hover
+        background: $buttonGlass
+      span
+        color: $formText
+        font-size: 12px
+        padding-left: 1em
+        @include max(767)
+          padding: 3px 0 0
+  &__submit
+    position: absolute
+    right: 0
+    top: 50%
+    transform: translateY(-50%)
+    background: transparent
+    fill: $white
+    padding: 0
+    &::before
+      content: ''
+      position: absolute
+      width: 1px
+      height: 100%
+      top: 50%
+      transform: translateY(-50%)
+      left: -14px
+      background: $whiteGradient
+  &__close
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    right: 44px
+    fill: $formText

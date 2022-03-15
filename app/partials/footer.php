@@ -77,7 +77,7 @@
       <button type="submit" class="button-red modal__form-button disabled">Добавить</button>
     </form>
   </div>
-  <div class="modal-car-added">
+  <div class="modal modal-car-added">
     <div class="modal-car-added__top">
       <svg class="modal-car-added__svg">
         <use xlink:href="img/sprite-form.svg#checked-green"></use>
@@ -88,6 +88,30 @@
       по вашему автомобилю
     </div>
     <div class="modal-car-added__button button-red">Хорошо</div>
+  </div>
+  <div class="modal modal-search">
+    <form class="modal-search__form" autocomplete="off" id="form-modal-search">
+      <input type="text" list="form-search-list" class="modal-search__input" id="search-datalist-input"
+             placeholder="Поиск..">
+      <ul id="datalist-ul" class="modal-search__list"></ul>
+      <svg class="modal-search__close pointer">
+        <use xlink:href="img/sprite.svg#close"></use>
+      </svg>
+      <button type="submit" class="modal-search__submit pointer">
+        <svg>
+          <use xlink:href="img/sprite.svg#search"></use>
+        </svg>
+      </button>
+      <script>
+        const dataSearch = [
+          { value: "1", text: "Шиномонтаж", type: "Услуга" },
+          { value: "2", text: "Шиномонтаж литых дисков", type: "Услуга" },
+          { value: "3", text: "Шиномонтаж 24/7", type: "Акция" },
+          { value: "4", text: "Шиномонтаж без границ", type: "Услуга" },
+          { value: "5", text: "Еще", type: "Услуга" }
+        ];
+      </script>
+    </form>
   </div>
 </div>
 <div class="menu">
