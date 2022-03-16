@@ -77,6 +77,35 @@ const gridSlider = new Swiper('.mainpage__slide-grid', {
   },
 });
 
+
+const usefulNews = new Swiper('.useful__block-slider', {
+  init: false,
+  slidesPerView: 'auto',
+  spaceBetween: 20,
+  breakpoints: {
+    320: {
+      init: false
+    },
+    1280: {
+      init: true,
+    }
+  }
+});
+
+const usefulSlider = new Swiper('.useful__slider', {
+  slidesPerView: 'auto',
+  loop: true,
+  spaceBetween: 20,
+  centeredSlides: true,
+  initialSlide: 2,
+  pagination: {
+    el: '.pagination',
+    type: 'bullets',
+    currentClass: 'active',
+    clickable: true,
+  },
+});
+
 $(document).ready(function () {
   let windowWidth = window.innerWidth;
   if (windowWidth < 1280) {

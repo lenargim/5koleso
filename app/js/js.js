@@ -458,6 +458,7 @@ $(document).ready(function () {
   });
 
   /* End Faq page  */
+
 });
 
 function checkForm(form) {
