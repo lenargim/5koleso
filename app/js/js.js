@@ -459,6 +459,14 @@ $(document).ready(function () {
 
   /* End Faq page  */
 
+  /* Useful page */
+
+  $('.useful__callback-form').on('submit', function (e) {
+    e.preventDefault();
+    window.location.href = 'useful-thx.php';
+  });
+
+  /* End Useful page */
 });
 
 function checkForm(form) {

@@ -82,14 +82,6 @@ const usefulNews = new Swiper('.useful__block-slider', {
   init: false,
   slidesPerView: 'auto',
   spaceBetween: 20,
-  breakpoints: {
-    320: {
-      init: false
-    },
-    1280: {
-      init: true,
-    }
-  }
 });
 
 const usefulSlider = new Swiper('.useful__slider', {
@@ -111,15 +103,19 @@ $(document).ready(function () {
   if (windowWidth < 1280) {
     for (let i = 0; i < gridSlider.length; i++)
       gridSlider[i].init();
+  } else {
+    usefulNews.init()
   }
 });
 
 $(window).resize(function () {
   let windowWidth = window.innerWidth;
   if (windowWidth < 1280) {
+    usefulNews.destroy()
     for (let i = 0; i < gridSlider.length; i++)
       gridSlider[i].init();
   } else {
+    usefulNews.init()
     for (let i = 0; i < gridSlider.length; i++)
       gridSlider[i].destroy();
   }
