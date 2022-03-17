@@ -467,6 +467,15 @@ $(document).ready(function () {
   });
 
   /* End Useful page */
+
+  /* Text page */
+
+  $('.text-page__side').on('click', '.nav', function () {
+    $(this).toggleClass('open');
+    $(this).siblings('.sub').slideToggle()
+  })
+
+  /* End Text page */
 });
 
 function checkForm(form) {
