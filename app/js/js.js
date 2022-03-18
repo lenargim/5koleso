@@ -71,7 +71,6 @@ $(document).ready(function () {
   });
 
 
-
   class DataList {
     constructor(containerId, inputId, listId, options) {
       this.containerId = containerId;
@@ -110,7 +109,7 @@ $(document).ready(function () {
         }
       });
 
-      input.addEventListener("input", function(e) {
+      input.addEventListener("input", function (e) {
         if (!container.classList.contains("active")) {
           container.classList.add("active");
         }
@@ -118,7 +117,7 @@ $(document).ready(function () {
         datalist.create(input.value);
       });
 
-      list.addEventListener("click", function(e) {
+      list.addEventListener("click", function (e) {
         if (e.target.nodeName.toLocaleLowerCase() === "li") {
           input.value = e.target.getAttribute('data-text');
           container.classList.remove("active");
@@ -476,6 +475,51 @@ $(document).ready(function () {
   })
 
   /* End Text page */
+
+  /* Resume part */
+
+  let joinForm = $('.career__join-form');
+  let resumeBox = $('.resume__box');
+  var droppedFiles = false;
+
+  resumeBox.on('drag dragstart dragend dragover dragenter dragleave drop', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+  })
+    .on('dragover dragenter', function () {
+      resumeBox.addClass('is-dragover');
+    })
+    .on('dragleave dragend drop', function () {
+      resumeBox.removeClass('is-dragover');
+    })
+    .on('drop', function (e) {
+      droppedFiles = e.originalEvent.dataTransfer.files;
+      $('.resume__label').text(`Добавлено: ${droppedFiles[0].name}`);
+      resumeBox.addClass('dropped');
+    });
+
+  $('.file').on('change', function (e) {
+    if ($(this).val() != '') {
+      droppedFiles = $(this)[0].files;
+      $('.resume__label').text(`Добавлено: ${droppedFiles[0].name}`);
+      resumeBox.addClass('dropped');
+    }
+  });
+
+  joinForm.on('submit', function (e) {
+    let btn = $(this).find('.career__join-submit');
+    if (btn.hasClass('disabled')) {
+      e.preventDefault();
+      $(this).find('.should-be-checked').each(function () {
+        $(this).hasClass('checked') ? true : $(this).addClass('alert')
+      })
+    } else {
+      joinData = joinForm.serializeArray().map(v => [v.name, v.value]);
+      console.log(joinData)
+    }
+  });
+
+  /* End Resume part */
 });
 
 function checkForm(form) {

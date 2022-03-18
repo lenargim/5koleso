@@ -114,7 +114,7 @@
   .guest-button-wrap
     display: none
   &_menued
-    background: transparent
+    background: url('../img/bg.jpg') no-repeat
     z-index: 4
     .city, .sign-online, .header__search, .header__exit, .burger
       display: none
@@ -199,6 +199,27 @@
         padding: 8px
         line-height: 24px
         text-align: center
+  &__navigation
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    gap: 60px
+    &-link
+      color: $white
+      font-weight: 700
+  &__phone
+    color: $white
+    font-weight: 700
+    margin-left: auto
+  &__fill
+    width: 167px
+    margin-left: 60px
+    @include max(767)
+      margin: 0 auto
+      width: 150px
+  &_career
+    .header__city
+      margin-right: 60px
 .member-card
   display: none
   z-index: -1

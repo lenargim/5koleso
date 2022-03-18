@@ -98,6 +98,96 @@ const usefulSlider = new Swiper('.useful__slider', {
   },
 });
 
+const careerTypesSlider = new Swiper('.career__types-slider', {
+  spaceBetween: 20,
+  pagination: {
+    el: '.pagination',
+    type: 'bullets',
+    currentClass: 'active',
+    clickable: true,
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+    },
+    767: {
+      slidesPerView: 2,
+    },
+    1280: {
+      slidesPerView: 4,
+    },
+  }
+});
+
+const careerWhySlider = new Swiper('.career__why-slider', {
+  pagination: {
+    el: '.pagination',
+    type: 'bullets',
+    currentClass: 'active',
+    clickable: true,
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+    },
+    767: {
+      slidesPerView: 2,
+      spaceBetween: 43,
+    },
+    1280: {
+      slidesPerView: 4,
+      spaceBetween: 43,
+    }
+  }
+});
+
+const careerInfoSlider = new Swiper('.career__info-slider', {
+  spaceBetween: 20,
+  pagination: {
+    el: '.pagination',
+    type: 'bullets',
+    currentClass: 'active',
+    clickable: true,
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 'auto',
+    },
+    1280: {
+      slidesPerView: 2,
+    }
+  }
+});
+
+
+const careerCorpSlider = new Swiper('.career__corp-slider', {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  preloadImages: false,
+  lazy: true,
+  pagination: {
+    el: '.pagination',
+    type: 'bullets',
+    currentClass: 'active',
+  },
+  on: {
+    init: function () {
+      let corpSliderTotal = this.slides.length;
+      let corpSliderTotalSpan = $('.career__pagination-total');
+      corpSliderTotal < 10 ? corpSliderTotalSpan.text(`0${corpSliderTotal}`) : corpSliderTotalSpan.text(corpSliderTotal);
+    }
+  }
+});
+
+careerCorpSlider.on('slideChange', function () {
+  let mainSliderCurrent = ++careerCorpSlider.realIndex;
+  let mainSliderCurrentSpan = $('.career__pagination-current');
+  mainSliderCurrent < 10 ? mainSliderCurrentSpan.text(`0${mainSliderCurrent}`) : mainSliderCurrentSpan.text(mainSliderCurrent);
+});
+
 $(document).ready(function () {
   let windowWidth = window.innerWidth;
   if (windowWidth < 1280) {

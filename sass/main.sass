@@ -45,6 +45,11 @@ main
     padding: 0 27px
   @include max(767)
     padding: 0 10px
+.container-md
+  width: 100%
+  padding: 0 15px
+  margin: 0 auto
+  max-width: 1450px
 .container-sm
   width: 100%
   padding: 0 15px
@@ -54,6 +59,10 @@ main
     padding: 0 27px
   @include max(767)
     padding: 0 10px
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus
+  transition: background-color 600000s 0s, color 600000s 0s
 
 input[type=search]::-ms-clear
   display: none
@@ -223,6 +232,9 @@ svg
   background: $buttonGlass
   border-radius: 4px
   cursor: pointer
+  line-height: 20px
+  gap: 8px
+  color: $white
   white-space: nowrap
   @include max(767)
     width: 100%

@@ -100,6 +100,52 @@
       &:last-of-type
         @include max(1279)
           max-width: 450px
+  &__career
+    background: rgba(51, 51, 51, 1)
+    padding: 194px 0 107px
+    @include between(1280, 1919)
+      padding: 100px 0
+    @include between(768, 1279)
+      padding: 25px 0 56px
+    @include max(767)
+      padding: 90px 0
+    &-wrap
+      display: flex
+      align-items: center
+      justify-content: space-between
+      color: $white
+      font-size: 16px
+      @include max(767)
+        flex-direction: column
+        justify-content: flex-start
+        align-items: center
+        gap: 30px
+    &-left
+      @include max(767)
+        text-align: center
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 30px
+      a
+        display: inline-block
+        margin-left: 50px
+        color: $white
+        @include max(767)
+          margin: 0
+    &-right
+      display: flex
+      align-items: center
+      justify-content: flex-end
+      gap: 22px
+      @include max(767)
+        flex-direction: column
+        text-align: center
+    &-socials
+      display: flex
+      align-items: center
+      justify-content: flex-end
+      gap: 40px
 .footer-card
   z-index: 1
   position: absolute
