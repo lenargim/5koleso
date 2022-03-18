@@ -4,45 +4,48 @@ include('partials/header-registered.php'); ?>
     <div class="container">
       <div class="text-page__wrap">
         <div class="text-page__side">
-          <div class="text-page__side-item">
-            <div class="nav pointer">
-              <svg>
-                <use xlink:href="img/sprite.svg#menu-down"></use>
-              </svg>
-              <span>Общие</span>
+          <div class="text-page__open hide-on-desktop">Другие разделы</div>
+          <div class="text-page__list">
+            <div class="text-page__side-item">
+              <div class="nav pointer">
+                <svg>
+                  <use xlink:href="img/sprite.svg#menu-down"></use>
+                </svg>
+                <span>Общие</span>
+              </div>
+              <ul class="sub">
+                <li><a href="text-page.php">Пользовательское соглашение</a></li>
+                <li><a href="text-page.php">Политика конфиденциальности</a></li>
+              </ul>
             </div>
-            <ul class="sub">
-              <li><a href="text-page.php">Пользовательское соглашение</a></li>
-              <li><a href="text-page.php">Политика конфиденциальности</a></li>
-            </ul>
-          </div>
-          <div class="text-page__side-item">
-            <div class="nav pointer">
-              <svg>
-                <use xlink:href="img/sprite.svg#menu-down"></use>
-              </svg>
-              <span>Корпоративные продукты</span>
+            <div class="text-page__side-item">
+              <div class="nav pointer">
+                <svg>
+                  <use xlink:href="img/sprite.svg#menu-down"></use>
+                </svg>
+                <span>Корпоративные продукты</span>
+              </div>
+              <ul class="sub">
+                <li><a href="text-page.php">Пользовательское соглашение</a></li>
+                <li><a href="text-page.php">Политика конфиденциальности</a></li>
+              </ul>
             </div>
-            <ul class="sub">
-              <li><a href="text-page.php">Пользовательское соглашение</a></li>
-              <li><a href="text-page.php">Политика конфиденциальности</a></li>
-            </ul>
-          </div>
-          <div class="text-page__side-item">
-            <div class="nav pointer">
-              <svg>
-                <use xlink:href="img/sprite.svg#menu-down"></use>
-              </svg>
-              <span>Корпоративные продукты</span>
+            <div class="text-page__side-item">
+              <div class="nav pointer">
+                <svg>
+                  <use xlink:href="img/sprite.svg#menu-down"></use>
+                </svg>
+                <span>Корпоративные продукты</span>
+              </div>
+              <ul class="sub">
+                <li><a href="text-page.php">Пользовательское соглашение</a></li>
+                <li><a href="text-page.php">Политика конфиденциальности</a></li>
+              </ul>
             </div>
-            <ul class="sub">
-              <li><a href="text-page.php">Пользовательское соглашение</a></li>
-              <li><a href="text-page.php">Политика конфиденциальности</a></li>
-            </ul>
           </div>
         </div>
         <div class="text-page__content">
-          <h1>Пользовательское соглашение</h1>
+          <h1 class="text-page__title">Пользовательское соглашение</h1>
           <div class="text-page__main">
             <div class="text-page__block">
               <h3>1. Общие положения</h3>

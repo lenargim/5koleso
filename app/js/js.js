@@ -472,7 +472,12 @@ $(document).ready(function () {
   $('.text-page__side').on('click', '.nav', function () {
     $(this).toggleClass('open');
     $(this).siblings('.sub').slideToggle()
-  })
+  });
+
+  $('.text-page__open').on('click', function () {
+    $(this).toggleClass('open');
+    $(this).siblings('.text-page__list').toggleClass('open');
+  });
 
   /* End Text page */
 
