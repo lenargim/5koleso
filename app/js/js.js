@@ -525,6 +525,44 @@ $(document).ready(function () {
   });
 
   /* End Resume part */
+
+  /* Vacany page */
+
+  let vacancyForm = $('.vacancy-form');
+
+  $('.vacancies__side-showall').on('click', function () {
+    $(this).siblings('.vacancies__side-list').find('.checkbox-row').show()
+    $(this).hide()
+  });
+  $('.vacancies-reset').on('click', function () {
+    $(this).parents('form')[0].reset()
+  });
+
+  $('.fill-blank-open').on('click', function () {
+    vacancyForm.addClass('open')
+  });
+
+  $('.vacancy-form__close').on('click', function () {
+    vacancyForm.removeClass('open')
+  });
+
+  vacancyForm.on('submit', function (e) {
+    e.preventDefault();
+    let btn = $(this).find('.career__join-submit');
+    if (btn.hasClass('disabled')) {
+      $(this).find('.should-be-checked').each(function () {
+        $(this).hasClass('checked') ? true : $(this).addClass('alert')
+      })
+    } else {
+      joinData = joinForm.serializeArray().map(v => [v.name, v.value]);
+      console.log(joinData);
+      window.location.href = 'vacancy-thx.php';
+    }
+  });
+
+
+
+  /* End Vacany page */
 });
 
 function checkForm(form) {

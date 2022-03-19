@@ -188,6 +188,23 @@ careerCorpSlider.on('slideChange', function () {
   mainSliderCurrent < 10 ? mainSliderCurrentSpan.text(`0${mainSliderCurrent}`) : mainSliderCurrentSpan.text(mainSliderCurrent);
 });
 
+const vacancySlider = new Swiper('.vacancy__faq-slider', {
+  spaceBetween: 20,
+  pagination: {
+    el: '.pagination',
+    type: 'bullets',
+    currentClass: 'active',
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+    },
+    1280: {
+      slidesPerView: 2,
+    }
+  }
+});
+
 $(document).ready(function () {
   let windowWidth = window.innerWidth;
   if (windowWidth < 1280) {

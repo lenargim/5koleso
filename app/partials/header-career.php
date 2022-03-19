@@ -1,5 +1,5 @@
 <header class="header header_career header_unregistered">
-  <div class="container">
+  <div class="container-md">
     <div class="header__wrap">
       <a href="/" class="header__logo">
         <picture>
@@ -42,7 +42,7 @@
         <a href="#map" class="header__navigation-link">Ближайший «5 Колесо»</a>
       </nav>
       <a href="tel:79999999999" class="header__phone hide-on-mobile">+7 (999) 999-99-99</a>
-      <div class="button-red header__fill">Заполнить анкету</div>
+      <div class="button-red header__fill fill-blank-open">Заполнить анкету</div>
       <svg class="burger pointer hide-on-desktop">
         <use xlink:href="img/sprite.svg#burger"></use>
       </svg>

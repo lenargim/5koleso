@@ -316,6 +316,7 @@ include('partials/header-career.php'); ?>
     </div>
   </div>
 </main>
+<?php include('partials/vacancy-form.php'); ?>
 <?php include('partials/footer-career.php'); ?>
 <?php include('partials/footer-swiper.php'); ?>
 <script>
@@ -342,6 +343,27 @@ include('partials/header-career.php'); ?>
     },
     onSelect: (instance, date) => {
       $('#join-date').parents('.form-row-date').addClass('checked').removeClass('alert');
+      let form = $(this).parents('form');
+      checkForm(form);
+    },
+  });
+
+  const vacancyPicker = datepicker('#vacancy-date', {
+    showOn: "focus",
+    showAllDates: true,
+    hideIfNoPrevNext: true,
+    //minDate: new Date(year, month, day),
+    startDay: 1,
+    maxDate: new Date(year, month, day),
+    customDays: ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'],
+    customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+    formatter: (input, date, instance) => {
+      const options = {year: 'numeric', month: 'numeric', day: 'numeric'};
+      const value = date.toLocaleDateString('ru-RU', options);
+      input.value = value
+    },
+    onSelect: (instance, date) => {
+      $('#vacancy-date').parents('.form-row-date').addClass('checked').removeClass('alert');
       let form = $(this).parents('form');
       checkForm(form);
     },
