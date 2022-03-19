@@ -48,9 +48,21 @@ $(document).ready(function () {
   if (isCity == null) {
     isCity = 'kazan';
     $('.header__is-city').addClass('open')
-  } else {
-
   }
+
+  let isCookie = (document.cookie.match(/^(?:.*;)?\s*cookies\s*=\s*([^;]+)(?:.*)?$/) || [, null])[1];
+  if (isCookie == null) {
+    $('.cookie-block').addClass('open')
+  }
+
+  $('.accept-cookies').click(function () {
+    document.cookie = `cookies=true`;
+    $('.cookie-block').removeClass('open');
+  });
+
+
+
+
   $('#get-city-data').attr("src", `cities/${isCity}.js`);
 
   $('.burger').on('click', function () {

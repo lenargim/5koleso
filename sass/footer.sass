@@ -500,3 +500,48 @@
           padding-top: 20px
         @include max(767)
           padding: 0
+.cookie-block
+  display: none
+  position: absolute
+  left: 0
+  bottom: 0
+  right: 0
+  padding: 47px 10px
+  align-items: center
+  justify-content: center
+  z-index: 5
+  background: rgba(51, 51, 51, 0.6)
+  backdrop-filter: blur(15px)
+  color: $extraLightGray
+  font-size: 12px
+  @include max(1279)
+    flex-wrap: wrap
+    gap: 15px 0
+  @include between(768, 1279)
+    padding: 17px 86px 17px 300px
+  @include max(767)
+    padding: 24px 10px 16px
+  &.open
+    display: flex
+  &__text
+    text-align: center
+    @include max(1279)
+      width: 100%
+  a
+    display: inline-block
+    margin-left: 10px
+    color: $extraLightGray
+    font-weight: 700
+  &__button
+    margin-left: 18px
+    width: 104px
+  &::before
+    position: absolute
+    left: 40px
+    bottom: 0
+    content: ''
+    width: 240px
+    height: 180px
+    background: url("../img/cookie.png") no-repeat
+    @include max(767)
+      content: unset

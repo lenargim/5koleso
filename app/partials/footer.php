@@ -214,6 +214,13 @@
     </div>
   </div>
 </div>
+<div class="cookie-block">
+  <div class="cookie-block__text">Мы используем файлы cookie для вашего удобства пользования сайтом и повышения качества
+    рекомендаций.
+  </div>
+  <a href="./text-page.php" target="_blank">Подробнее</a>
+  <div class="cookie-block__button button-red accept-cookies">Я согласен</div>
+</div>
 <script id="get-city-data"></script>
 <script src="js/scripts.js"></script>
 </body>
