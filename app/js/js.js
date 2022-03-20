@@ -1,4 +1,41 @@
 $(document).ready(function () {
+  /* Preloader */
+
+  let preloader = $('.preloader'),
+    imagesCount = $('img').length,
+    percent = 100 / imagesCount,
+    progress = 0,
+    loadedImg = 0;
+
+  if (imagesCount > 0) {
+    $('html, body').css('overflow', 'hidden');
+    for (let i = 0; i < imagesCount; i++) {
+      let img_copy = new Image();
+      img_copy.src = document.images[i].src;
+      img_copy.onload = img_load;
+      img_copy.onerror = img_load;
+    }
+
+    function img_load() {
+      progress += percent;
+      loadedImg++;
+      let progressRounded = Math.round(progress);
+      $('.preloader__percent').text(`${progressRounded}%`);
+      $('.preloader__filled').css('width', `${progressRounded}%`);
+      if (progress >= 100 || loadedImg == imagesCount) {
+        preloader.hide()
+        $('html, body').css('overflow', '');
+      }
+    }
+  } else {
+    preloader.hide()
+  }
+
+
+
+
+  /* End Preloader */
+
   /* Common */
   $('.tel').mask('(Z00) 000-00-00', {translation: {'Z': {pattern: /[0-79]/}}});
   let carNumberOptions = {

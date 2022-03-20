@@ -286,3 +286,40 @@ svg
       &::after
         content: '•'
         margin: 0 1em
+.preloader
+  position: fixed
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  left: 0
+  bottom: 0
+  right: 0
+  top: 0
+  background: #313743
+  z-index: 99
+  color: $white
+  text-align: center
+  &__row
+    margin-bottom: 10px
+    width: 332px
+    height: 4px
+    background: $formText
+    border-radius: 2px
+    overflow: hidden
+    position: relative
+    @include max(767)
+      width: 300px
+  &__filled
+    position: absolute
+    left: 0
+    top: 0
+    bottom: 0
+    background: $red
+  &__percent
+    margin-bottom: 15px
+    font-weight: 700
+  &__wait
+    font-size: 14px
+    line-height: 20px
+    color: $extraLightGray
