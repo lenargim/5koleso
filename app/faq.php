@@ -69,7 +69,7 @@ include('partials/header-registered.php'); ?>
               <span class="actions__item-date">31 марта 2020</span>
             </div>
           </div>
-          <div class="news__button button-dark">Задать вопрос</div>
+          <a href="faq-ask.php" class="news__button button-dark">Задать вопрос</a>
           <?php include('partials/footer-nav.php'); ?>
         </div>
       </div>

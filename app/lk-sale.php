@@ -51,7 +51,7 @@ include('partials/header-registered.php'); ?>
           <div class="lk__person">
             <div class="lk__person-top">
               <h3 class="lk__person-name">Александралександр</h3>
-              <a href="#" class="lk__person-settings">
+              <a href="lk-settings.php" class="lk__person-settings">
                 <svg>
                   <use xlink:href="img/sprite-lk.svg#settings"></use>
                 </svg>
@@ -75,7 +75,7 @@ include('partials/header-registered.php'); ?>
                 <div class="lk__person-low">Избранное</div>
               </div>
             </div>
-            <div class="lk__person-button button-red sign-online">Записаться онлайн</div>
+            <a href="entry.php" class="lk__person-button button-red sign-online">Записаться онлайн</a>
           </div>
           <div class="lk__page sale">
             <h3>Акции</h3>

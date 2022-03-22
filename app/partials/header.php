@@ -43,15 +43,15 @@
         </svg>
       </div>
       <div class="header__exit pointer">
-        <div class="guest account-state">
+        <a href="entrance-person.php" class="guest account-state">
           <svg>
             <use xlink:href="img/sprite.svg#entrance"></use>
           </svg>
           <span>Вход<span class="desktop">/Регистрация</span></span>
-        </div>
+        </a>
         <div class="guest-button-wrap">
-          <a href="#" class="button-red">Вход</a>
-          <a href="#">Регистрация</a>
+          <a href="entrance-person.php" class="button-red">Вход</a>
+          <a href="entrance-person.php">Регистрация</a>
         </div>
       </div>
       <svg class="burger pointer">

@@ -24,7 +24,7 @@ include('partials/header-registered.php'); ?>
                   <li>Начислим кэш-бэк с каждой услуги</li>
                 </ul>
               </div>
-              <div class="mainpage__map-button mainpage__slider-button button-red">Записаться онлайн</div>
+              <a href="entry.php" class="mainpage__map-button mainpage__slider-button button-red">Записаться онлайн</a>
             </div>
           </div>
         </div>
@@ -44,7 +44,7 @@ include('partials/header-registered.php'); ?>
               </div>
               <div class="mainpage__slide-grid">
                 <div class="swiper-wrapper">
-                  <a href="#" class="mainpage__slide-detailed swiper-slide">
+                  <a href="services.php" class="mainpage__slide-detailed swiper-slide">
                     <img data-src="img/main-service-1.jpg" alt="Шиномонтаж" class="mainpage__slide-img swiper-lazy">
                     <span class="swiper-lazy-preloader"></span>
                     <div class="mainpage__slide-detailed-info">
@@ -56,11 +56,11 @@ include('partials/header-registered.php'); ?>
                       <span class="more hide-on-mobile">Подробнее</span>
                     </div>
                   </a>
-                  <a href="#" class="mainpage__slide-detailed swiper-slide">
+                  <a href="services.php" class="mainpage__slide-detailed swiper-slide">
                     <img data-src="img/main-service-2.jpg" alt="" class="mainpage__slide-img swiper-lazy">
                     <span class="swiper-lazy-preloader"></span>
                   </a>
-                  <a href="#" class="mainpage__slide-detailed swiper-slide">
+                  <a href="services.php" class="mainpage__slide-detailed swiper-slide">
                     <img data-src="img/main-service-3.jpg" alt="" class="mainpage__slide-img swiper-lazy">
                     <span class="swiper-lazy-preloader"></span>
                   </a>
@@ -84,7 +84,7 @@ include('partials/header-registered.php'); ?>
                   мастерских</p>
 
               </div>
-              <a href="#" class="more">Подробнее</a>
+              <a href="corp.php" class="more">Подробнее</a>
               <a href="entrance-corporate.php" class="mainpage__corp-button mainpage__slider-button button-dark-border">Вход
                 для корп. клиентов</a>
             </div>
@@ -108,7 +108,7 @@ include('partials/header-registered.php'); ?>
               </div>
               <div class="mainpage__slide-grid">
                 <div class="swiper-wrapper">
-                  <a href="#" class="mainpage__slide-detailed swiper-slide">
+                  <a href="services.php" class="mainpage__slide-detailed swiper-slide">
                     <img data-src="img/main-action-1.jpg" alt="Работаем круглосуточно 24/7"
                          class="mainpage__slide-img swiper-lazy">
                     <span class="swiper-lazy-preloader"></span>
@@ -120,11 +120,11 @@ include('partials/header-registered.php'); ?>
                       <span class="more hide-on-mobile">Подробнее</span>
                     </div>
                   </a>
-                  <a href="#" class="mainpage__slide-detailed swiper-slide">
+                  <a href="services.php" class="mainpage__slide-detailed swiper-slide">
                     <img data-src="img/main-action-2.jpg" alt="" class="mainpage__slide-img swiper-lazy">
                     <span class="swiper-lazy-preloader"></span>
                   </a>
-                  <a href="#" class="mainpage__slide-detailed swiper-slide">
+                  <a href="services.php" class="mainpage__slide-detailed swiper-slide">
                     <img data-src="img/main-action-3.jpg" alt="" class="mainpage__slide-img swiper-lazy">
                     <span class="swiper-lazy-preloader"></span>
                   </a>
@@ -147,7 +147,7 @@ include('partials/header-registered.php'); ?>
                 <p class="hide-on-mobile">Узнайте что можно получить заключив договор на обслуживание автомобилей в сети
                   шиномонтажных мастерских</p>
               </div>
-              <a href="#" class="more">Подробнее</a>
+              <a href="useful.php" class="more">Подробнее</a>
             </div>
           </div>
         </div>

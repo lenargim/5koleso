@@ -29,7 +29,7 @@ include('partials/header-career.php'); ?>
           вакансию. Присоединиться к нам просто: нужно выбрать интересующую вас вакансию из списка, заполнить форму и
           подождать, пока наши менеджеры свяжутся с вами.
         </div>
-        <div class="career__banner-button button-dark">Подобрать вакансию</div>
+        <a href="vacancies.php" class="career__banner-button button-dark">Подобрать вакансию</a>
       </div>
     </div>
     <div class="career__banner-row">
@@ -42,28 +42,28 @@ include('partials/header-career.php'); ?>
       <div class="career__types-slider">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <a href="#" class="career__types-item">
+            <a href="vacancy.php" class="career__types-item">
               <h3>Шиномонтажник</h3>
               <div class="career__types-more">Подробнее</div>
               <img src="img/career/types1.png" class="career__types-img" alt="Шиномонтажник">
             </a>
           </div>
           <div class="swiper-slide">
-            <a href="#" class="career__types-item">
+            <a href="vacancy.php" class="career__types-item">
               <h3>Менеджер по подбору персонала</h3>
               <div class="career__types-more">Подробнее</div>
               <img src="img/career/types2.png" class="career__types-img" alt="Менеджер по подбору персонала">
             </a>
           </div>
           <div class="swiper-slide">
-            <a href="#" class="career__types-item">
+            <a href="vacancy.php" class="career__types-item">
               <h3>Территориальный управляющий</h3>
               <div class="career__types-more">Подробнее</div>
               <img src="img/career/types3.png" class="career__types-img" alt="Территориальный управляющий">
             </a>
           </div>
           <div class="swiper-slide">
-            <a href="#" class="career__types-item">
+            <a href="vacancy.php" class="career__types-item">
               <h3>Техник</h3>
               <div class="career__types-more">Подробнее</div>
               <img src="img/career/types4.png" class="career__types-img" alt="Техник">
@@ -71,7 +71,7 @@ include('partials/header-career.php'); ?>
           </div>
         </div>
         <div class="pagination"></div>
-        <a href="#" class="career__types-link button-dark">Все вакансии</a>
+        <a href="vacancies.php" class="career__types-link button-dark">Все вакансии</a>
       </div>
     </div>
   </div>

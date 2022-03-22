@@ -1,0 +1,287 @@
+.corp
+  padding-top: 150px
+  @include between(768, 1279)
+    padding-top: 106px
+  @include max(767)
+    padding-top: 80px
+  h1
+    padding-bottom: 10px
+    border-bottom: 5px solid $white
+    margin-bottom: 100px
+    @include between(768, 1279)
+      margin-bottom: 46px
+    @include max(767)
+      margin-bottom: 40px
+  h2
+    padding-bottom: 40px
+    @include max(1279)
+      padding-bottom: 20px
+  &__wrap
+    display: flex
+    flex-direction: row-reverse
+    gap: 15px
+    padding-bottom: 120px
+    @include max(1279)
+      flex-direction: column
+      gap: 20px
+  &__info
+    width: 705px
+    @include max(1279)
+      width: 100%
+  &__text
+    color: $extraLightGray
+    padding-bottom: 30px
+    @include between(768, 1279)
+      padding-bottom: 20px
+    p
+      padding-bottom: 1em
+      @include max(767)
+        font-size: 16px
+    a
+      color: $extraLightGray
+  &__button
+    width: 270px
+    @include max(767)
+      width: 100%
+.corp-form
+  height: 100vh
+  position: relative
+  overflow: hidden
+  &__img
+    position: absolute
+    left: 0
+    width: 100%
+    height: 100%
+    right: 0
+    top: 0
+    bottom: 0
+    z-index: -1
+    object-fit: cover
+    filter: blur(15px)
+  &__wrap
+    display: flex
+    justify-content: center
+    align-items: flex-start
+    width: 50%
+    flex-direction: column
+    height: 100vh
+    @include max(1279)
+      width: 100%
+      height: 50vh
+      padding-top: 120px
+      justify-content: flex-start
+    @include max(767)
+      padding-top: 85px
+    h2
+      padding-bottom: 30px
+      @include max(767)
+        padding-bottom: 10px
+    a
+      color: $extraLightGray
+  &__desc
+    color: $extraLightGray
+    max-width: 506px
+  &__block
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    width: 50%
+    background: url("../img/bg-5k.jpg") no-repeat
+    background-size: cover
+    @include max(1279)
+      top: unset
+      width: 100%
+      left: 0
+      height: 50vh
+    &-desc
+      color: $extraLightGray
+      padding-bottom: 40px
+      max-width: 506px
+      @include max(1919)
+        padding-bottom: 20px
+    &-wrap
+      position: relative
+      width: 100%
+      padding: 0 15px
+      margin: 150px auto 10px 150px
+      max-width: 735px
+      @include between(1280, 1919)
+        max-width: 100%
+        margin: 80px 0 50px
+      @include between(768, 1279)
+        padding: 90px 65px
+        margin: 0
+        max-width: 100%
+        height: 100%
+        overflow-y: auto
+      @include max(767)
+        height: 100%
+        margin: 0
+        padding: 10px
+        overflow-y: auto
+  h3
+    padding-bottom: 30px
+  &__pagination
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: flex-start
+    gap: 2px
+    color: $white
+    position: relative
+    padding-bottom: 30px
+    @include max(767)
+      padding-bottom: 15px
+    &-current
+      font-size: 46px
+      line-height: 1
+      font-weight: 700
+      @include between(1280,1919)
+        font-size: 30px
+      @include max(767)
+        font-size: 36px
+    &-total
+      font-size: 26px
+      @include between(1280, 1919)
+        font-size: 22px
+      @include max(767)
+        font-size: 18px
+      &:before
+        content: '/'
+    .pagination
+      display: flex
+      align-items: flex-end
+      justify-content: flex-start
+      gap: 5px
+      @include max(767)
+        display: none
+      div
+        background: $formText
+        width: 30px
+        height: 3px
+        &.active
+          height: 5px
+          background: $white
+  &__form
+    display: flex
+    flex-wrap: wrap
+    flex-direction: column
+    height: 610px
+    width: 100%
+    gap: 0 30px
+    @include between(1280, 1919)
+      display: block
+      height: auto
+      overflow-y: auto
+    @include between(1280,1919)
+      height: calc(100vh - 300px)
+    @include max(767)
+      display: block
+      height: calc(50vh - 100px)
+    .form-row
+      width: calc(50% - 15px)
+      @include between(1280,1919)
+        width: 100%
+      @include max(767)
+        width: 100%
+    .button
+      width: 125px
+      align-self: flex-end
+      margin-top: 14px
+      @include max(767)
+        width: 100%
+    &-last
+      display: flex
+      justify-content: flex-start
+      align-items: center
+      flex-wrap: wrap
+      gap: 0 30px
+      @include max(767)
+        flex-direction: column
+        gap: unset
+        margin-bottom: 10px
+      .form-row
+        width: calc(50% - 15px)
+        @include max(767)
+          width: 100%
+      .button-second
+        width: 154px
+        @include max(767)
+          width: 100%
+          margin-bottom: 30px
+      .button-add-car
+        width: 154px
+        display: flex
+        align-self: center
+        justify-content: center
+        margin-bottom: 20px
+        border: 1px solid #AAAEB3
+        font-size: 14px
+        font-weight: 700
+        line-height: 20px
+        border-radius: 5px
+        padding: 8px
+        gap: 8px
+        background: radial-gradient(154.21% 2840.14% at -4.66% 147.5%, rgba(97, 112, 130, 0.7) 0%, rgba(65, 70, 77, 0.7) 100%)
+        @include max(767)
+          width: 100%
+        &::before
+          content: ''
+          width: 20px
+          height: 20px
+          display: block
+          background: url("../img/sprites-content/plus.svg") no-repeat center center/contain
+    &-support
+      overflow-y: auto
+      max-width: 560px
+      .button-support
+        width: 270px
+        position: relative
+        left: 50%
+        transform: translateX(-50%)
+        @include max(767)
+          width: 100%
+  &__buttonrow
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: flex-start
+    width: 100%
+  &__back
+    display: flex
+    align-self: center
+    justify-content: flex-start
+    gap: 4px
+    padding-bottom: 30px
+    font-size: 14px
+    line-height: 20px
+    color: $formText
+    @include max(767)
+      justify-content: center
+    svg
+      width: 20px
+      height: 20px
+      fill: transparent
+      stroke: $formText
+  &__close
+    @include min(768)
+      position: absolute
+    @include min(1280)
+      right: 64px
+      top: 0
+    @include between(768, 1279)
+      top: 30px
+      right: 50%
+      transform: translateX(50%)
+    @include max(767)
+      position: relative
+      left: 50%
+      transform: translateX(-50%)
+      margin-bottom: 20px
+    svg
+      fill: $white
+  .breadcrumbs
+    a
+      font-size: 14px
+      line-height: 20px

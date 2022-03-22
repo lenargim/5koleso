@@ -36,7 +36,7 @@
           <div class="yes button-red">Да</div>
         </div>
       </div>
-      <div class="header__button button-red sign-online">Записаться онлайн</div>
+      <a href="entry.php" class="header__button button-red sign-online">Записаться онлайн</a>
       <div class="header__search pointer">
         <input type="search" class="hidden">
         <svg>

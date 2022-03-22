@@ -603,15 +603,56 @@ $(document).ready(function () {
         $(this).hasClass('checked') ? true : $(this).addClass('alert')
       })
     } else {
-      joinData = joinForm.serializeArray().map(v => [v.name, v.value]);
+      joinData = vacancyForm.serializeArray().map(v => [v.name, v.value]);
       console.log(joinData);
       window.location.href = 'vacancy-thx.php';
     }
   });
 
-
-
   /* End Vacany page */
+
+  /* Corp page */
+
+  $('.corp-form__form').on('submit', function (e) {
+    e.preventDefault();
+    let btn = $(this).find('.button');
+    if (btn.hasClass('disabled')) {
+      $(this).find('.should-be-checked').each(function () {
+        $(this).hasClass('checked') ? true : $(this).addClass('alert')
+      })
+    } else {
+      window.location.href = 'corp-form-2.php';
+    }
+  });
+
+  $('.corp-form__form-last').on('submit', function (e) {
+    e.preventDefault();
+    let btn = $(this).find('.button-second');
+    if (btn.hasClass('disabled')) {
+      $(this).find('.should-be-checked').each(function () {
+        $(this).hasClass('checked') ? true : $(this).addClass('alert')
+      })
+    } else {
+      window.location.href = 'corp-thx.php';
+    }
+  });
+  /* End Corp page */
+
+  /* Support Page */
+
+  $('.corp-form__form-support').on('submit', function (e) {
+    e.preventDefault();
+    let btn = $(this).find('.button-support');
+    if (btn.hasClass('disabled')) {
+      $(this).find('.should-be-checked').each(function () {
+        $(this).hasClass('checked') ? true : $(this).addClass('alert')
+      })
+    } else {
+      window.location.href = 'support-thx.php';
+    }
+  });
+
+  /* End Support Page */
 });
 
 function checkForm(form) {

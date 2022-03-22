@@ -75,7 +75,7 @@ include('partials/header-registered.php'); ?>
                 <div class="lk__person-low">Избранное</div>
               </div>
             </div>
-            <div class="lk__person-button button-red sign-online">Записаться онлайн</div>
+            <a href="entry.php" class="lk__person-button button-red sign-online">Записаться онлайн</a>
           </div>
           <div class="lk__page history">
             <h3>История посещений</h3>
