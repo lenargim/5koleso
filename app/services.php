@@ -171,7 +171,7 @@ include('partials/header-registered.php'); ?>
                 </picture>
               </div>
               <div class="services__item-info">
-                <picture class="services__item-img">
+                <picture class="services__item-img img">
                   <source media="(max-width:767px)" srcset="img/services/services1-mobile.jpg">
                   <source media="(max-width:1279px)" srcset="img/services/services1-tablet.jpg">
                   <img src="img/services/services1.jpg" alt="Шиномонтаж">
@@ -279,7 +279,7 @@ include('partials/header-registered.php'); ?>
                 </picture>
               </div>
               <div class="services__item-info">
-                <picture class="services__item-img">
+                <picture class="services__item-img img">
                   <source media="(max-width:767px)" srcset="img/services/services2-mobile.jpg">
                   <source media="(max-width:1279px)" srcset="img/services/services2-tablet.jpg">
                   <img src="img/services/services2.jpg" alt="Съем, установка колеса">
@@ -371,7 +371,7 @@ include('partials/header-registered.php'); ?>
                 </picture>
               </div>
               <div class="services__item-info">
-                <picture class="services__item-img">
+                <picture class="services__item-img img">
                   <source media="(max-width:767px)" srcset="img/services/services3-mobile.jpg">
                   <source media="(max-width:1279px)" srcset="img/services/services3-tablet.jpg">
                   <img src="img/services/services3.jpg" alt="Балансировка колес">
@@ -419,7 +419,7 @@ include('partials/header-registered.php'); ?>
                 </picture>
               </div>
               <div class="services__item-info">
-                <picture class="services__item-img">
+                <picture class="services__item-img img">
                   <source media="(max-width:767px)" srcset="img/services/services4-mobile.jpg">
                   <source media="(max-width:1279px)" srcset="img/services/services4-tablet.jpg">
                   <img src="img/services/services4.jpg" alt="Технологическая мойка колес">
@@ -465,7 +465,7 @@ include('partials/header-registered.php'); ?>
                 </picture>
               </div>
               <div class="services__item-info">
-                <picture class="services__item-img">
+                <picture class="services__item-img img">
                   <source media="(max-width:767px)" srcset="img/services/services5-mobile.jpg">
                   <source media="(max-width:1279px)" srcset="img/services/services5-tablet.jpg">
                   <img src="img/services/services5.jpg" alt="Накачка азотом">
@@ -572,7 +572,7 @@ include('partials/header-registered.php'); ?>
                 </picture>
               </div>
               <div class="services__item-info">
-                <picture class="services__item-img">
+                <picture class="services__item-img img">
                   <source media="(max-width:767px)" srcset="img/services/services6-mobile.jpg">
                   <source media="(max-width:1279px)" srcset="img/services/services6-tablet.jpg">
                   <img src="img/services/services6.jpg" alt="Ремонт шины">
@@ -734,7 +734,7 @@ include('partials/header-registered.php'); ?>
                 </picture>
               </div>
               <div class="services__item-info">
-                <picture class="services__item-img">
+                <picture class="services__item-img img">
                   <source media="(max-width:767px)" srcset="img/services/services7-mobile.jpg">
                   <source media="(max-width:1279px)" srcset="img/services/services7-tablet.jpg">
                   <img src="img/services/services7.jpg" alt="Правка диска">
@@ -796,7 +796,7 @@ include('partials/header-registered.php'); ?>
                 </picture>
               </div>
               <div class="services__item-info">
-                <picture class="services__item-img">
+                <picture class="services__item-img img">
                   <source media="(max-width:767px)" srcset="img/services/services8-mobile.jpg">
                   <source media="(max-width:1279px)" srcset="img/services/services8-tablet.jpg">
                   <img src="img/services/services8.jpg" alt="Сезонное хранение">
@@ -900,7 +900,7 @@ include('partials/header-registered.php'); ?>
                 </picture>
               </div>
               <div class="services__item-info">
-                <picture class="services__item-img">
+                <picture class="services__item-img img">
                   <source media="(max-width:767px)" srcset="img/services/services9-mobile.jpg">
                   <source media="(max-width:1279px)" srcset="img/services/services9-tablet.jpg">
                   <img src="img/services/services9.jpg" alt="Сезонная смена шин">
@@ -954,7 +954,7 @@ include('partials/header-registered.php'); ?>
                 </picture>
               </div>
               <div class="services__item-info">
-                <picture class="services__item-img">
+                <picture class="services__item-img img">
                   <source media="(max-width:767px)" srcset="img/services/services10-mobile.jpg">
                   <source media="(max-width:1279px)" srcset="img/services/services10-tablet.jpg">
                   <img src="img/services/services10.jpg" alt="Дошиповка зимней шины">

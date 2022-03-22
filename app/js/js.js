@@ -104,12 +104,14 @@ $(document).ready(function () {
 
   $('.burger').on('click', function () {
     $('.menu').addClass('active');
-    $('.header').addClass('header_menued')
+    $('.header').addClass('header_menued');
+    $('html, body').css('overflow', 'hidden');
   });
 
   $('.close').on('click', function () {
     $('.menu').removeClass('active');
-    $('.header').removeClass('header_menued')
+    $('.header').removeClass('header_menued');
+    $('html, body').css('overflow', '');
   });
 
   $('.member-card').on('click', function () {

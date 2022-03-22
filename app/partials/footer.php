@@ -115,63 +115,65 @@
   </div>
 </div>
 <div class="menu">
-  <div class="container">
-    <div class="menu__wrap">
-      <a href="about.php" class="menu__item">
-        <h2>О компании</h2>
-        <span>Узнайте больше о компании «5 Колесо»</span>
-        <img src="img/menu1.png" alt="О компании">
-      </a>
-      <a href="services.php" class="menu__item">
-        <h2>Услуги<br>и цены</h2>
-        <img src="img/menu2.png" alt="Услуги и цены">
-      </a>
-      <a href="vacancy.php" class="menu__item">
-        <h2>Вакансии</h2>
-        <img src="img/menu3.png" alt="Вакансии">
-      </a>
-      <a href="#" class="menu__item">
-        <h2>Полезная<br>информация</h2>
-        <img src="img/menu4.png" alt="Полезная информация">
-      </a>
-      <a href="#" class="menu__item">
-        <h2>Корпоративным<br>клиентам</h2>
-        <img src="img/menu5.png" alt="Корпоративным клиентам">
-      </a>
-    </div>
-  </div>
-  <div class="menu__footer">
+  <div class="menu__scroll">
     <div class="container">
-      <div class="menu__footer-wrap">
-        <div class="menu__left">
-          <nav class="hidden">
-            <a href="#">Правовые документы</a>
-            <a href="#">Служба поддержки</a>
-            <a href="#">Новости</a>
-          </nav>
-          <a href="#" class="link">Рассылка акций и новостей</a>
-        </div>
-        <div class="menu__socials">
-          <a href="#" class="menu__socials-link" target="_blank">
-            <svg>
-              <use xlink:href="img/sprite.svg#instagram"></use>
-            </svg>
-          </a>
-          <a href="#" class="menu__socials-link" target="_blank">
-            <svg>
-              <use xlink:href="img/sprite.svg#facebook"></use>
-            </svg>
-          </a>
-          <a href="#" class="menu__socials-link" target="_blank">
-            <svg>
-              <use xlink:href="img/sprite.svg#youtube"></use>
-            </svg>
-          </a>
-          <a href="#" class="menu__socials-link" target="_blank">
-            <svg>
-              <use xlink:href="img/sprite.svg#vk"></use>
-            </svg>
-          </a>
+      <div class="menu__wrap">
+        <a href="about.php" class="menu__item">
+          <h2>О компании</h2>
+          <span>Узнайте больше о компании «5 Колесо»</span>
+          <img src="img/menu1.png" alt="О компании">
+        </a>
+        <a href="services.php" class="menu__item">
+          <h2>Услуги<br>и цены</h2>
+          <img src="img/menu2.png" alt="Услуги и цены">
+        </a>
+        <a href="vacancy.php" class="menu__item">
+          <h2>Вакансии</h2>
+          <img src="img/menu3.png" alt="Вакансии">
+        </a>
+        <a href="useful.php" class="menu__item">
+          <h2>Полезная<br>информация</h2>
+          <img src="img/menu4.png" alt="Полезная информация">
+        </a>
+        <a href="corp.php" class="menu__item">
+          <h2>Корпоративным<br>клиентам</h2>
+          <img src="img/menu5.png" alt="Корпоративным клиентам">
+        </a>
+      </div>
+    </div>
+    <div class="menu__footer">
+      <div class="container">
+        <div class="menu__footer-wrap">
+          <div class="menu__left">
+            <nav class="hidden">
+              <a href="text-page.php">Правовые документы</a>
+              <a href="text-page.php">Служба поддержки</a>
+              <a href="news.php">Новости</a>
+            </nav>
+            <a href="#" class="link">Рассылка акций и новостей</a>
+          </div>
+          <div class="menu__socials">
+            <a href="#" class="menu__socials-link" target="_blank">
+              <svg>
+                <use xlink:href="img/sprite.svg#instagram"></use>
+              </svg>
+            </a>
+            <a href="#" class="menu__socials-link" target="_blank">
+              <svg>
+                <use xlink:href="img/sprite.svg#facebook"></use>
+              </svg>
+            </a>
+            <a href="#" class="menu__socials-link" target="_blank">
+              <svg>
+                <use xlink:href="img/sprite.svg#youtube"></use>
+              </svg>
+            </a>
+            <a href="#" class="menu__socials-link" target="_blank">
+              <svg>
+                <use xlink:href="img/sprite.svg#vk"></use>
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>

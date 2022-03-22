@@ -3,14 +3,14 @@
     <div class="footer__col">
       <div class="footer__col-title">Навигация</div>
       <nav class="footer__list">
-        <li><a href="#" class="footer__link">Служба поддержки</a></li>
-        <li><a href="#" class="footer__link">Пользовательское соглашение</a></li>
-        <li><a href="#" class="footer__link">Политика конфиденциальности</a></li>
-        <li><a href="#" class="footer__link">Онлайн-запись</a></li>
-        <li><a href="#" class="footer__link">Вопрос-ответ</a></li>
+        <li><a href="text-page.php" class="footer__link">Служба поддержки</a></li>
+        <li><a href="text-page.php" class="footer__link">Пользовательское соглашение</a></li>
+        <li><a href="text-page.php" class="footer__link">Политика конфиденциальности</a></li>
+        <li><a href="entry.php" class="footer__link">Онлайн-запись</a></li>
+        <li><a href="faq.php" class="footer__link">Вопрос-ответ</a></li>
         <li><a href="#" class="footer__link">Контакты</a></li>
-        <li><a href="#" class="footer__link">Информация</a></li>
-        <li><a href="#" class="footer__link">Акции</a></li>
+        <li><a href="useful.php" class="footer__link">Информация</a></li>
+        <li><a href="actions.php" class="footer__link">Акции</a></li>
       </nav>
     </div>
     <div class="footer__col">
@@ -20,18 +20,18 @@
         <li><a href="#" class="footer__link">Избранное</a></li>
         <li><a href="#" class="footer__link">Корзина</a></li>
         <li><a href="#" class="footer__link">Отслеживание доставки</a></li>
-        <li><a href="#" class="footer__link">История покупок</a></li>
+        <li><a href="lk-history.php" class="footer__link">История покупок</a></li>
         <li><a href="#" class="footer__link">Каталог</a></li>
-        <li><a href="#" class="footer__link">Вопрос-ответ</a></li>
+        <li><a href="faq.php" class="footer__link">Вопрос-ответ</a></li>
         <li><a href="#" class="footer__link">Оплата/доставка</a></li>
-        <li><a href="#" class="footer__link">Акции</a></li>
+        <li><a href="actions.php" class="footer__link">Акции</a></li>
       </nav>
     </div>
     <div class="footer__col">
       <div class="footer__col-title">Профиль</div>
       <nav class="footer__list">
-        <li><a href="#" class="footer__link">Личный кабинет</a></li>
-        <li><a href="#" class="footer__link">Настройки профиля</a></li>
+        <li><a href="lk-history.php" class="footer__link">Личный кабинет</a></li>
+        <li><a href="lk-settings.php" class="footer__link">Настройки профиля</a></li>
         <li><a href="#" class="footer__link">Корзина</a></li>
         <li><a href="#" class="footer__link">Избранное</a></li>
       </nav>
@@ -39,19 +39,19 @@
     <div class="footer__col">
       <div class="footer__col-title">Партнерам</div>
       <nav class="footer__list">
-        <li><a href="#" class="footer__link">Корпоративным клиентам</a></li>
+        <li><a href="corp.php" class="footer__link">Корпоративным клиентам</a></li>
         <li><a href="#" class="footer__link">Избранное</a></li>
         <li><a href="#" class="footer__link">Корзина</a></li>
         <li><a href="#" class="footer__link">Отслеживание доставки</a></li>
-        <li><a href="#" class="footer__link">История покупок</a></li>
+        <li><a href="lk-history.php" class="footer__link">История покупок</a></li>
         <li><a href="#" class="footer__link">Каталог</a></li>
-        <li><a href="#" class="footer__link">Вопрос-ответ</a></li>
+        <li><a href="faq.php" class="footer__link">Вопрос-ответ</a></li>
       </nav>
     </div>
     <div class="footer__col">
       <div class="footer__col-title">Рассылка новостей</div>
       <div class="footer__mail">
-        <a href="#">
+        <a href="mailto:r.biktagirov@5krf.ru">
           <svg>
             <use xlink:href="img/sprite.svg#mail"></use>
             <span>Электронная почта</span>

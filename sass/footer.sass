@@ -189,8 +189,8 @@
   position: absolute
   left: 200%
   right: 0
-  min-height: 100%
   top: 0
+  height: 100vh
   background: url("../img/menu-bg.jpg") no-repeat
   background-size: cover
   background-position: right bottom
@@ -203,8 +203,19 @@
     background: url("../img/bg.jpg") no-repeat
     overflow-y: auto
     overflow-x: hidden
+  &__scroll
+    margin-top: 161px
+    overflow-y: auto
+    overflow-x: hidden
+    height: calc(100vh - 111px)
+    padding-top: 50px
+    @include between(1280, 1919)
+      margin-top: 100px
+      height: calc(100vh - 50px)
+    @include max(767)
+      margin-top: 225px
+      height: calc(100vh - 175px)
   &__wrap
-    padding-top: 161px
     max-width: 1140px
     width: calc(8/12*100%)
     display: grid
@@ -212,7 +223,6 @@
     grid-template-rows: auto
     grid-gap: 30px 14px
     @include between(1280, 1919)
-      padding-top: 100px
       grid-gap: 14px
     @include max(1279)
       width: 100%
@@ -222,7 +232,6 @@
       padding-bottom: 46px
     @include max(767)
       gap: 25px
-      padding-top: 225px
       grid-template-columns: 1fr
       padding-bottom: 40px
   &__item
