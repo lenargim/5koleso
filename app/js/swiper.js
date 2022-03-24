@@ -31,10 +31,14 @@ const mainSlider = new Swiper('.mainpage__slider', {
   draggable: true,
   preloadImages: false,
   lazy: true,
+  mousewheelControl: true,
+  speed: 600,
+  mousewheel: true,
   pagination: {
     el: '.pagination',
     type: 'bullets',
     currentClass: 'active',
+    mousewheelControl: true,
   },
   on: {
     init: function () {
@@ -52,6 +56,7 @@ mainSlider.on('slideChange', function () {
   mainSliderCurrent < 10 ? mainSliderCurrentSpan.text(`0${mainSliderCurrent}`) : mainSliderCurrentSpan.text(mainSliderCurrent);
   checkSlideBg(mainSliderCurrent)
 });
+
 
 function checkSlideBg(index) {
   $('.mainpage__slide').eq(--index).hasClass('white-bg') ?
