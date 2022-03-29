@@ -9,6 +9,7 @@ include('partials/header-registered.php'); ?>
             <source srcset="img/fake-map-tablet.jpg" media="(max-width:1279px)">
             <img data-src="img/fake-map.jpg" alt="Шиномонтаж в Казани" class="mainpage__map-img swiper-lazy image">
           </picture>
+          <div class="swiper-lazy-preloader"></div>
           <div class="container">
             <div class="mainpage__slide-content content">
               <h2 class="mainpage__map-title title">Шиномонтаж в <span class="city">Казани</span></h2>
@@ -46,7 +47,7 @@ include('partials/header-registered.php'); ?>
                 <div class="swiper-wrapper">
                   <a href="services.php" class="mainpage__slide-detailed swiper-slide">
                     <img data-src="img/main-service-1.jpg" alt="Шиномонтаж" class="mainpage__slide-img swiper-lazy">
-                    <span class="swiper-lazy-preloader"></span>
+                    <div class="swiper-lazy-preloader"></div>
                     <div class="mainpage__slide-detailed-info">
                       <h3>Шиномонтаж</h3>
                       <p class="hide-on-mobile">Любой автомобиль нуждается в шиномонтаже. В том числе и корпоративный.
@@ -58,11 +59,11 @@ include('partials/header-registered.php'); ?>
                   </a>
                   <a href="services.php" class="mainpage__slide-detailed swiper-slide">
                     <img data-src="img/main-service-2.jpg" alt="" class="mainpage__slide-img swiper-lazy">
-                    <span class="swiper-lazy-preloader"></span>
+                    <div class="swiper-lazy-preloader"></div>
                   </a>
                   <a href="services.php" class="mainpage__slide-detailed swiper-slide">
                     <img data-src="img/main-service-3.jpg" alt="" class="mainpage__slide-img swiper-lazy">
-                    <span class="swiper-lazy-preloader"></span>
+                    <div class="swiper-lazy-preloader"></div>
                   </a>
                 </div>
               </div>
@@ -71,6 +72,7 @@ include('partials/header-registered.php'); ?>
         </div>
         <div class="swiper-slide mainpage__slide mainpage__slide_type1 mainpage__corp">
           <img data-src="img/main-corp.jpg" alt="Корпоративным клиентам" class="mainpage__corp-img swiper-lazy image">
+          <div class="swiper-lazy-preloader"></div>
           <div class="container">
             <div class="mainpage__slide-content content">
               <h2 class="mainpage__corp-title title">Корпоративным<br>клиентам</h2>
@@ -111,7 +113,7 @@ include('partials/header-registered.php'); ?>
                   <a href="services.php" class="mainpage__slide-detailed swiper-slide">
                     <img data-src="img/main-action-1.jpg" alt="Работаем круглосуточно 24/7"
                          class="mainpage__slide-img swiper-lazy">
-                    <span class="swiper-lazy-preloader"></span>
+                    <div class="swiper-lazy-preloader"></div>
                     <div class="mainpage__slide-detailed-info">
                       <h3>Работаем<br>круглосуточно 24/7</h3>
                       <p class="hide-on-mobile">Любой автомобиль нуждается в шиномонтаже. В том числе и корпоративный.
@@ -122,11 +124,11 @@ include('partials/header-registered.php'); ?>
                   </a>
                   <a href="services.php" class="mainpage__slide-detailed swiper-slide">
                     <img data-src="img/main-action-2.jpg" alt="" class="mainpage__slide-img swiper-lazy">
-                    <span class="swiper-lazy-preloader"></span>
+                    <div class="swiper-lazy-preloader"></div>
                   </a>
                   <a href="services.php" class="mainpage__slide-detailed swiper-slide">
                     <img data-src="img/main-action-3.jpg" alt="" class="mainpage__slide-img swiper-lazy">
-                    <span class="swiper-lazy-preloader"></span>
+                    <div class="swiper-lazy-preloader"></div>
                   </a>
                 </div>
               </div>
@@ -135,6 +137,7 @@ include('partials/header-registered.php'); ?>
         </div>
         <div class="swiper-slide mainpage__slide mainpage__info mainpage__slide_type1">
           <img data-src="img/main-info.jpg" alt="Информация" class="mainpage__corp-img swiper-lazy image">
+          <div class="swiper-lazy-preloader"></div>
           <div class="container">
             <div class="mainpage__slide-content content">
               <h2 class="mainpage__corp-title title">Информация</h2>

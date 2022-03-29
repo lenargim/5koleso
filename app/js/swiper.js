@@ -30,7 +30,9 @@ const mainSlider = new Swiper('.mainpage__slider', {
   slidesPerView: 1,
   draggable: true,
   preloadImages: false,
-  lazy: true,
+  lazy: {
+    loadOnTransitionStart: true,
+  },
   mousewheelControl: true,
   speed: 600,
   mousewheel: true,
@@ -68,7 +70,9 @@ const gridSlider = new Swiper('.mainpage__slide-grid', {
   init: false,
   spaceBetween: 200,
   center: true,
-  loop: true,
+  lazy: {
+    loadOnTransitionStart: true,
+  },
   effect: "creative",
   creativeEffect: {
     prev: {
@@ -172,7 +176,9 @@ const careerCorpSlider = new Swiper('.career__corp-slider', {
   slidesPerView: 1,
   spaceBetween: 20,
   preloadImages: false,
-  lazy: true,
+  lazy: {
+    loadOnTransitionStart: true,
+  },
   pagination: {
     el: '.pagination',
     type: 'bullets',
