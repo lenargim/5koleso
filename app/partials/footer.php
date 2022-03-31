@@ -145,7 +145,7 @@
       <div class="container">
         <div class="menu__footer-wrap">
           <div class="menu__left">
-            <nav class="hidden">
+            <nav class="menu__left-nav">
               <a href="text-page.php">Правовые документы</a>
               <a href="text-page.php">Служба поддержки</a>
               <a href="news.php">Новости</a>
