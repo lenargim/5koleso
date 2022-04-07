@@ -471,72 +471,11 @@ include('partials/header.php'); ?>
     for (var i = 0; i < cityData.length; i++) {
       let item = cityData[i];
       let address = item.address;
-      ymaps.geocode(address, {results: 1}).then(function (res) {
-        //var firstGeoObject = res.geoObjects.get(0);
-        //coords = firstGeoObject.geometry.getCoordinates();
-        let iconSrc = item.iconSrc;
-        let coords = item.coords
-
-        var myPlacemark = new ymaps.Placemark(coords, {
-          id: item.id,
-          address: item.address,
-          balloonContent:
-            `<div class='balloon-content'>
-              <div class='balloon-content__text'>
-                <div class='balloon-content__address'>${item.address}</div>
-                <div class='balloon-content__workhour'>Время работы: ${item.workhour}</div>
-                <div class='balloon-content__workload ${item.baloonColor}'>${item.workload}</div>
-              </div>
-            <div class="balloon-content__img img"><img src="${item.imgSrc}"></div>
-            </div>`
-        }, {
-          hideIconOnBalloonOpen: false,
-          balloonCloseButton: false,
-          balloonLayout: BalloonContentLayout,
-          iconLayout: 'default#image',
-          // Своё изображение иконки метки.
-          iconImageHref: iconSrc,
-          // Размеры метки.
-          iconImageSize: [27, 27],
-        });
-        let margin = [];
-        if (window.innerWidth > 1279) {
-          margin = [0, 250,0, 0]
-        } else {
-          margin = [0, 0, 100, 0]
-        }
-        myMap.geoObjects.add(myPlacemark);
-        myMap.setBounds(myMap.geoObjects.getBounds(), {
-          checkZoomRange: true,
-          zoomMargin: margin
-        });
-      });
-
-
-
-      myMap.geoObjects.events.add('click', function (e) {
-        // Получим ссылку на геообъект, по которому кликнул пользователь.
-        var target = e.get('target');
-        let address = target.properties.get('address');
-        $('.entry__search-input').val(address);
-        $('.entry__search').submit();
-        // Переместим центр карты по координатам метки с учётом заданных отступов.
-        let coords = target.geometry.getCoordinates();
-        let newCoords = [];
-        if (window.innerWidth > 1279) {
-          newCoords = [
-            coords[0],
-            coords[1] + 0.05
-          ];
-        } else {
-          newCoords = [
-            coords[0] - 0.02,
-            coords[1]
-          ]
-        }
-        myMap.panTo(newCoords, {useMapMargin: true});
-      });
-
+      console.log(item)
+      //var firstGeoObject = res.geoObjects.get(0);
+      //coords = firstGeoObject.geometry.getCoordinates();
+      let iconSrc = item.iconSrc;
+      let coords = item.coords;
 
       BalloonContentLayout = ymaps.templateLayoutFactory.createClass(
         '<div class="balloon-root ">' +
@@ -571,6 +510,65 @@ include('partials/header.php'); ?>
             });
           },
         });
+
+      var myPlacemark = new ymaps.Placemark(coords, {
+        id: item.id,
+        address: item.address,
+        balloonContent:
+          `<div class='balloon-content'>
+              <div class='balloon-content__text'>
+                <div class='balloon-content__address'>${item.address}</div>
+                <div class='balloon-content__workhour'>Время работы: ${item.workhour}</div>
+                <div class='balloon-content__workload ${item.baloonColor}'>${item.workload}</div>
+              </div>
+            <div class="balloon-content__img img"><img src="${item.imgSrc}"></div>
+            </div>`
+      }, {
+        hideIconOnBalloonOpen: false,
+        balloonCloseButton: false,
+        balloonLayout: BalloonContentLayout,
+        iconLayout: 'default#image',
+        // Своё изображение иконки метки.
+        iconImageHref: iconSrc,
+        // Размеры метки.
+        iconImageSize: [27, 27],
+      });
+      let margin = [];
+      if (window.innerWidth > 1279) {
+        margin = [0, 250,0, 0]
+      } else {
+        margin = [0, 0, 100, 0]
+      }
+      myMap.geoObjects.add(myPlacemark);
+      myMap.setBounds(myMap.geoObjects.getBounds(), {
+        checkZoomRange: true,
+        zoomMargin: margin
+      });
+
+
+
+      myMap.geoObjects.events.add('click', function (e) {
+        // Получим ссылку на геообъект, по которому кликнул пользователь.
+        var target = e.get('target');
+        let address = target.properties.get('address');
+        $('.entry__search-input').val(address);
+        $('.entry__search').submit();
+        // Переместим центр карты по координатам метки с учётом заданных отступов.
+        let coords = target.geometry.getCoordinates();
+        let newCoords = [];
+        if (window.innerWidth > 1279) {
+          newCoords = [
+            coords[0],
+            coords[1] + 0.05
+          ];
+        } else {
+          newCoords = [
+            coords[0] - 0.02,
+            coords[1]
+          ]
+        }
+        myMap.panTo(newCoords, {useMapMargin: true});
+      });
     }
     $(".entry__search").on('submit', function (e) {
       e.preventDefault();

@@ -390,47 +390,8 @@ include('partials/header-career.php'); ?>
     for (var i = 0; i < cityData.length; i++) {
       let item = cityData[i];
       let address = item.address;
-      ymaps.geocode(address, {results: 1}).then(function (res) {
-        let iconSrc = item.iconSrc;
-        let coords = item.coords
-
-        var myPlacemark = new ymaps.Placemark(coords, {
-          id: item.id,
-          address: item.address,
-          balloonContent:
-            `<div class='balloon-content'>
-              <div class='balloon-content__text'>
-                <div class='balloon-content__address'>${item.address}</div>
-                <div class='balloon-content__workhour'>Время работы: ${item.workhour}</div>
-                <div class='balloon-content__workload ${item.baloonColor}'>${item.workload}</div>
-              </div>
-            <div class="balloon-content__img img"><img src="${item.imgSrc}"></div>
-            </div>`
-        }, {
-          hideIconOnBalloonOpen: false,
-          balloonCloseButton: false,
-          balloonLayout: BalloonContentLayout,
-          iconLayout: 'default#image',
-          // Своё изображение иконки метки.
-          iconImageHref: iconSrc,
-          // Размеры метки.
-          iconImageSize: [27, 27],
-        });
-        myMap.geoObjects.add(myPlacemark);
-        myMap.setBounds(myMap.geoObjects.getBounds(), {
-          checkZoomRange: true,
-        });
-      });
-      myMap.behaviors.disable('scrollZoom');
-
-
-      myMap.geoObjects.events.add('click', function (e) {
-        // Получим ссылку на геообъект, по которому кликнул пользователь.
-        var target = e.get('target');
-        let coords = target.geometry.getCoordinates();
-        myMap.panTo(coords, {useMapMargin: true});
-      });
-
+      let iconSrc = item.iconSrc;
+      let coords = item.coords;
 
       BalloonContentLayout = ymaps.templateLayoutFactory.createClass(
         '<div class="balloon-root ">' +
@@ -465,6 +426,42 @@ include('partials/header-career.php'); ?>
             });
           },
         });
+
+      var myPlacemark = new ymaps.Placemark(coords, {
+        id: item.id,
+        address: item.address,
+        balloonContent:
+          `<div class='balloon-content'>
+              <div class='balloon-content__text'>
+                <div class='balloon-content__address'>${item.address}</div>
+                <div class='balloon-content__workhour'>Время работы: ${item.workhour}</div>
+                <div class='balloon-content__workload ${item.baloonColor}'>${item.workload}</div>
+              </div>
+            <div class="balloon-content__img img"><img src="${item.imgSrc}"></div>
+            </div>`
+      }, {
+        hideIconOnBalloonOpen: false,
+        balloonCloseButton: false,
+        balloonLayout: BalloonContentLayout,
+        iconLayout: 'default#image',
+        // Своё изображение иконки метки.
+        iconImageHref: iconSrc,
+        // Размеры метки.
+        iconImageSize: [27, 27],
+      });
+      myMap.geoObjects.add(myPlacemark);
+      myMap.setBounds(myMap.geoObjects.getBounds(), {
+        checkZoomRange: true,
+      });
+      myMap.behaviors.disable('scrollZoom');
+
+
+      myMap.geoObjects.events.add('click', function (e) {
+        // Получим ссылку на геообъект, по которому кликнул пользователь.
+        var target = e.get('target');
+        let coords = target.geometry.getCoordinates();
+        myMap.panTo(coords, {useMapMargin: true});
+      });
     }
   }
 </script>

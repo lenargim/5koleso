@@ -1,11 +1,11 @@
 var gulp         = require('gulp'),
-		sass         = require('gulp-sass')(require('sass')),
-		autoprefixer = require('gulp-autoprefixer'),
-		cleanCSS     = require('gulp-clean-css'),
-		rename       = require('gulp-rename'),
-		browserSync  = require('browser-sync').create(),
-		concat       = require('gulp-concat'),
-		uglify       = require('gulp-uglify-es').default;
+	sass         = require('gulp-sass')(require('sass')),
+	autoprefixer = require('gulp-autoprefixer'),
+	cleanCSS     = require('gulp-clean-css'),
+	rename       = require('gulp-rename'),
+	browserSync  = require('browser-sync').create(),
+	concat       = require('gulp-concat'),
+	uglify       = require('gulp-uglify-es').default;
 
 gulp.task('browser-sync', function() {
 	browserSync.init({
@@ -19,22 +19,22 @@ function bsReload(done) { browserSync.reload(); done() };
 
 gulp.task('styles', function () {
 	return gulp.src('sass/styles.sass')
-	.pipe(sass({
-	}, {allowEmpty: true}).on('error', sass.logError))
-	.pipe(rename({suffix: '.min', prefix : ''}))
-	.pipe(autoprefixer({
-		overrideBrowserslist: ['last 10 versions']
-	}))
-	.pipe(cleanCSS())
-	.pipe(gulp.dest('app/css'))
-	.pipe(browserSync.stream());
+		.pipe(sass({
+		}, {allowEmpty: true}).on('error', sass.logError))
+		.pipe(rename({suffix: '.min', prefix : ''}))
+		.pipe(autoprefixer({
+			overrideBrowserslist: ['last 10 versions']
+		}))
+		.pipe(cleanCSS())
+		.pipe(gulp.dest('app/css'))
+		.pipe(browserSync.stream());
 });
 
 gulp.task('scripts', function() {
 	return gulp.src([
 		'app/libs/**/*.js',
 		'app/js/js.js',
-		])
+	])
 		.pipe(concat('scripts.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('app/js/'))
@@ -43,7 +43,7 @@ gulp.task('scripts', function() {
 
 gulp.task('code', function() {
 	return gulp.src('app/**/*.php')
-	.pipe(browserSync.reload({ stream: true }))
+		.pipe(browserSync.reload({ stream: true }))
 });
 
 gulp.task('watch', function () {
