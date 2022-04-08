@@ -382,11 +382,7 @@ include('partials/header.php'); ?>
         "</svg>\n</div>" +
         "<div id='zoom-out' class='btn'><svg class='icon-minus' width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n" +
         "<path d=\"M19 11H5C4.73478 11 4.48043 11.1054 4.29289 11.2929C4.10536 11.4804 4 11.7348 4 12C4 12.2652 4.10536 12.5196 4.29289 12.7071C4.48043 12.8946 4.73478 13 5 13H19C19.2652 13 19.5196 12.8946 19.7071 12.7071C19.8946 12.5196 20 12.2652 20 12C20 11.7348 19.8946 11.4804 19.7071 11.2929C19.5196 11.1054 19.2652 11 19 11Z\" fill=\"white\"/>\n" +
-        "</svg>\n</div>" +
-        "<div id='geo-location' class='btn'><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n" +
-        "<path d=\"M21.1498 2.85977C20.7678 2.47033 20.2833 2.19698 19.7524 2.07134C19.2215 1.9457 18.6659 1.97289 18.1498 2.14977L3.9998 6.87977C3.42912 7.06657 2.93049 7.42591 2.57276 7.9082C2.21502 8.39049 2.01582 8.97193 2.00265 9.57227C1.98948 10.1726 2.16299 10.7622 2.49923 11.2597C2.83547 11.7572 3.31786 12.1381 3.87981 12.3498L9.1198 14.3498C9.23912 14.3954 9.34776 14.4651 9.43895 14.5546C9.53014 14.644 9.60191 14.7513 9.6498 14.8698L11.6498 20.1198C11.8534 20.6738 12.2228 21.1515 12.7078 21.4879C13.1927 21.8244 13.7696 22.0031 14.3598 21.9998H14.4298C15.0308 21.9888 15.6134 21.7901 16.0958 21.4314C16.5781 21.0728 16.9362 20.5722 17.1198 19.9998L21.8498 5.82977C22.0218 5.3187 22.0474 4.76971 21.9237 4.24485C21.8 3.72 21.5319 3.24022 21.1498 2.85977ZM19.9998 5.19977L15.2198 19.3798C15.1643 19.5592 15.0528 19.7162 14.9017 19.8278C14.7505 19.9394 14.5677 19.9996 14.3798 19.9998C14.1931 20.0028 14.0098 19.949 13.8544 19.8454C13.699 19.7418 13.5788 19.5933 13.5098 19.4198L11.5098 14.1698C11.3648 13.7883 11.1412 13.4416 10.8535 13.1521C10.5658 12.8627 10.2204 12.637 9.83981 12.4898L4.58981 10.4898C4.4127 10.4249 4.26046 10.306 4.15459 10.1499C4.04872 9.99374 3.99458 9.80832 3.9998 9.61977C3.99996 9.43191 4.06022 9.24903 4.17178 9.09789C4.28334 8.94675 4.44034 8.83527 4.6198 8.77977L18.7998 4.04977C18.9626 3.98341 19.1411 3.96564 19.3138 3.99859C19.4865 4.03154 19.646 4.11381 19.7729 4.23545C19.8998 4.35709 19.9888 4.5129 20.0291 4.68403C20.0693 4.85516 20.0592 5.03429 19.9998 5.19977Z\" fill=\"#F2F2F2\"/>\n" +
-        "</svg>\n</div>" +
-        "</div>", {
+        "</svg>\n</div>\n</div>", {
 
         // Переопределяем методы макета, чтобы выполнять дополнительные действия
         // при построении и очистке макета.
@@ -398,12 +394,12 @@ include('partials/header.php'); ?>
           // на них, чтобы потом отписаться от событий.
           this.zoomInCallback = ymaps.util.bind(this.zoomIn, this);
           this.zoomOutCallback = ymaps.util.bind(this.zoomOut, this);
-          this.geolocationCallback = ymaps.util.bind(this.doGeolocation, this);
+          //this.geolocationCallback = ymaps.util.bind(this.doGeolocation, this);
 
           // Начинаем слушать клики на кнопках макета.
           $('#zoom-in').bind('click', this.zoomInCallback);
           $('#zoom-out').bind('click', this.zoomOutCallback);
-          $('#geo-location').bind('click', this.doGeolocation);
+          //$('#geo-location').bind('click', this.doGeolocation);
         },
 
         clear: function () {
@@ -425,48 +421,48 @@ include('partials/header.php'); ?>
           map.setZoom(map.getZoom() - 1, {checkZoomRange: true});
         },
 
-        doGeolocation: function () {
-          //var map = this.getData().control.getMap();
-          var location = ymaps.geolocation.get();
-          location.then(
-            function (result) {
-              // Добавление местоположения на карту.
-              myMap.geoObjects.add(result.geoObjects);
-              // Перемещение к местоположению
-              myMap.panTo(result.geoObjects.position)
-            },
-            function (err) {
-              console.log('Ошибка: ' + err)
-            }
-          );
-        }
+        // doGeolocation: function () {
+        //   //var map = this.getData().control.getMap();
+        //   var location = ymaps.geolocation.get();
+        //   location.then(
+        //     function (result) {
+        //       // Добавление местоположения на карту.
+        //       myMap.geoObjects.add(result.geoObjects);
+        //       // Перемещение к местоположению
+        //       myMap.panTo(result.geoObjects.position)
+        //     },
+        //     function (err) {
+        //       console.log('Ошибка: ' + err)
+        //     }
+        //   );
+        // }
       });
       zoomControl = new ymaps.control.ZoomControl({options: {layout: ZoomLayout}});
     myMap.controls.add(zoomControl, {
       position: {}
     });
-    var searchControl = new ymaps.control.SearchControl({
-      options: {
-        noSelect: true,
-        noPlacemark: true,
-        placeholderContent: 'Выберите адрес',
-        //provider: 'yandex#search',
-        noSuggestPanel: true,
-        noPopup: true,
-        position: {
-          top: -100,
-        }
-      },
-    });
+    // var searchControl = new ymaps.control.SearchControl({
+    //   options: {
+    //     noSelect: true,
+    //     noPlacemark: true,
+    //     placeholderContent: 'Выберите адрес',
+    //     //provider: 'yandex#search',
+    //     noSuggestPanel: true,
+    //     noPopup: true,
+    //     position: {
+    //       top: -100,
+    //     }
+    //   },
+    // });
 
-    searchControl.events.add('load', function (event) {
-      // Проверяет, что это событие не "дозагрузка" результатов и
-      // по запросу найден хотя бы один результат.
-       if (!event.get('skip') && searchControl.getResultsCount()) {
-         //searchControl.showResult(0);
-       }
-    });
-    myMap.controls.add(searchControl);
+    // searchControl.events.add('load', function (event) {
+    //   // Проверяет, что это событие не "дозагрузка" результатов и
+    //   // по запросу найден хотя бы один результат.
+    //    if (!event.get('skip') && searchControl.getResultsCount()) {
+    //      //searchControl.showResult(0);
+    //    }
+    // });
+    // myMap.controls.add(searchControl);
 
     for (var i = 0; i < cityData.length; i++) {
       let item = cityData[i];
@@ -575,7 +571,7 @@ include('partials/header.php'); ?>
       let input = $(this).find('.entry__search-input').val();
       cityData.forEach(el => {
         if (el.address == input) {
-          searchControl.search(input).then(function () {
+          // searchControl.search(input).then(function () {
             myMap.geoObjects.each(function (geoObject) {
               if (geoObject.properties.get('id') == el.id) {
                 geoObject.balloon.open();
@@ -594,7 +590,7 @@ include('partials/header.php'); ?>
                 return false;
               }
             });
-          });
+          // });
         }
       })
     });
