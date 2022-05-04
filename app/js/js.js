@@ -32,8 +32,6 @@ $(document).ready(function () {
   }
 
 
-
-
   /* End Preloader */
 
   /* Common */
@@ -96,8 +94,6 @@ $(document).ready(function () {
     document.cookie = `cookies=true`;
     $('.cookie-block').removeClass('open');
   });
-
-
 
 
   $('#get-city-data').attr("src", `cities/${isCity}.js`);

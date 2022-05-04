@@ -130,7 +130,8 @@ include('partials/header.php'); ?>
       <svg class="svg-alert svg-state hidden">
         <use xlink:href="img/sprite-form.svg#alert"></use>
       </svg>
-      <input type="text" placeholder="Гос. номер авто *" name="entry-car-number" id="entry-car-number" class="form-input car-number"
+      <input type="text" placeholder="Гос. номер авто *" name="entry-car-number" id="entry-car-number"
+             class="form-input car-number"
              autocomplete="off">
       <span class="form-hint">Гос. номер авто</span>
     </div>
@@ -373,71 +374,71 @@ include('partials/header.php'); ?>
     });
 
     myMap.controls.add(buttonListOpen);
-    buttonListOpen.events.add('click',function () {
+    buttonListOpen.events.add('click', function () {
       $('.entry__info').removeClass('hide');
     })
-      ZoomLayout = ymaps.templateLayoutFactory.createClass("<div class='map-layout'>" +
-        "<div id='zoom-in' class='btn'><svg class='icon-plus' width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n" +
-        "<path d=\"M15 7H9V1C9 0.734784 8.89464 0.48043 8.70711 0.292893C8.51957 0.105357 8.26522 0 8 0C7.73478 0 7.48043 0.105357 7.29289 0.292893C7.10536 0.48043 7 0.734784 7 1V7H1C0.734784 7 0.48043 7.10536 0.292893 7.29289C0.105357 7.48043 0 7.73478 0 8C0 8.26522 0.105357 8.51957 0.292893 8.70711C0.48043 8.89464 0.734784 9 1 9H7V15C7 15.2652 7.10536 15.5196 7.29289 15.7071C7.48043 15.8946 7.73478 16 8 16C8.26522 16 8.51957 15.8946 8.70711 15.7071C8.89464 15.5196 9 15.2652 9 15V9H15C15.2652 9 15.5196 8.89464 15.7071 8.70711C15.8946 8.51957 16 8.26522 16 8C16 7.73478 15.8946 7.48043 15.7071 7.29289C15.5196 7.10536 15.2652 7 15 7Z\" fill=\"white\"/>\n" +
-        "</svg>\n</div>" +
-        "<div id='zoom-out' class='btn'><svg class='icon-minus' width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n" +
-        "<path d=\"M19 11H5C4.73478 11 4.48043 11.1054 4.29289 11.2929C4.10536 11.4804 4 11.7348 4 12C4 12.2652 4.10536 12.5196 4.29289 12.7071C4.48043 12.8946 4.73478 13 5 13H19C19.2652 13 19.5196 12.8946 19.7071 12.7071C19.8946 12.5196 20 12.2652 20 12C20 11.7348 19.8946 11.4804 19.7071 11.2929C19.5196 11.1054 19.2652 11 19 11Z\" fill=\"white\"/>\n" +
-        "</svg>\n</div>\n</div>", {
+    ZoomLayout = ymaps.templateLayoutFactory.createClass("<div class='map-layout'>" +
+      "<div id='zoom-in' class='btn'><svg class='icon-plus' width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n" +
+      "<path d=\"M15 7H9V1C9 0.734784 8.89464 0.48043 8.70711 0.292893C8.51957 0.105357 8.26522 0 8 0C7.73478 0 7.48043 0.105357 7.29289 0.292893C7.10536 0.48043 7 0.734784 7 1V7H1C0.734784 7 0.48043 7.10536 0.292893 7.29289C0.105357 7.48043 0 7.73478 0 8C0 8.26522 0.105357 8.51957 0.292893 8.70711C0.48043 8.89464 0.734784 9 1 9H7V15C7 15.2652 7.10536 15.5196 7.29289 15.7071C7.48043 15.8946 7.73478 16 8 16C8.26522 16 8.51957 15.8946 8.70711 15.7071C8.89464 15.5196 9 15.2652 9 15V9H15C15.2652 9 15.5196 8.89464 15.7071 8.70711C15.8946 8.51957 16 8.26522 16 8C16 7.73478 15.8946 7.48043 15.7071 7.29289C15.5196 7.10536 15.2652 7 15 7Z\" fill=\"white\"/>\n" +
+      "</svg>\n</div>" +
+      "<div id='zoom-out' class='btn'><svg class='icon-minus' width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n" +
+      "<path d=\"M19 11H5C4.73478 11 4.48043 11.1054 4.29289 11.2929C4.10536 11.4804 4 11.7348 4 12C4 12.2652 4.10536 12.5196 4.29289 12.7071C4.48043 12.8946 4.73478 13 5 13H19C19.2652 13 19.5196 12.8946 19.7071 12.7071C19.8946 12.5196 20 12.2652 20 12C20 11.7348 19.8946 11.4804 19.7071 11.2929C19.5196 11.1054 19.2652 11 19 11Z\" fill=\"white\"/>\n" +
+      "</svg>\n</div>\n</div>", {
 
-        // Переопределяем методы макета, чтобы выполнять дополнительные действия
-        // при построении и очистке макета.
-        build: function () {
-          // Вызываем родительский метод build.
-          ZoomLayout.superclass.build.call(this);
+      // Переопределяем методы макета, чтобы выполнять дополнительные действия
+      // при построении и очистке макета.
+      build: function () {
+        // Вызываем родительский метод build.
+        ZoomLayout.superclass.build.call(this);
 
-          // Привязываем функции-обработчики к контексту и сохраняем ссылки
-          // на них, чтобы потом отписаться от событий.
-          this.zoomInCallback = ymaps.util.bind(this.zoomIn, this);
-          this.zoomOutCallback = ymaps.util.bind(this.zoomOut, this);
-          //this.geolocationCallback = ymaps.util.bind(this.doGeolocation, this);
+        // Привязываем функции-обработчики к контексту и сохраняем ссылки
+        // на них, чтобы потом отписаться от событий.
+        this.zoomInCallback = ymaps.util.bind(this.zoomIn, this);
+        this.zoomOutCallback = ymaps.util.bind(this.zoomOut, this);
+        //this.geolocationCallback = ymaps.util.bind(this.doGeolocation, this);
 
-          // Начинаем слушать клики на кнопках макета.
-          $('#zoom-in').bind('click', this.zoomInCallback);
-          $('#zoom-out').bind('click', this.zoomOutCallback);
-          //$('#geo-location').bind('click', this.doGeolocation);
-        },
+        // Начинаем слушать клики на кнопках макета.
+        $('#zoom-in').bind('click', this.zoomInCallback);
+        $('#zoom-out').bind('click', this.zoomOutCallback);
+        //$('#geo-location').bind('click', this.doGeolocation);
+      },
 
-        clear: function () {
-          // Снимаем обработчики кликов.
-          $('#zoom-in').unbind('click', this.zoomInCallback);
-          $('#zoom-out').unbind('click', this.zoomOutCallback);
+      clear: function () {
+        // Снимаем обработчики кликов.
+        $('#zoom-in').unbind('click', this.zoomInCallback);
+        $('#zoom-out').unbind('click', this.zoomOutCallback);
 
-          // Вызываем родительский метод clear.
-          ZoomLayout.superclass.clear.call(this);
-        },
+        // Вызываем родительский метод clear.
+        ZoomLayout.superclass.clear.call(this);
+      },
 
-        zoomIn: function () {
-          var map = this.getData().control.getMap();
-          map.setZoom(map.getZoom() + 1, {checkZoomRange: true});
-        },
+      zoomIn: function () {
+        var map = this.getData().control.getMap();
+        map.setZoom(map.getZoom() + 1, {checkZoomRange: true});
+      },
 
-        zoomOut: function () {
-          var map = this.getData().control.getMap();
-          map.setZoom(map.getZoom() - 1, {checkZoomRange: true});
-        },
+      zoomOut: function () {
+        var map = this.getData().control.getMap();
+        map.setZoom(map.getZoom() - 1, {checkZoomRange: true});
+      },
 
-        // doGeolocation: function () {
-        //   //var map = this.getData().control.getMap();
-        //   var location = ymaps.geolocation.get();
-        //   location.then(
-        //     function (result) {
-        //       // Добавление местоположения на карту.
-        //       myMap.geoObjects.add(result.geoObjects);
-        //       // Перемещение к местоположению
-        //       myMap.panTo(result.geoObjects.position)
-        //     },
-        //     function (err) {
-        //       console.log('Ошибка: ' + err)
-        //     }
-        //   );
-        // }
-      });
-      zoomControl = new ymaps.control.ZoomControl({options: {layout: ZoomLayout}});
+      // doGeolocation: function () {
+      //   //var map = this.getData().control.getMap();
+      //   var location = ymaps.geolocation.get();
+      //   location.then(
+      //     function (result) {
+      //       // Добавление местоположения на карту.
+      //       myMap.geoObjects.add(result.geoObjects);
+      //       // Перемещение к местоположению
+      //       myMap.panTo(result.geoObjects.position)
+      //     },
+      //     function (err) {
+      //       console.log('Ошибка: ' + err)
+      //     }
+      //   );
+      // }
+    });
+    zoomControl = new ymaps.control.ZoomControl({options: {layout: ZoomLayout}});
     myMap.controls.add(zoomControl, {
       position: {}
     });
@@ -466,10 +467,6 @@ include('partials/header.php'); ?>
 
     for (var i = 0; i < cityData.length; i++) {
       let item = cityData[i];
-      let address = item.address;
-      console.log(item)
-      //var firstGeoObject = res.geoObjects.get(0);
-      //coords = firstGeoObject.geometry.getCoordinates();
       let iconSrc = item.iconSrc;
       let coords = item.coords;
 
@@ -531,7 +528,7 @@ include('partials/header.php'); ?>
       });
       let margin = [];
       if (window.innerWidth > 1279) {
-        margin = [0, 250,0, 0]
+        margin = [0, 250, 0, 0]
       } else {
         margin = [0, 0, 100, 0]
       }
@@ -540,7 +537,6 @@ include('partials/header.php'); ?>
         checkZoomRange: true,
         zoomMargin: margin
       });
-
 
 
       myMap.geoObjects.events.add('click', function (e) {
@@ -572,60 +568,68 @@ include('partials/header.php'); ?>
       cityData.forEach(el => {
         if (el.address == input) {
           // searchControl.search(input).then(function () {
-            myMap.geoObjects.each(function (geoObject) {
-              if (geoObject.properties.get('id') == el.id) {
-                geoObject.balloon.open();
-                $('.entry__info').addClass('hide');
-                $('.entry__form').removeClass('hide');
-                $('.entry-address-data').val(el.address);
-                let choosenCoords = geoObject.geometry.getCoordinates()[0] + ',' + geoObject.geometry.getCoordinates()[1];
-                let choosenCoords1 = geoObject.geometry.getCoordinates()[1] + ',' + geoObject.geometry.getCoordinates()[0];
-                $('.entry-address-data').attr('data-coords', choosenCoords);
-                let yandexLink = `https://yandex.ru/maps/?rtext=~${choosenCoords}`;
-                let gisLink = `dgis://2gis.ru/routeSearch/rsType/car/to/${choosenCoords1}`;
-                let googleLink = `https://www.google.com/maps/dir//${choosenCoords}/@${choosenCoords},18z`;
-                $('.entry__thx-button_yandex').attr('href', yandexLink);
-                $('.entry__thx-button_gis').attr('href', gisLink);
-                $('.entry__thx-button_google').attr('href', googleLink);
-                return false;
-              }
-            });
+          myMap.geoObjects.each(function (geoObject) {
+            if (geoObject.properties.get('id') == el.id) {
+              geoObject.balloon.open();
+              $('.entry__info').addClass('hide');
+              $('.entry__form').removeClass('hide');
+              $('.entry-address-data').val(el.address);
+              let choosenCoords = geoObject.geometry.getCoordinates()[0] + ',' + geoObject.geometry.getCoordinates()[1];
+              let choosenCoords1 = geoObject.geometry.getCoordinates()[1] + ',' + geoObject.geometry.getCoordinates()[0];
+              $('.entry-address-data').attr('data-coords', choosenCoords);
+              let yandexLink = `https://yandex.ru/maps/?rtext=~${choosenCoords}`;
+              let gisLink = `dgis://2gis.ru/routeSearch/rsType/car/to/${choosenCoords1}`;
+              let googleLink = `https://www.google.com/maps/dir//${choosenCoords}/@${choosenCoords},18z`;
+              $('.entry__thx-button_yandex').attr('href', yandexLink);
+              $('.entry__thx-button_gis').attr('href', gisLink);
+              $('.entry__thx-button_google').attr('href', googleLink);
+              return false;
+            }
+          });
           // });
         }
       })
     });
   }
+
   let d = new Date();
 
   let month = d.getMonth();
   let day = d.getDate();
   let year = d.getFullYear();
 
+  let loc = {
+    days: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
+    daysShort: ['Вос', 'Пон', 'Вто', 'Сре', 'Чет', 'Пят', 'Суб'],
+    daysMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+    months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+    monthsShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
+    today: 'Сегодня',
+    clear: 'Очистить',
+    dateFormat: 'dd.MM.yyyy',
+    timeFormat: 'HH:mm',
+    firstDay: 1
+  };
 
-  const picker = datepicker('#entry-date', {
-    showOn: "focus",
-    showAllDates: true,
-    hideIfNoPrevNext: true,
+  new AirDatepicker('#entry-date', {
+    locale: loc,
+    autoClose: true,
     minDate: new Date(year, month, day),
-    startDay: 1,
     maxDate: new Date(year, month, day+30),
-    customDays: ['ВС','ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'],
-    customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-    formatter: (input, date, instance) => {
-      const options = {year: 'numeric', month: 'numeric', day: 'numeric'};
-      const value = date.toLocaleDateString('ru-RU', options);
-      input.value = value
+    dateFormat(date) {
+      return date.toLocaleString('ru', {
+        year: 'numeric',
+        day: '2-digit',
+        month: '2-digit'
+      });
     },
-    onSelect: (instance, date) => {
+    onSelect({date, formattedDate, datepicker}) {
       $('#entry-date').parents('.form-row-date').addClass('checked').removeClass('alert');
       let form = $(this).parents('form');
       checkForm(form);
-      const options1 = { month: 'long', day: 'numeric'};
+      const options1 = {month: 'long', day: 'numeric'};
       let value1 = date.toLocaleDateString('ru-RU', options1);
       $('.entry-send-date').text(value1);
-      //const options2 = {weekday: 'long'};
-      //let dayOfWeek = new Intl.DateTimeFormat('ru-RU', options2).format(date);
-      //let value2 = dayOfWeek[0].toUpperCase() + dayOfWeek.slice(1);
-    },
+    }
   });
 </script>

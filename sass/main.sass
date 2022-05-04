@@ -38,7 +38,7 @@ main
 
 .container
   width: 100%
-  padding: 0 15px
+  padding: 0 100px
   margin: 0 auto
   max-width: 1750px
   @include between(768, 1279)
@@ -47,12 +47,16 @@ main
     padding: 0 10px
 .container-md
   width: 100%
-  padding: 0 15px
+  padding: 0 100px
   margin: 0 auto
   max-width: 1450px
+  @include max(1279)
+    padding: 0 15px
+  @include max(767)
+    padding: 0 10px
 .container-sm
   width: 100%
-  padding: 0 15px
+  padding: 0 100px
   margin: 0 auto
   max-width: 1210px
   @include between(768, 1279)

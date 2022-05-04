@@ -10,10 +10,9 @@
     "gulp-concat": "^2.6.1",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.0.0",
+    "gulp-terser": "^2.1.0",
     "gulp-uglify-es": "^3.0.0",
     "node-bourbon": "^4.2.8",
     "sass": "^1.45.1"
-  },
-  "dependencies": {
   }
 }

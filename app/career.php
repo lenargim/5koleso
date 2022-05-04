@@ -326,47 +326,53 @@ include('partials/header-career.php'); ?>
   let day = d.getDate();
   let year = d.getFullYear();
 
+  let loc = {
+    days: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
+    daysShort: ['Вос','Пон','Вто','Сре','Чет','Пят','Суб'],
+    daysMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
+    months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+    monthsShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
+    today: 'Сегодня',
+    clear: 'Очистить',
+    dateFormat: 'dd.MM.yyyy',
+    timeFormat: 'HH:mm',
+    firstDay: 1
+  };
 
-  const joinPicker = datepicker('#join-date', {
-    showOn: "focus",
-    showAllDates: true,
-    hideIfNoPrevNext: true,
-    //minDate: new Date(year, month, day),
-    startDay: 1,
+  new AirDatepicker('#join-date', {
+    locale: loc,
+    autoClose: true,
     maxDate: new Date(year, month, day),
-    customDays: ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'],
-    customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-    formatter: (input, date, instance) => {
-      const options = {year: 'numeric', month: 'numeric', day: 'numeric'};
-      const value = date.toLocaleDateString('ru-RU', options);
-      input.value = value
+    dateFormat(date) {
+      return date.toLocaleString('ru', {
+        year: 'numeric',
+        day: '2-digit',
+        month: '2-digit'
+      });
     },
-    onSelect: (instance, date) => {
+    onSelect({date, formattedDate, datepicker}) {
       $('#join-date').parents('.form-row-date').addClass('checked').removeClass('alert');
       let form = $(this).parents('form');
       checkForm(form);
-    },
+    }
   });
 
-  const vacancyPicker = datepicker('#vacancy-date', {
-    showOn: "focus",
-    showAllDates: true,
-    hideIfNoPrevNext: true,
-    //minDate: new Date(year, month, day),
-    startDay: 1,
+  new AirDatepicker('#vacancy-date', {
+    locale: loc,
+    autoClose: true,
     maxDate: new Date(year, month, day),
-    customDays: ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'],
-    customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-    formatter: (input, date, instance) => {
-      const options = {year: 'numeric', month: 'numeric', day: 'numeric'};
-      const value = date.toLocaleDateString('ru-RU', options);
-      input.value = value
+    dateFormat(date) {
+      return date.toLocaleString('ru', {
+        year: 'numeric',
+        day: '2-digit',
+        month: '2-digit'
+      });
     },
-    onSelect: (instance, date) => {
+    onSelect({date, formattedDate, datepicker}) {
       $('#vacancy-date').parents('.form-row-date').addClass('checked').removeClass('alert');
       let form = $(this).parents('form');
       checkForm(form);
-    },
+    }
   });
 
 
