@@ -1,0 +1,158 @@
+#calendar
+  margin-bottom: 93px
+  font-family: $proximaNova
+  .air-datepicker
+    width: 100%
+    background: transparent
+    border: none
+    position: unset
+    &--navigation
+      display: flex
+      align-items: center
+      justify-content: center
+    &-nav
+      border: none
+      padding: 0
+      gap: 16px
+      margin-bottom: 32px
+      &--title
+        padding: 0
+        color: #fff
+        font: 700 28px/34px $proximaNova
+        white-space: nowrap
+        &:hover
+          background: none
+      &--action
+        background: rgba(51, 51, 51, 0.6)
+        backdrop-filter: blur(12.5px)
+        border-radius: 5px
+        width: 40px
+        height: 69px
+        display: flex
+        align-items: center
+        justify-content: center
+        &.-disabled-
+          visibility: hidden
+        svg
+          width: 24px
+          height: 29px
+          path
+            fill: #fff
+            stroke: none
+        &:hover
+          background: rgba(51, 51, 51, 0.6)
+    &--content
+      padding: 0
+    &-body
+      box-sizing: border-box
+      @include max(820)
+        position: relative
+        left: -27px
+        width: 100vw
+        padding: 0 27px
+        overflow-x: auto
+        -ms-overflow-style: none
+        scrollbar-width: none
+        &::-webkit-scrollbar
+          display: none
+      @include max(767)
+        left: -10px
+        padding: 0 10px
+      &--cells
+        grid-auto-rows: 1fr
+        grid-template-columns: repeat(7, 1fr)
+        border-left: 1px solid rgba(255, 255, 255, 0.5)
+        border-right: 1px solid rgba(255, 255, 255, 0.5)
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5)
+        @include max(820)
+          width: 770px
+    &-body--day
+      &-names
+        grid-template-columns: repeat(7, 1fr)
+        margin: 0
+        border: 1px solid rgba(255, 255, 255, 0.5)
+        @include max(820)
+          width: 770px
+      &-name
+        padding: 16px
+        font: 700 24px/29px $proximaNova
+        color: #fff
+        text-transform: none
+        background: rgba(51, 51, 51, 0.6)
+        @include between(1366, 1920)
+          font: 600 20px/24px $proximaNova
+          padding: 12px
+        &:not(:last-child)
+          border-right: 1px solid rgba(255, 255, 255, 0.5)
+    &-cell
+      padding: 16px 8px
+      font: 700 14px/17px $proximaNova
+      color: #fff
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5)
+      border-radius: 0
+      text-align: left
+      background: rgba(51, 51, 51, 0.6)
+      display: flex
+      flex-direction: column
+      gap: 4px
+      justify-content: flex-start
+      align-items: flex-start
+      @include between(1366, 1920)
+        padding: 10px 5px
+      &:hover
+        background: transparent
+      &.-day-
+        &:not(:nth-child(7n))
+          border-right: 1px solid rgba(255, 255, 255, 0.5)
+      &.-month-, &.-year-
+        align-items: center
+        &.-disabled-
+          color: rgba(255, 255, 255, 0.5)
+          cursor: initial
+      &.-month-:not(:nth-child(3n))
+        border-right: 1px solid rgba(255, 255, 255, 0.5)
+      &.-year-:not(:nth-child(4n))
+        border-right: 1px solid rgba(255, 255, 255, 0.5)
+      &.-other-month-
+        opacity: 0.6
+      .date
+        font: 600 14px/17px $proximaNova
+        @include between(1366, 1920)
+          line-height: 15px
+      .calendar-sale
+        display: flex
+        flex-direction: column
+        gap: 4px
+        border-radius: 5px
+        padding: 4px 10px
+        color: #fff
+        flex: 1 0 auto
+        align-items: stretch
+        justify-content: center
+        width: 100%
+        @include between(1366, 1920)
+          gap: 2px
+          padding: 2px 6px
+        &:nth-of-type(2)
+          background: linear-gradient(90deg, #3373DD 0%, #75ABFB 100%)
+        &:nth-of-type(3)
+          background: linear-gradient(90deg, #FFA195 0%, #FFB4B4 100%)
+        .title
+          font: 700 18px/22px $proximaNova
+          @include between(1366, 1920)
+            font: 600 16px/18px $proximaNova
+        .desc
+          font: 700 14px/17px $proximaNova
+          @include between(1366, 1920)
+            font: 600 14px/15px $proximaNova
+      .error
+        text-align: center
+        font: 400 14px/20px $proximaNova
+        color: rgba(255, 255, 255, 0.6)
+        display: flex
+        align-items: center
+        justify-content: center
+        flex: 1 0 auto
+        min-height: 100px
+        @include between(1366, 1920)
+          min-height: 80px

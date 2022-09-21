@@ -7,6 +7,17 @@ var gulp         = require('gulp'),
 	concat       = require('gulp-concat'),
 	uglify       = require('gulp-uglify-es').default;
 
+// import gulp from 'gulp'
+// import gulpSass from 'gulp-sass'
+// import dartSass from 'sass'
+// const  sass = gulpSass(dartSass);
+// import autoprefixer from 'gulp-autoprefixer'
+// import cleanCSS from 'gulp-clean-css'
+// import rename from 'gulp-rename'
+// import browserSync from 'browser-sync'
+// import concat from 'gulp-concat'
+
+
 gulp.task('browser-sync', function() {
 	browserSync.init({
 		proxy: "5koleso.loc",
